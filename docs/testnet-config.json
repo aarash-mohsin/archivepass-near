@@ -1,67 +1,67 @@
 {
-  "network": "testnet",
-  "rpc": "https://test.rpc.fastnear.com",
-  "asset_id": "archive.apw-mw3re9ta.testnet",
-  "code_hash": "8DVxZxb2nD3zST8tky1jPTbWvLJfs8vfLXzrB7AMgSNN",
-  "accounts": {
-    "owner": "apw-mw3re9ta.testnet",
-    "a": "a.apw-mw3r4y86.testnet",
-    "b": "b.apw-mw3r4y86.testnet",
-    "bob": "bob.apw-mw3r4y86.testnet",
-    "refund": "refund.apw-mw3r4y86.testnet"
-  },
-  "manifest": {
-    "title": "Public stewardship field guide",
-    "filename": "stewardship-guide.txt",
-    "media_type": "text/plain",
-    "license_note": "CC0-1.0",
-    "schema": "archivepass-manifest-v1",
-    "version_id": "v1",
-    "size_bytes": "2937",
-    "chunk_size": 1024,
-    "chunk_count": 3,
-    "file_sha256": "613d3d09c8774dd2af511845c984555d9c6017cc470243ea181bce76818023f4",
-    "merkle_root": "dc891c97cec1f21834ae5f028122c160d9ed290863b4c3663d0a4d43f8a83a6f",
-    "manifest_sha256": "78775dd9a9369986e660da98bd4b37b77756a1ca7e343dfe330a4d4b6157b142"
-  },
-  "policy": {
-    "service_origin": "1793896477363287801",
-    "period_duration": "120000000000",
-    "max_provider_rate": "1000000000000000000000",
-    "max_slot_spend": "2000000000000000000000",
-    "fund_expiry": "1793982877363287801",
-    "refund_beneficiary": "refund.apw-mw3r4y86.testnet",
-    "eligible_providers": [
-      "a.apw-mw3r4y86.testnet",
-      "b.apw-mw3r4y86.testnet"
-    ],
-    "max_nonterminal_commitments": 16,
-    "max_total_commitments": 256,
-    "max_pending_payouts": 8
-  },
-  "providers": [
-    {
-      "provider_id": "a.apw-mw3r4y86.testnet",
-      "label": "Release keeper A",
-      "endpoint": "http://127.0.0.1:8981",
-      "enabled": true
-    },
-    {
-      "provider_id": "b.apw-mw3r4y86.testnet",
-      "label": "Release keeper B",
-      "endpoint": "http://127.0.0.1:8982",
-      "enabled": true
-    }
+ "network": "testnet",
+ "rpc": "https://test.rpc.fastnear.com",
+ "asset_id": "archive.apw-mw4fsdcz.testnet",
+ "code_hash": "8DVxZxb2nD3zST8tky1jPTbWvLJfs8vfLXzrB7AMgSNN",
+ "accounts": {
+  "owner": "apw-mw4fsdcz.testnet",
+  "a": "a.apw-mw4fsdcz.testnet",
+  "b": "b.apw-mw4fsdcz.testnet",
+  "bob": "bob.apw-mw4fsdcz.testnet",
+  "refund": "refund.apw-mw4fsdcz.testnet"
+ },
+ "manifest": {
+  "title": "Public stewardship field guide",
+  "filename": "stewardship-guide.txt",
+  "media_type": "text/plain",
+  "license_note": "CC0-1.0",
+  "schema": "archivepass-manifest-v1",
+  "version_id": "v1",
+  "size_bytes": "2937",
+  "chunk_size": 1024,
+  "chunk_count": 3,
+  "file_sha256": "613d3d09c8774dd2af511845c984555d9c6017cc470243ea181bce76818023f4",
+  "merkle_root": "dc891c97cec1f21834ae5f028122c160d9ed290863b4c3663d0a4d43f8a83a6f",
+  "manifest_sha256": "78775dd9a9369986e660da98bd4b37b77756a1ca7e343dfe330a4d4b6157b142"
+ },
+ "policy": {
+  "service_origin": "1793937222055723825",
+  "period_duration": "120000000000",
+  "max_provider_rate": "1000000000000000000000",
+  "max_slot_spend": "2000000000000000000000",
+  "fund_expiry": "1796083200000000000",
+  "refund_beneficiary": "refund.apw-mw4fsdcz.testnet",
+  "eligible_providers": [
+   "a.apw-mw4fsdcz.testnet",
+   "b.apw-mw4fsdcz.testnet"
   ],
-  "source_origin": "http://127.0.0.1:8788",
-  "source_asset_id": "e30b8c8a-0ba5-42b4-9556-1d02db6784fd",
-  "manifest_sha256": "78775dd9a9369986e660da98bd4b37b77756a1ca7e343dfe330a4d4b6157b142",
-  "policy_sha256": "ffd1eb46903b228119f8f07a825a14f3353bad8c9912fa75b1e1f3d63caac9ff",
-  "key_status": "verified_keyless",
-  "access_keys": [],
-  "key_verified_at": "2026-11-05T16:50:51.648Z",
-  "bytes_path": "fixtures/stewardship-guide.txt",
-  "evidence_path": "docs/RELEASE_WORKERS-final-evidence.json",
-  "previous_config": "docs/releases/original-20261105/testnet-config.json",
-  "note": "Selected final 50T callback artifact; automatic signed keeper verification. Original short-lived scenario preserved separately. Local source and keeper endpoints require running local processes."
+  "max_nonterminal_commitments": 16,
+  "max_total_commitments": 256,
+  "max_pending_payouts": 8
+ },
+ "providers": [
+  {
+   "provider_id": "a.apw-mw4fsdcz.testnet",
+   "label": "Release keeper A",
+   "endpoint": "http://127.0.0.1:8981",
+   "enabled": true
+  },
+  {
+   "provider_id": "b.apw-mw4fsdcz.testnet",
+   "label": "Release keeper B",
+   "endpoint": "http://127.0.0.1:8982",
+   "enabled": true
+  }
+ ],
+ "source_origin": "http://127.0.0.1:8788",
+ "source_asset_id": "0b89c60a-9e6c-4cfa-94b6-947ab8f56253",
+ "manifest_sha256": "78775dd9a9369986e660da98bd4b37b77756a1ca7e343dfe330a4d4b6157b142",
+ "policy_sha256": "3dd36c5d3f087b89498056304440a061110391c8f801b96e88743d55ef5c3d02",
+ "key_status": "verified_keyless",
+ "access_keys": [],
+ "key_verified_at": "2026-11-06T03:58:51.832Z",
+ "bytes_path": "fixtures/stewardship-guide.txt",
+ "evidence_path": "docs/RELEASE_WORKERS-final-evidence.json",
+ "previous_config": "docs/releases/release-20261105/testnet-config.json",
+ "note": "Final 50T callback artifact, redeployed keyless on 6 November 2026 with funding open until 1 December 2026; automatic signed keeper verification. Earlier deployments preserved under docs/releases/. Local source and keeper endpoints require running local processes."
 }

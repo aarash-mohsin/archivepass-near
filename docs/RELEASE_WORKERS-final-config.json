@@ -1,15 +1,15 @@
 {
   "network": "testnet",
   "rpc": "https://test.rpc.fastnear.com",
-  "contract_id": "archive.apw-mw3re9ta.testnet",
+  "contract_id": "archive.apw-mw4fsdcz.testnet",
   "code_hash": "8DVxZxb2nD3zST8tky1jPTbWvLJfs8vfLXzrB7AMgSNN",
   "manifest_sha256": "78775dd9a9369986e660da98bd4b37b77756a1ca7e343dfe330a4d4b6157b142",
-  "policy_sha256": "ffd1eb46903b228119f8f07a825a14f3353bad8c9912fa75b1e1f3d63caac9ff",
+  "policy_sha256": "3dd36c5d3f087b89498056304440a061110391c8f801b96e88743d55ef5c3d02",
   "provider_ids": [
-    "a.apw-mw3r4y86.testnet",
-    "b.apw-mw3r4y86.testnet"
+    "a.apw-mw4fsdcz.testnet",
+    "b.apw-mw4fsdcz.testnet"
   ],
   "source_origin": "http://127.0.0.1:8788",
-  "source_asset_id": "e30b8c8a-0ba5-42b4-9556-1d02db6784fd",
+  "source_asset_id": "0b89c60a-9e6c-4cfa-94b6-947ab8f56253",
   "qa_fixture": true
 }

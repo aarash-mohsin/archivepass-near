@@ -15,4 +15,4 @@ Observed on 5–6 November 2026 in a browser against the isolated built applicat
 ## Narrow screens and testnet view
 
 - The built detail page rendered inside a real 360-pixel iframe. The inner document measured clientWidth 345 and scrollWidth 345 (15-pixel scrollbar), with a readable narrow layout and no horizontal page overflow.
-- ArchivePass production testnet screen displayed final asset `archive.apw-mw3re9ta.testnet`, exact 50T code hash, zero access keys, Bob epoch 3, .003 paid/.017 available and zero conservation residual, with final-worker evidence and operator-runbook labels. Its skip link focused `main` while preserving the `#/testnet` route.
+- The production testnet screen displayed the then-current final asset `archive.apw-mw3re9ta.testnet` (since redeployed as `archive.apw-mw4fsdcz.testnet`), exact 50T code hash, zero access keys, Bob epoch 3, .003 paid/.017 available and zero conservation residual, with final-worker evidence and operator-runbook labels. Its skip link focused `main` while preserving the `#/testnet` route.

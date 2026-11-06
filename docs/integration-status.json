@@ -13,7 +13,7 @@
   "worstCaseReceiptGasMeasured": false,
   "appTests": 75,
   "rustTests": 21,
-  "contractId": "archive.apw-mw3re9ta.testnet",
+  "contractId": "archive.apw-mw4fsdcz.testnet",
   "evidencePath": "docs/RELEASE_WORKERS-final-evidence.json",
   "detail": "Browser mutations use an explicit local ledger. Reusable owner CLI and automatic signed testnet workers verified on the final keyless deployment; final restart fixes independently verified with process and adapter regressions. Final-artifact 256-record capacity retest is user-excluded and unverified. Two keepers remain localhost processes."
 }

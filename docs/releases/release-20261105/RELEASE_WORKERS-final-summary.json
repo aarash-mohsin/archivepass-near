@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "contract_id": "archive.apw-mw3re9ta.testnet",
+  "finished_at": "2026-11-05T16:50:51.648Z",
+  "steps": 17,
+  "owner_id": "bob.apw-mw3r4y86.testnet",
+  "epoch": "3",
+  "ledger": {
+    "principal_in": "20000000000000000000000",
+    "available_upkeep": "17000000000000000000000",
+    "reserved_upkeep": "0",
+    "earned_credit": "0",
+    "refund_credit": "0",
+    "pending_payments": "0",
+    "principal_paid": "3000000000000000000000",
+    "conservation_residual": "0",
+    "operations_funded": "6500000000000000000000000",
+    "security_deposits": "11"
+  },
+  "account_balance": "6517000000000000000000011",
+  "code_hash": "8DVxZxb2nD3zST8tky1jPTbWvLJfs8vfLXzrB7AMgSNN",
+  "access_keys": [],
+  "worker_a_signed_attempts": 7,
+  "worker_b_signed_attempts": 10,
+  "all_recorded_worker_outcomes_final": true
+}

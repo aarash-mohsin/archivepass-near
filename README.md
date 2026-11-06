@@ -26,25 +26,30 @@ The asset contract is in `contract/` (with a test receiver in `contract/receiver
 
 | Component | Account |
 |---|---|
-| Archive asset (NFT + fund) | [`archive.apw-mw3re9ta.testnet`](https://testnet.nearblocks.io/address/archive.apw-mw3re9ta.testnet) |
-| Current caretaker (NFT owner) | [`bob.apw-mw3r4y86.testnet`](https://testnet.nearblocks.io/address/bob.apw-mw3r4y86.testnet) |
-| Keepers | [`a.apw-mw3r4y86.testnet`](https://testnet.nearblocks.io/address/a.apw-mw3r4y86.testnet), [`b.apw-mw3r4y86.testnet`](https://testnet.nearblocks.io/address/b.apw-mw3r4y86.testnet) |
-| Fixed refund address | [`refund.apw-mw3r4y86.testnet`](https://testnet.nearblocks.io/address/refund.apw-mw3r4y86.testnet) |
+| Archive asset (NFT + fund) | [`archive.apw-mw4fsdcz.testnet`](https://testnet.nearblocks.io/address/archive.apw-mw4fsdcz.testnet) |
+| Current caretaker (NFT owner) | [`bob.apw-mw4fsdcz.testnet`](https://testnet.nearblocks.io/address/bob.apw-mw4fsdcz.testnet) |
+| Keepers | [`a.apw-mw4fsdcz.testnet`](https://testnet.nearblocks.io/address/a.apw-mw4fsdcz.testnet), [`b.apw-mw4fsdcz.testnet`](https://testnet.nearblocks.io/address/b.apw-mw4fsdcz.testnet) |
+| Fixed refund address | [`refund.apw-mw4fsdcz.testnet`](https://testnet.nearblocks.io/address/refund.apw-mw4fsdcz.testnet) |
 
-**The asset account has no access keys.** It was created, funded, deployed and initialized in [one transaction](https://testnet.nearblocks.io/txns/7n9gQbtrv6X7L3x8JNHcZuXQYU2mSqdVzVHdfkVnQoZA) with no AddKey action, so nobody can change its code or move its money outside the contract's rules. The contract has no upgrade, no generic execute and no owner withdrawal method.
+**The asset account has no access keys.** It was created, funded, deployed and initialized in [one transaction](https://testnet.nearblocks.io/txns/GeaYLrKs6XvgBoy64keqWxEGVvtUUtDq4ZEHimQ5BcgE) with no AddKey action, so nobody can change its code or move its money outside the contract's rules. The contract has no upgrade, no generic execute and no owner withdrawal method.
 
-Key transactions from the signed run on 5 November 2026:
+**Funding is open until 1 December 2026**, so the asset is live through judging: anyone can add upkeep, and Bob, the current caretaker, can schedule more service.
+
+Key transactions from the signed run on 6 November 2026:
 
 | Step | Transaction |
 |---|---|
-| NFT handed over to Bob | [`75NznTSa…`](https://testnet.nearblocks.io/txns/75NznTSaKNrEXtjfNr5DEndamWEXUzQCx2sXBpWkGXhn) |
-| Bob, the new caretaker, schedules a service period | [`ESwCfr8k…`](https://testnet.nearblocks.io/txns/ESwCfr8kCzJbdJcC9pwRgig393HBntF6KGBpkUinNa7N) |
-| Keeper A opens a challenge on a period agreed before the handover | [`6vC7Zca3…`](https://testnet.nearblocks.io/txns/6vC7Zca3MpnabFWUNLj1YzpvwcwBm9pZUqdVzvcmhGpn) |
-| Keeper A answers with the chunk and its Merkle proof | [`5gQNiJhk…`](https://testnet.nearblocks.io/txns/5gQNiJhkTbdk1ZtRCXatNmPbzt42vRLxXPFA27PrcuXo) |
-| Keeper A claims its payment | [`EDX49jAa…`](https://testnet.nearblocks.io/txns/EDX49jAa74AhBCZwms2QiaMvbMVPi8XoA4C1j3qWDUq4) |
-| Keeper B answers and claims | [`A7uVLmVm…`](https://testnet.nearblocks.io/txns/A7uVLmVmE6j2vu6uGsMA9QswJ41wJompG2LpEFgKCG3t), [`DizfWcMe…`](https://testnet.nearblocks.io/txns/DizfWcMePgQ7TURfV92zrZFiob74Wt1EEQbtafowbzUx) |
+| Upkeep funded (0.02 NEAR) | [`C3LYenrk…`](https://testnet.nearblocks.io/txns/C3LYenrkBUNxjZYW7VNZyAgtQL46sEYMNGxfXv2ik1NS) |
+| First caretaker schedules a period for keeper A | [`89H1wipw…`](https://testnet.nearblocks.io/txns/89H1wipwcwffWxYiA9gzHBoXyTXQt6BgGWNLrUGTp5e1) |
+| NFT handed over to Bob | [`4dpF6GYy…`](https://testnet.nearblocks.io/txns/4dpF6GYyxLadANYswo1kAKdCSPLYUNqo82JGEQnWJyqC) |
+| Bob, the new caretaker, schedules a later period | [`3UNTPasc…`](https://testnet.nearblocks.io/txns/3UNTPasc3DXeLJYEc7k3j9iYDB2VQYf5YH1hLuBAzWmm) |
+| Keeper A opens a challenge on a period agreed before the handover | [`BoaGztdP…`](https://testnet.nearblocks.io/txns/BoaGztdPSvrHJjEHHzsN6PFPg57MDsa2LLTSv7aAm72h) |
+| Keeper A answers with the chunk and its Merkle proof | [`4mBoEtUV…`](https://testnet.nearblocks.io/txns/4mBoEtUV8an7EFWZqmmnGBZfmYMY33g8hik9WaEUeQ5F) |
+| Keeper A claims its payment | [`7AtPXRwN…`](https://testnet.nearblocks.io/txns/7AtPXRwNvsTPjUTtdnWRMvyMp2k5uvfkEpqpdhD9UHH4) |
+| Keeper B answers and claims | [`2hBEEJmU…`](https://testnet.nearblocks.io/txns/2hBEEJmUX8poMxuYrrK6P1NKBhTA5N74KcMKg7Kt6ZbZ), [`9UjdvpT9…`](https://testnet.nearblocks.io/txns/9UjdvpT9j4DYCnTBfFNBGCRn55bdqefp1eS2ZBDe6p9v) |
+| A period keeper A missed while stopped is closed unpaid | [`GXKSMQYT…`](https://testnet.nearblocks.io/txns/GXKSMQYTzKbhdDkXVAofimypqVPvvBLn81eCaudpYXyB) |
 
-The full run is in [`docs/RELEASE_WORKERS-final-evidence.json`](docs/RELEASE_WORKERS-final-evidence.json). This asset's funding window closed on 6 November 2026 at 16:34 UTC; its state and history stay readable on chain.
+The full run is in [`docs/RELEASE_WORKERS-final-evidence.json`](docs/RELEASE_WORKERS-final-evidence.json). An earlier deployment of the same contract, whose funding window has closed, is listed in the [evidence index](docs/EVIDENCE_INDEX.md).
 
 ### Check the contract yourself
 
@@ -52,16 +57,16 @@ Read-only calls against the public testnet RPC, with no wallet needed:
 
 ```sh
 # Access keys on the asset account; expect "keys": []
-curl -s https://rpc.testnet.near.org -H 'Content-Type: application/json' -d '{"jsonrpc":"2.0","id":1,"method":"query","params":{"request_type":"view_access_key_list","finality":"final","account_id":"archive.apw-mw3re9ta.testnet"}}'
+curl -s https://rpc.testnet.near.org -H 'Content-Type: application/json' -d '{"jsonrpc":"2.0","id":1,"method":"query","params":{"request_type":"view_access_key_list","finality":"final","account_id":"archive.apw-mw4fsdcz.testnet"}}'
 
-# Who holds the NFT; expect owner_id bob.apw-mw3r4y86.testnet  (args: {"token_id":"archive"})
-curl -s https://rpc.testnet.near.org -H 'Content-Type: application/json' -d '{"jsonrpc":"2.0","id":1,"method":"query","params":{"request_type":"call_function","finality":"final","account_id":"archive.apw-mw3re9ta.testnet","method_name":"nft_token","args_base64":"eyJ0b2tlbl9pZCI6ImFyY2hpdmUifQ=="}}'
+# Who holds the NFT; expect owner_id bob.apw-mw4fsdcz.testnet  (args: {"token_id":"archive"})
+curl -s https://rpc.testnet.near.org -H 'Content-Type: application/json' -d '{"jsonrpc":"2.0","id":1,"method":"query","params":{"request_type":"call_function","finality":"final","account_id":"archive.apw-mw4fsdcz.testnet","method_name":"nft_token","args_base64":"eyJ0b2tlbl9pZCI6ImFyY2hpdmUifQ=="}}'
 
 # The fund's books; expect principal_in = principal_paid + available_upkeep and conservation_residual "0"
-curl -s https://rpc.testnet.near.org -H 'Content-Type: application/json' -d '{"jsonrpc":"2.0","id":1,"method":"query","params":{"request_type":"call_function","finality":"final","account_id":"archive.apw-mw3re9ta.testnet","method_name":"get_ledger","args_base64":"e30="}}'
+curl -s https://rpc.testnet.near.org -H 'Content-Type: application/json' -d '{"jsonrpc":"2.0","id":1,"method":"query","params":{"request_type":"call_function","finality":"final","account_id":"archive.apw-mw4fsdcz.testnet","method_name":"get_ledger","args_base64":"e30="}}'
 ```
 
-`result.result` in the last two responses is a byte array of JSON text. On 6 November 2026 the ledger showed 0.02 NEAR funded, 0.003 NEAR paid to keepers and 0.017 NEAR still available. The deployed code hash `8DVxZxb2nD3zST8tky1jPTbWvLJfs8vfLXzrB7AMgSNN` matches `contract/target/near/archivepass.wasm`. `node scripts/testnet-view.mjs` prints the same state in one go.
+`result.result` in the last two responses is a byte array of JSON text. After the run, the ledger showed 0.02 NEAR funded, 0.003 NEAR paid to keepers and 0.017 NEAR still available. The deployed code hash `8DVxZxb2nD3zST8tky1jPTbWvLJfs8vfLXzrB7AMgSNN` matches `contract/target/near/archivepass.wasm`; CI checks this on every push. `node scripts/testnet-view.mjs` prints the same state in one go.
 
 ## Run it locally
 
@@ -131,7 +136,7 @@ The exact versions are pinned in `package.json`, `pnpm-lock.yaml` and `contract/
 
 ## Development history
 
-The project was built locally during the hackathon and put under Git only when it was published, so the first commit contains the finished work. The testnet deployments give independent dated evidence: the asset, keeper and caretaker accounts were created on 5 November 2026 (see the explorer links above and [`docs/RELEASE_WORKERS-final-setup.json`](docs/RELEASE_WORKERS-final-setup.json)).
+The project was built locally during the hackathon and put under Git only when it was published, so the first commit contains the finished work. The testnet deployments give independent dated evidence: the first deployments were made on 5 November 2026, and the current asset on 6 November 2026 (see the [evidence index](docs/EVIDENCE_INDEX.md) and the explorer links above).
 
 ## License
 

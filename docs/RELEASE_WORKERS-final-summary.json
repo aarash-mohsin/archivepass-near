@@ -1,10 +1,10 @@
 {
   "status": "passed",
-  "contract_id": "archive.apw-mw3re9ta.testnet",
-  "finished_at": "2026-11-05T16:50:51.648Z",
-  "steps": 17,
-  "owner_id": "bob.apw-mw3r4y86.testnet",
-  "epoch": "3",
+  "contract_id": "archive.apw-mw4fsdcz.testnet",
+  "finished_at": "2026-11-06T03:57:56.370Z",
+  "steps": 13,
+  "owner_id": "bob.apw-mw4fsdcz.testnet",
+  "epoch": "1",
   "ledger": {
     "principal_in": "20000000000000000000000",
     "available_upkeep": "17000000000000000000000",
@@ -15,12 +15,12 @@
     "principal_paid": "3000000000000000000000",
     "conservation_residual": "0",
     "operations_funded": "6500000000000000000000000",
-    "security_deposits": "11"
+    "security_deposits": "5"
   },
-  "account_balance": "6517000000000000000000011",
+  "account_balance": "6517000000000000000000005",
   "code_hash": "8DVxZxb2nD3zST8tky1jPTbWvLJfs8vfLXzrB7AMgSNN",
   "access_keys": [],
-  "worker_a_signed_attempts": 7,
-  "worker_b_signed_attempts": 10,
+  "worker_a_signed_attempts": 5,
+  "worker_b_signed_attempts": 8,
   "all_recorded_worker_outcomes_final": true
 }

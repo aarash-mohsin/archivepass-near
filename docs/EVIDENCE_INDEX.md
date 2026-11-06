@@ -2,14 +2,15 @@
 
 What each file in `docs/` shows. Every transaction in these files is on NEAR testnet and can be looked up on [testnet.nearblocks.io](https://testnet.nearblocks.io). Several of the files are read or written by the app and the scripts, so they stay at these paths.
 
-All deployments happened on 5 November 2026:
+All deployments use the same contract code:
 
 | Deployment | Asset account | Status |
 |---|---|---|
-| **Final (current)** | `archive.apw-mw3re9ta.testnet` | Keyless; signed keeper run passed. The app and the README point here |
-| First keeper-worker deployment | `archive.apw-mw3r4y86.testnet` | Run stopped by public RPC rate limits (HTTP 429); replaced by the final deployment |
-| Original product deployment | `archive.ap-mw3n0te5.testnet` | End-to-end owner scenario passed; kept as history |
-| Very first attempt | `archive.ap-mw3n08w6.testnet` | The test accounts couldn't prepay the 200 Tgas needed, so no provider accepted; all upkeep was refunded after expiry |
+| **Current** (6 Nov 2026) | `archive.apw-mw4fsdcz.testnet` | Keyless; funding open until 1 Dec 2026; signed keeper run passed. The app and the README point here |
+| Previous final (5 Nov 2026) | `archive.apw-mw3re9ta.testnet` | Keyless; the same signed keeper run passed; funding closed on 6 Nov 2026. Records in `releases/release-20261105/` |
+| First keeper-worker deployment (5 Nov) | `archive.apw-mw3r4y86.testnet` | Run stopped by public RPC rate limits (HTTP 429); replaced by the final deployment |
+| Original product deployment (5 Nov) | `archive.ap-mw3n0te5.testnet` | End-to-end owner scenario passed; kept as history |
+| Very first attempt (5 Nov) | `archive.ap-mw3n08w6.testnet` | The test accounts couldn't prepay the 200 Tgas needed, so no provider accepted; all upkeep was refunded after expiry |
 | Capacity benchmarks | `asset.qab-mw3qhtsg-35fb41.testnet` and others | Separate QA assets for the large-state test; never used by the app |
 
 ## Start here
@@ -21,7 +22,7 @@ All deployments happened on 5 November 2026:
 | [ABI.md](ABI.md) | Contract methods, arguments and events |
 | [STORAGE.md](STORAGE.md) | How upkeep money, operations balance and storage are kept apart |
 
-## Final deployment (machine records)
+## Current deployment (machine records)
 
 | File | What it shows |
 |---|---|
@@ -31,7 +32,7 @@ All deployments happened on 5 November 2026:
 | `RELEASE_WORKERS-final-config.json` | Binding used by the keeper workers |
 | `RELEASE_WORKERS-final-evidence.json` | The full signed run: periods scheduled, NFT handed over to Bob, both keepers challenged, answered and paid, keeper A stopped while B still serves the file |
 | `RELEASE_WORKERS-final-summary.json` | Short summary of that run |
-| `RELEASE_WORKERS-final-attempt-1793897028416.json` | An earlier try on the same asset that stopped on an RPC rate limit, kept unchanged |
+| `releases/release-20261105/` | The previous final asset's setup, deployment, binding, run, summary and an earlier rate-limited attempt, unchanged |
 | `RELEASE_WORKERS-spare-gas-transfer.json` | A 2 testnet NEAR transfer from the final deployment's root account to the benchmark account, to pay for the final benchmark |
 | `integration-status.json` | Which integration levels were reached. Read by the server |
 

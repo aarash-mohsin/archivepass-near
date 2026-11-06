@@ -15,8 +15,8 @@ Before signing, the adapter reads authoritative finalized chain state and valida
 Run from the ArchivePass project folder, with its configured public content source available. Each command is a separate process, database and content directory:
 
 ```powershell
-node keeper/testnet-main.ts --binding docs/RELEASE_WORKERS-final-config.json --key .secrets/release-worker-a.json --provider a.apw-mw3r4y86.testnet --data-dir data/release-workers-final/a --port 8981
-node keeper/testnet-main.ts --binding docs/RELEASE_WORKERS-final-config.json --key .secrets/release-worker-b.json --provider b.apw-mw3r4y86.testnet --data-dir data/release-workers-final/b --port 8982
+node keeper/testnet-main.ts --binding docs/RELEASE_WORKERS-final-config.json --key .secrets/release-worker-a.json --provider a.apw-mw4fsdcz.testnet --data-dir data/release-workers-final/a --port 8981
+node keeper/testnet-main.ts --binding docs/RELEASE_WORKERS-final-config.json --key .secrets/release-worker-b.json --provider b.apw-mw4fsdcz.testnet --data-dir data/release-workers-final/b --port 8982
 ```
 
 Do not run both commands in one blocking shell line; use separate terminals/process supervision. `/health` reports actual network/contract/signer binding, observed chain time and unresolved transaction count/hash. `/archives/<bound-source-uuid>/download` serves actual keeper-local bytes. Status/proof paths remain restricted to known imported IDs and the fixed binding. Operator controls use a generated local token stored inside each ignored worker directory unless explicitly supplied; no shared public default credential is used.
@@ -44,7 +44,7 @@ node scripts/near-operator.mjs --binding docs/RELEASE_WORKERS-final-config.json 
 Example future-period command (derive the current epoch, a sufficiently future slot and available budget from live state):
 
 ```json
-{"type":"propose_period","expected_owner_epoch":"3","provider_id":"b.apw-mw3r4y86.testnet","slot":"12","rate":"1000000000000000000000"}
+{"type":"propose_period","expected_owner_epoch":"1","provider_id":"b.apw-mw4fsdcz.testnet","slot":"12","rate":"1000000000000000000000"}
 ```
 
 The example epoch/slot is illustrative and will become stale. A slot starts at `service_origin + slot * period_duration`; allow at least60seconds for worker observation/consent. Never describe a120-second demonstration period as a month of service.
@@ -63,16 +63,24 @@ This operator adapter intentionally uses explicit dedicated full-access testnet 
 
 ## Verification and remaining boundaries
 
-The final actual run **passed at2026-11-05T16:50:51.648Z** on `archive.apw-mw3re9ta.testnet`, code hash `8DVxZxb2nD3zST8tky1jPTbWvLJfs8vfLXzrB7AMgSNN`, with zero access keys. Bob owns the NFT at epoch3. The final journal includes seven providerA and ten providerB signed attempts across the preserved timed attempts and successful continuation; all recorded worker outcomes reached FINAL. The successful continuation verified three automatic0.001NEAR provider payments, one genuinely missed unpaid period and unchanged fixed obligations across handover. Of0.02 accepted upkeep,0.003 was paid and0.017 remains available; no reserved, earned, refund or pending liability remains. Actual account balance `6517000000000000000000011`yoctoNEAR equals6.5 operational NEAR +0.017 upkeep +11 security yocto.
+The current run **passed at 2026-11-06T03:57:56Z** on a fresh keyless deployment, `archive.apw-mw4fsdcz.testnet`, code hash `8DVxZxb2nD3zST8tky1jPTbWvLJfs8vfLXzrB7AMgSNN`, with zero access keys. Funding stays open until **1 December 2026 00:00 UTC**, so the asset is still active during judging. Bob owns the NFT at epoch 1. Worker A made 5 and worker B 8 signed attempts, and every recorded outcome reached FINAL. The run verified three automatic 0.001 NEAR provider payments, one genuinely missed unpaid period, and fixed obligations that stayed unchanged across the handover. Of 0.02 accepted upkeep, 0.003 was paid and 0.017 remains available; no reserved, earned, refund or pending liability remains. The account balance `6517000000000000000000005` yoctoNEAR equals 6.5 operational NEAR + 0.017 upkeep + 5 security yocto. Outcome totals are in `RELEASE_WORKERS-final-summary.json`.
 
-The initial old-artifact baseline and first final-artifact timed attempt encountered public RPC rate limits. Their status/error records are preserved; they are not passing release evidence. The successful continuation used later immutable grid slots6/7 on the same correct final asset, after releasing genuinely expired earlier commitments. No provider state, deadline, receipt or outcome was fabricated or reset. Final source identities and focused-test results are recorded in `RELEASE_WORKERS-source.json`; concise outcome totals are in `RELEASE_WORKERS-final-summary.json`.
+It was deployed with:
 
-The QA runner stops its owned worker processes on completion, including the deliberately stopped provider. Restart the two documented commands for ongoing service and future caretaker operations. The finite one-day expiry was deliberately left in the future; this run does not claim a new final-asset expiry refund already occurred.
+```sh
+ARCHIVEPASS_WORKER_EXPECTED_WASM_SHA=6b35856cc8d713b123a5431b525a6f3dc6393110d3f11a46e50f64cf9a07cad3 ARCHIVEPASS_FUND_EXPIRY_ISO=2026-12-01T00:00:00Z node scripts/qa-testnet-workers.mjs --final --deploy
+```
+
+`--final --prepare` must run first, with the local app running and seeded as the file source; `--final --run` runs the signed scenario afterwards. Without `ARCHIVEPASS_FUND_EXPIRY_ISO`, funding closes one day after the service origin.
+
+The previous final asset, `archive.apw-mw3re9ta.testnet`, passed the same scenario on 5 November 2026; its funding window closed on 6 November. Its records, including the earlier rate-limited attempt, are preserved unchanged in `releases/release-20261105/`. Final source identities and focused-test results for the worker code are recorded in `RELEASE_WORKERS-source.json`.
+
+The QA runner stops its owned worker processes on completion, including the deliberately stopped provider. Restart the two documented commands for ongoing service and future caretaker operations. The funding expiry is still in the future; this run does not claim that an expiry refund on this asset has already occurred.
 
 `tests/server/testnet-worker.test.mjs` covers persisted-before-dispatch identity; lost claim response and restart exactly once; Unknown/no replacement; wrong network/code/provider/content/policy; actor/source spoofing; finite CLI command parsing; concurrent calls; body conflicts; read-only status; and non-final execution remaining Unknown. Mock transport tests do not claim live receipt execution.
 
 `qa-testnet-workers.mjs --run --final` separately exercises real worker processes and finalized transactions. A dedicated test-only post-broadcast response-loss injection exits workerA with86 after a transaction genuinely executes, leaving its hash Unknown locally; restart must reconcile that hash rather than sign another acceptance. The injection requires an explicit QA environment flag and a QA fixture binding, is tagged once per QA run, and does not invent a receipt or payment.
 
-The QA flow preserves any earlier rate-limited timed attempt, releases genuinely expired commitments, schedules new future slots on the same one-day immutable asset, transfers actual stewardship, and has the new owner schedule a later period. It verifies automatic proofs/claims by both providers, an actual stopped-worker outage, a surviving complete download and an unpaid missed period. Read the machine-readable evidence's exact `status` and outcomes rather than inferring completion from deployment alone.
+The QA flow preserves any earlier rate-limited timed attempt, releases genuinely expired commitments, schedules new future slots on the same immutable asset, transfers actual stewardship, and has the new owner schedule a later period. It verifies automatic proofs/claims by both providers, an actual stopped-worker outage, a surviving complete download and an unpaid missed period. Read the machine-readable evidence's exact `status` and outcomes rather than inferring completion from deployment alone.
 
-The demonstration leaves a finite unused reserve for future service instead of waiting a day to expire it. Refund behavior has separate native/local/earlier-testnet evidence. No public hosting, browser chain-signing, permanent storage, independent replica guarantee, mainnet funds or factory is introduced here. The source file and process availability remain real operational dependencies.
+The demonstration leaves a finite unused reserve for future service instead of waiting for the expiry. Refund behavior has separate native/local/earlier-testnet evidence. No public hosting, browser chain-signing, permanent storage, independent replica guarantee, mainnet funds or factory is introduced here. The source file and process availability remain real operational dependencies.

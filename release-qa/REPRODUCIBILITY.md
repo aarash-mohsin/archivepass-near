@@ -10,4 +10,4 @@ Run on 5 November 2026 at 22:25 UTC, on Windows with Node 24.22.1 and pnpm 11.25
 
 The final JavaScript suite passed with **75 passed, 0 failed, 0 skipped**; the full output is in [archivepass-recovery-final-tests.log](archivepass-recovery-final-tests.log). The check was repeated after the last fixes (receipt timestamp and hash ownership, and keeper restart recovery) and passed again. It made no chain writes or RPC calls.
 
-The read-only configuration points to the final deployment `archive.apw-mw3re9ta.testnet`, code hash `8DVxZxb2nD3zST8tky1jPTbWvLJfs8vfLXzrB7AMgSNN`. The original configuration and scenario are kept in `docs/releases/original-20261105/`.
+At the time of this check, the read-only configuration pointed to `archive.apw-mw3re9ta.testnet`. It now points to the long-lived redeploy `archive.apw-mw4fsdcz.testnet`, with the same code hash `8DVxZxb2nD3zST8tky1jPTbWvLJfs8vfLXzrB7AMgSNN`. Earlier configurations are kept in `docs/releases/`.
