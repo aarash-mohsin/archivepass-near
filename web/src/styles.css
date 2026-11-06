@@ -7,3 +7,19 @@
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 :root .skip-link{position:fixed;top:-5rem;left:1rem;z-index:1000;background:#30285e;color:white;padding:.8rem 1rem;border-radius:.25rem}
 :root .skip-link:focus{top:1rem}
+/* Layout and type consistency fixes (7 Nov) */
+.site-header,footer{max-width:1248px}
+@media(min-width:1450px){.site-header{padding-left:40px;padding-right:40px}}
+.panel dl.facts{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:9px 18px;font-size:12px;margin:18px 0 16px}
+.panel dl.facts dt{color:var(--muted);margin:0}
+.panel dl.facts dd{margin:0;color:var(--ink);font-weight:500}
+.panel dl.facts time{font-size:12px}
+.facts .amount small{font-size:10px}
+.commitment .section-heading{align-items:flex-start}
+.section-heading>p{font-size:12px;color:var(--muted);margin:0;max-width:430px;text-align:right}
+@media(max-width:760px){.section-heading>p{text-align:left}.tabs{overflow-x:auto;scrollbar-width:none}.tabs button{white-space:nowrap}}
+input[type=file]::file-selector-button{border:1px solid #c6c1d5;background:#fff;color:var(--ink);border-radius:4px;padding:8px 14px;margin-right:14px;font:inherit;font-size:12px;font-weight:500;cursor:pointer}
+input[type=file]::file-selector-button:hover{background:#eeecf4}
+.create-panel button[type=submit]{margin-bottom:12px}
+article.panel>.section-heading:first-child{margin:0 0 14px}
+article.panel>.section-heading+p.wrap{font-size:12px;color:var(--muted)}

@@ -1,5 +1,5 @@
 {
- "observed_at": "2026-11-06T19:44:29.390Z",
+ "observed_at": "2026-11-06T19:59:33.573Z",
  "chain_id": "testnet",
  "code_hash": "8DVxZxb2nD3zST8tky1jPTbWvLJfs8vfLXzrB7AMgSNN",
  "access_keys": [],
@@ -56,8 +56,8 @@
    }
   ],
   "ledger": {
-   "principal_in": "20000000000000000000000",
-   "available_upkeep": "17000000000000000000000",
+   "principal_in": "30000000000000000000000",
+   "available_upkeep": "27000000000000000000000",
    "reserved_upkeep": "0",
    "earned_credit": "0",
    "refund_credit": "0",
@@ -698,24 +698,6 @@
    }
   },
   {
-   "tx": "9UjdvpT9j4DYCnTBfFNBGCRn55bdqefp1eS2ZBDe6p9v",
-   "signer": "b.apw-mw4fsdcz.testnet",
-   "method": "claim_provider",
-   "args": {
-    "provider_id": "b.apw-mw4fsdcz.testnet"
-   },
-   "at": "1793937256836664300",
-   "block": 276436594,
-   "standard": "archivepass",
-   "event": "payment_started",
-   "data": {
-    "operation_id": "1",
-    "kind": "provider",
-    "creditor": "b.apw-mw4fsdcz.testnet",
-    "amount": "1000000000000000000000"
-   }
-  },
-  {
    "tx": "7AtPXRwNvsTPjUTtdnWRMvyMp2k5uvfkEpqpdhD9UHH4",
    "signer": "a.apw-mw4fsdcz.testnet",
    "method": "claim_provider",
@@ -740,15 +722,14 @@
    "args": {
     "provider_id": "b.apw-mw4fsdcz.testnet"
    },
-   "at": "1793937259338848800",
-   "block": 276436597,
+   "at": "1793937256836664300",
+   "block": 276436594,
    "standard": "archivepass",
-   "event": "payment_resolved",
+   "event": "payment_started",
    "data": {
     "operation_id": "1",
-    "success": true,
-    "creditor": "b.apw-mw4fsdcz.testnet",
     "kind": "provider",
+    "creditor": "b.apw-mw4fsdcz.testnet",
     "amount": "1000000000000000000000"
    }
   },
@@ -767,6 +748,25 @@
     "operation_id": "2",
     "success": true,
     "creditor": "a.apw-mw4fsdcz.testnet",
+    "kind": "provider",
+    "amount": "1000000000000000000000"
+   }
+  },
+  {
+   "tx": "9UjdvpT9j4DYCnTBfFNBGCRn55bdqefp1eS2ZBDe6p9v",
+   "signer": "b.apw-mw4fsdcz.testnet",
+   "method": "claim_provider",
+   "args": {
+    "provider_id": "b.apw-mw4fsdcz.testnet"
+   },
+   "at": "1793937259338848800",
+   "block": 276436597,
+   "standard": "archivepass",
+   "event": "payment_resolved",
+   "data": {
+    "operation_id": "1",
+    "success": true,
+    "creditor": "b.apw-mw4fsdcz.testnet",
     "kind": "provider",
     "amount": "1000000000000000000000"
    }
@@ -868,6 +868,23 @@
    "data": {
     "commitment_id": "2",
     "reason": "not_opened"
+   }
+  },
+  {
+   "tx": "7L6hSvfxJDjHgH2YdATwyU7otUcqDp4Hxsjahxo9unYn",
+   "signer": "sponsor.apw-mw4fsdcz.testnet",
+   "method": "fund_upkeep",
+   "args": {
+    "version_id": "v1"
+   },
+   "at": "1793995149029565400",
+   "block": 276531130,
+   "standard": "archivepass",
+   "event": "upkeep_funded",
+   "data": {
+    "amount": "10000000000000000000000",
+    "refund_beneficiary": "refund.apw-mw4fsdcz.testnet",
+    "fund_expiry": "1796083200000000000"
    }
   }
  ],
