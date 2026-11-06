@@ -4,11 +4,59 @@
 
 **Pass an archive on, with its upkeep money and its storage agreements attached.**
 
+> Other NFT wallets carry a balance through a sale. ArchivePass carries **ongoing obligations to third parties** through a handover: storage keepers are paid only for Merkle proofs of the file, and the asset account has no keys.
+
+**Live page:** <https://aarash-mohsin.github.io/archivepass-live/> · **Asset:** `archive.apw-mw4fsdcz.testnet` (NEAR testnet, funding open until 1 December 2026)
+
 Small public archives, like a community's oral-history recordings, a school's open dataset or an open-source project's documentation, often stay online only because one volunteer pays for the hosting. When that person steps away, the archive tends to disappear. The money and the hosting arrangements sit in their personal accounts, and there's no clean way to hand them over.
 
 ArchivePass makes the archive's stewardship an NFT that holds its own upkeep fund. Whoever holds the NFT can arrange future hosting, paid from a fund that can only be spent under fixed rules. Hosting providers ("keepers") are paid only after they answer a challenge with the right piece of the file. When the NFT moves to a new caretaker, the fund, the providers' existing agreements and the payments they've already earned all stay in place. The previous caretaker loses the authority to arrange service but cannot take the money with them.
 
 Built for the **NFTs That Do Something** track of the NEAR Hackathon: the NFT is its own NEAR account, and it holds and spends money.
+
+## Try it: do X, see Y
+
+| Do | See |
+|---|---|
+| Open the [live page](https://aarash-mohsin.github.io/archivepass-live/) | 14 checks computed in your browser from public testnet RPC, each `PASS`, with transaction links: no keys on the asset, code hash = the committed WASM, books balanced, every keeper's Merkle proof re-verified from its transaction |
+| Open **History** | Two caretakers (epoch 0, then Bob at epoch 1), the handover transaction, periods booked at epoch 0 that were answered and paid *after* the handover, and one missed period that earned nothing |
+| Open **Fund**, connect a testnet wallet, fund 0.01 NEAR | Your wallet signs `fund_upkeep`; the ledger's total rises and your contribution appears in **History** |
+| Open **Holder console**, click `apw-mw4fsdcz.testnet` | "Former caretaker, no access": it handed the NFT over and holds 0 tokens |
+| Open **Holder console** and sign in with a wallet | A NEP-413 signed message is checked against your key and `nft_token`; the console unlocks only for the current holder |
+| Run `pnpm install && npm run verify` | The same 14 checks in a terminal, ending `14 passed, 0 failed` |
+| Run `pnpm test` | 87 application tests, including tampered-state tests that make every verify check fail |
+| Run `pnpm test:contract` | 21 Rust tests, including a handover while a payout is in flight |
+| Run `pnpm dev` and `pnpm seed`, open <http://127.0.0.1:5174> | The whole caretaker story on a local test ledger: book keepers, hand over, watch both keepers prove and get paid |
+
+## How control passes on transfer
+
+`nft_transfer` changes two fields: `owner_id` and `owner_epoch` (it goes up by one). Everything else stays where it was.
+
+| Moves to the new caretaker | Stays fixed, whoever holds the NFT |
+|---|---|
+| The right to book future service periods (within the fixed caps) | Every booked period: keeper, fee, time window, content hash |
+| The right to update a keeper's endpoint | Fees keepers have earned, and payouts already in flight |
+| The right to hand the NFT on | The upkeep fund (nobody can withdraw it) and the fixed refund address |
+
+**What stops the old caretaker.** Every owner method checks that the caller is `owner_id` *and* that its `expected_owner_epoch` is current, so a transaction signed before the handover fails with `STALE_OWNER`. There is no withdrawal method, no approvals (NEP-178) to leave behind, and the asset account has no keys, so the code can't be changed. The full list of attacks, with the code line, test and transaction that stops each, is in [THREAT_MODEL.md](THREAT_MODEL.md). Every claim is mapped to code, test and transaction in [CLAIMS.md](CLAIMS.md).
+
+```mermaid
+flowchart LR
+  sponsor([Anyone]) -- fund_upkeep --> asset
+  subgraph asset [archive.apw-mw4fsdcz.testnet · NFT and its own account · 0 keys]
+    fund[(Upkeep fund)]
+    commitments[Booked periods<br/>keeper · fee · window]
+    owner[owner_id + owner_epoch]
+  end
+  caretaker([Current caretaker]) -- propose_period<br/>expected_owner_epoch --> commitments
+  caretaker -- nft_transfer --> next([Next caretaker])
+  next -. becomes .-> owner
+  keeper([Keeper A / B]) -- accept_period --> commitments
+  keeper -- submit_response<br/>chunk + Merkle proof --> commitments
+  commitments -- earned fee --> keeper
+  fund -- leftovers after expiry --> refund([Fixed refund address])
+  fund -. reserves .-> commitments
+```
 
 **Why not just use Arweave or Filecoin?** ArchivePass doesn't replace storage. It's the transferable part: who is responsible, what money is set aside, and which agreements the next caretaker inherits. Any storage provider could act as a keeper.
 
@@ -53,7 +101,16 @@ The full run is in [`docs/RELEASE_WORKERS-final-evidence.json`](docs/RELEASE_WOR
 
 ### Check the contract yourself
 
-Read-only calls against the public testnet RPC, with no wallet needed:
+One command runs every check against the live asset (read-only, no wallet or keys):
+
+```sh
+pnpm install --frozen-lockfile
+npm run verify          # 14 PASS/FAIL lines; add --json for machine-readable output
+```
+
+It reads the asset over public RPC, rebuilds its history from every transaction sent to it (FastNEAR transaction API), hashes `contract/target/near/archivepass.wasm` and `fixtures/stewardship-guide.txt`, and re-verifies each keeper's Merkle proof from its transaction arguments. The [live page](https://aarash-mohsin.github.io/archivepass-live/) runs the same code (`shared/live.ts`) in the browser.
+
+Or make the raw calls yourself. Read-only calls against the public testnet RPC, with no wallet needed:
 
 ```sh
 # Access keys on the asset account; expect "keys": []
@@ -92,7 +149,7 @@ The browser app runs on a clearly labeled **local test ledger** with demo identi
 ## Tests
 
 ```sh
-pnpm test            # 75 application tests
+pnpm test            # 87 application tests
 pnpm typecheck       # strict TypeScript
 pnpm build           # production frontend
 pnpm test:contract   # 21 Rust tests; needs Rust
@@ -108,10 +165,13 @@ The results of the last full release check are in [`release-qa/RELEASE_GATE.md`]
 | `contract/` | Rust asset contract (`src/`) and test receiver (`receiver/`); committed release WASMs under `target/near/` |
 | `keeper/` | Keeper service: local file store, challenge answers, and the signed testnet worker (`testnet-main.ts`) |
 | `server/` | Node API with SQLite storage and the read-only testnet reader |
-| `web/` | React app, including the Testnet evidence view |
+| `web/` | React app on the local test ledger, including the Testnet evidence view |
+| `site/` | The hosted live page: verify, history, wallet funding and holder console (`npm run build:site`) |
+| `shared/live.ts` | Read-only live checks and history, used by the live page and `npm run verify` |
 | `shared/`, `fixtures/` | Shared protocol code, and the sample CC0 file and protocol fixture |
 | `scripts/` | Dev, build, seed, scenario, backup/restore, the owner CLI and the testnet scripts |
 | `tests/` | Contract-model, server, keeper, browser-logic and release tests |
+| `THREAT_MODEL.md`, `CLAIMS.md` | Attacks on a handover and what stops each; every claim mapped to code, test and transaction |
 | `docs/` | Design notes and on-chain evidence; start with the [evidence index](docs/EVIDENCE_INDEX.md) |
 | `release-qa/` | Fresh-install, restore, dependency and browser checks |
 
@@ -122,13 +182,16 @@ The testnet scripts are for creating a **new, dedicated** testnet deployment. `t
 - **Testnet only.** There is no mainnet deployment.
 - **A passed challenge proves less than full storage.** It shows the keeper produced the requested chunk in time. It does not prove full-file availability, continuous uptime, an independent copy or permanent storage, and a keeper could fetch the bytes from somewhere else. Downloading the whole file and checking its hash in the browser is a separate check.
 - **Both keepers run on the same computer** in this demo.
-- **On-chain changes are made from the CLI and the keeper workers, not from the browser.** The browser's chain view is read-only.
+- **The local app doesn't sign transactions.** Its chain view is read-only, and its own actions run on a local test ledger. Live chain writes come from the owner CLI, the keeper workers, and the wallet buttons on the [live page](https://aarash-mohsin.github.io/archivepass-live/) (fund, book a period, hand over).
+- **The live page's holder console is a client-side check.** A static page can't keep secrets; the real gate is the contract's own owner check, which the console's buttons go through.
+- **The live page's history depends on the FastNEAR transaction API.** If it is unreachable, the page falls back to a snapshot recorded at build time and says so.
 - **The 256-record capacity test was not repeated on the final contract build.** An earlier build reached 256 records. A partial run on the final build reached 16 before public RPC rate limits stopped it, and all its funds were refunded. See [docs/RELEASE_TESTNET_BENCHMARK.md](docs/RELEASE_TESTNET_BENCHMARK.md).
 
 ## Built with
 
 - **Contracts:** Rust, [near-sdk](https://github.com/near/near-sdk-rs) 5.30; the contract implements the NEP-171 NFT methods itself
 - **App:** TypeScript, React 19, Vite, Node.js 24 (built-in SQLite), [near-api-js](https://github.com/near/near-api-js) 7.4
+- **Live page:** [near-connect](https://github.com/hot-dao/near-connect) 0.12 for wallets, [@noble/curves](https://github.com/paulmillr/noble-curves) for NEP-413 signature checks, FastNEAR RPC and transaction API, hosted on GitHub Pages
 - **On chain:** NEAR testnet
 - **AI tools:** OpenAI Codex with OpenAI's GPT-6 Astra model, used as a coding assistant for implementation and for the review passes recorded in `docs/ASTRA_*.md`.
 

@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@hot-labs/near-connect':
+        specifier: 0.12.0
+        version: 0.12.0
+      '@noble/curves':
+        specifier: 2.2.0
+        version: 2.2.0
       near-api-js:
         specifier: 7.4.0
         version: 7.4.0
@@ -35,6 +41,9 @@ importers:
         version: 8.3.6(@types/node@24.19.2)
 
 packages:
+
+  '@hot-labs/near-connect@0.12.0':
+    resolution: {integrity: sha512-aBb1UPGr43tHPsj/uk3fEwCn83Y7+cO6Ct8B6G/dm9EkTwXh9/xntXyWhQ6fA1eSt2WtYqSczOCENXlrBAXZqg==}
 
   '@noble/ciphers@2.2.0':
     resolution: {integrity: sha512-Z6pjIZ/8IJcCGzb2S/0Px5J81yij85xASuk1teLNeg75bfT07MV3a/O2Mtn1I2se43k3lkVEcFaR10N4cgQcZA==}
@@ -695,6 +704,8 @@ packages:
     engines: {node: '>=0.4'}
 
 snapshots:
+
+  '@hot-labs/near-connect@0.12.0': {}
 
   '@noble/ciphers@2.2.0': {}
 
