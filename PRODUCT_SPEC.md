@@ -2,8 +2,6 @@
 
 Version 1.0 · 5 November 2026 · NFTs That Do Something
 
-Project root: `C:\CryptoProject\archivepass`
-
 Status: specification for implementation planning. This document does not assert that ArchivePass has been implemented, deployed, independently audited, or published. AllTogether is a separate product; its application code, database, contract identities, secrets, and package identity must not be reused as ArchivePass state.
 
 ## 1. Product promise
@@ -487,7 +485,7 @@ The final report states local functional, Rust unit, WASM, receipt integration, 
 
 ## 14. Operational deliverables and implementation constraints
 
-Use the already available Node 24 runtime and built-in SQLite. The workspace has Rust tooling through `C:\CryptoProject\scripts\with-rust.ps1`, a WASM target, and near-sdk/near-contract-standards 5.30.0; verify paths/version output when implementing instead of reinstalling the stack unnecessarily. Package manager invocation and local TCP/dependency operations may require the environment's approval mechanism. Default ArchivePass ports are application API `8788`, frontend development server `5174`, keeper A `8791`, and keeper B `8792`, distinct from AllTogether's `8787`/`5173`; configure them through documented environment variables.
+Use the already available Node 24 runtime and built-in SQLite. The workspace has Rust tooling through a workspace-local toolchain script, a WASM target, and near-sdk/near-contract-standards 5.30.0; verify paths/version output when implementing instead of reinstalling the stack unnecessarily. Package manager invocation and local TCP/dependency operations may require the environment's approval mechanism. Default ArchivePass ports are application API `8788`, frontend development server `5174`, keeper A `8791`, and keeper B `8792`, distinct from AllTogether's `8787`/`5173`; configure them through documented environment variables.
 
 Suggested independent layout, to be finalized by the implementation plan:
 

@@ -1,35 +1,32 @@
-# Post-Astra release gate
+# Release gate
 
-Scope: reproducible hackathon/local and valueless NEAR testnet release candidates. No mainnet, public hosting or competition submission has been performed. Tests below do not establish absence of every possible defect or an independent security audit.
+Final checks before publishing, completed 6 November 2026. Scope: the local app and the valueless NEAR testnet deployment. This is not a mainnet approval or a formal security audit.
 
 ## Completed checks
 
-| Gate | AllTogether | ArchivePass |
-|---|---|---|
-| Independent high-effort Astra product/source review | Initial review + final review; receipt-replay P1 fixed and independently reproduced as rejected | Initial review + final review; two final worker restart P1s fixed and independently verified |
-| Full application regression suite | 63 passed, 0 failed/skipped | 75 passed, 0 failed/skipped after final startup fixes |
-| Native contract workspace | 17 escrow + 5 token passed | 21 passed; receiver crate included |
-| Strict TypeScript and production build | Passed | Passed |
-| Frozen fresh installation and shipped process startup | Passed | Passed, including both keeper processes |
-| Actual stopped backup/restore and persisted hashes | Passed | Passed, including both restored file downloads and regenerated operator credential |
-| Production JS advisory audit | 0 reported | 0 reported |
-| Rust advisory scope | Host/test/build advisories retained, absent normal deployed WASM graph; unmaintained allocator removed | Same; see DEPENDENCIES.md |
-| Changed contract/deployment evidence | Fresh release escrow/token and real Sputnik flows; 51-transaction release scenario | Fresh keyless 50T callback deployment; signed automatic-worker scenario |
-| Additional actual controller/worker QA | 22 FINAL transactions; all 17 signed controller operations reverified against final height/timestamp/hash guards | Two real signed worker processes, restart reconciliation, handover, automatic proof/payment, outage, unpaid miss |
-| Principal reconciliation | Global accepted 2,145 = paid 2,145 testUSD; custody, rights, pending all zero | Worker asset: .02 = .003 paid + .017 available; pending/residual zero |
-| Built browser fault recovery | Lost committed response, reload, same-request recovery without duplicate debit; stale/account isolation | Lost committed upkeep response, reload, same-request recovery; stale controls, readiness 0→1→2, both full-file hashes, transfer/preview invalidation, authoring |
-| Responsive layout | Actual 360px frame: inner 345/345, no page overflow | Actual 360px frame: inner 345/345, no page overflow |
+| Check | Result |
+|---|---|
+| Review passes (see `docs/ASTRA_*.md`) | Initial and final review. Two P1 issues found in the final review, both about keeper worker restarts; fixed and checked again |
+| Application test suite | 75 passed, 0 failed or skipped |
+| Rust contract tests | 21 passed, including the receiver crate |
+| Strict TypeScript and production build | Passed |
+| Fresh frozen install and production start | Passed, including both keeper processes |
+| Backup and restore with stopped services, hashes checked | Passed, including file downloads from both restored keepers and a newly generated operator token |
+| Production JavaScript advisory audit | 0 advisories |
+| Rust advisory scope | Two advisories remain in host, test and build tooling only, not in the deployed WASM; unmaintained allocator removed. See [DEPENDENCIES.md](DEPENDENCIES.md) |
+| Contract deployment | Fresh keyless deployment with 50 Tgas callbacks; signed automatic keeper scenario |
+| Keeper workers on testnet | Two real signed worker processes: restart reconciliation, NFT handover, automatic challenge answers and payments, an outage, and an unpaid miss |
+| On-chain books | 0.02 NEAR funded = 0.003 paid + 0.017 available; nothing pending, conservation residual zero |
+| Browser fault recovery | A lost response after a committed upkeep payment, then a reload, resumed the same request; stale data controls, keeper readiness 0 → 1 → 2, full-file hash from both keepers, transfer preview reset on change, new archive authoring |
+| Narrow screens | Real 360px frame: no horizontal page overflow |
 
-## Decision
+The two restart fixes are covered by 18 regression tests, which were rerun after the fixes. The process-level tests for those fixes use a mocked chain transport; the live signed keeper receipts come from the code before these local restart fixes. No new live-chain run is claimed for them.
 
-All required checks within the scoped hackathon/testnet review are complete. Both independent final Astra reviews report no remaining confirmed P0/P1 in their bounded inspected paths. AllTogether passes 63 application tests and 22 native tests; ArchivePass passes 75 application tests and 21 native tests, with zero failures or skips. Final fresh-copy builds, stopped restores and shipped entry-point checks passed again after the last fixes. Source/artifact identities are recorded in FINAL_SOURCE_MANIFEST.json.
+Source and artifact SHA-256 values for the checked release are in [FINAL_SOURCE_MANIFEST.json](FINAL_SOURCE_MANIFEST.json). It was recorded before the project was put under Git, so the README and the documentation files edited since will not match it; the code, contracts and WASMs are unchanged. Fresh-install and restore details are in [REPRODUCIBILITY.md](REPRODUCIBILITY.md); browser checks are in [BROWSER_RELEASE_QA.md](BROWSER_RELEASE_QA.md).
 
-ArchivePass's final restart fixes have 18 independently rerun regressions. Actual child-process startup/download with the original source offline and fixed-credit settlement use an explicitly mocked chain transport; the earlier real signed worker receipts retain their historical source hashes. No new live-chain execution is claimed for the final host recovery patches.
+## Not covered
 
-## Explicit validation boundaries
-
-**User-approved exclusion:** the user chose to leave ArchivePass's final-artifact 256-record/depth-14 capacity retest unverified after declining further QA-balance consolidation. Earlier 25T baseline reached 256 and exposed callback headroom; final 50T partial run reached 16, was interrupted by RPC limits and fully refunded. No consolidation or final capacity deployment followed that decision. The older artifact's success is not a final-artifact pass. This boundary must remain in release claims.
-
-AllTogether's external wallet selector opened/cancelled in the browser; external wallet account login and approval were not exercised. Actual signing was tested through the same controller with a dedicated SDK wallet adapter. ArchivePass browser chain mutations remain intentionally outside its scope; operators use the signed owner CLI and automatic workers. Both keeper processes run on one computer. Sampled proofs do not establish continuous availability, independent replicas, delivery of physical services or permanent storage. AllTogether retains disclosed prototype contract keys; ArchivePass final asset was observed keyless. Finite testnet assets and their policy windows expire; old receipt evidence is not a replay command.
-
-Evidence: per-project `docs/RELEASE_*.md`, `docs/ASTRA_FINAL_GATE.md`, [reproducibility](REPRODUCIBILITY.md), [browser log](BROWSER_RELEASE_QA.md), [dependency scope](DEPENDENCIES.md). This is a completed bounded engineering release gate, with the explicit exclusions above. It is not a mainnet or formal security approval.
+- **The 256-record capacity test was not repeated on the final contract build.** An earlier build (25 Tgas callbacks) reached 256 records and showed the callbacks needed more gas. A partial run on the final 50 Tgas build reached 16 records before public RPC rate limits stopped it, and its funds were fully refunded. The earlier build's result is not a pass for the final build. See `docs/RELEASE_TESTNET_BENCHMARK.md`.
+- **Browser chain transactions** are out of scope; the owner CLI and the keeper workers make the on-chain changes.
+- Both keeper processes run on one computer. A passed challenge does not prove continuous availability, independent copies or permanent storage.
+- Testnet assets have a finite funding window, and the records are history, not something to replay.
