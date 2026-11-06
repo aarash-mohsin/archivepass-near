@@ -1,0 +1,64 @@
+{
+  "mode": "read-only preview; no transfer performed",
+  "observed_at": "2026-11-05T22:01:17.446Z",
+  "rpc": "https://rpc.testnet.near.org",
+  "recipient": "qab-mw3qhtsg-35fb41.testnet",
+  "recipient_current_balance": "1228639113564603199999725",
+  "spare_transfers": [
+    {
+      "label": "own gas root",
+      "account_id": "qag-mw3qhtsg-35fb41.testnet",
+      "buffer": "10000000000000000000000",
+      "credential_reference": ".secrets/qa-benchmark-mw3qhtsg-35fb41-gas.json",
+      "balance": "999910726975000000000000",
+      "proposed_maximum_spare": "989910726975000000000000"
+    },
+    {
+      "label": "own provider0 spare above preserved buffer",
+      "account_id": "p0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+      "buffer": "300000000000000000000000",
+      "credential_reference": ".secrets/qa-benchmark-mw3qhtsg-35fb41-provider.json",
+      "balance": "596420748514785600000000",
+      "proposed_maximum_spare": "296420748514785600000000"
+    },
+    {
+      "label": "own provider1 spare above preserved buffer",
+      "account_id": "p1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+      "buffer": "300000000000000000000000",
+      "credential_reference": ".secrets/qa-benchmark-mw3qhtsg-35fb41-pending-provider.json",
+      "balance": "586685265896366699999999",
+      "proposed_maximum_spare": "286685265896366699999999"
+    },
+    {
+      "label": "own receiver spare above code storage and buffer",
+      "account_id": "receiverxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+      "buffer": "1300000000000000000000000",
+      "credential_reference": ".secrets/qa-benchmark-mw3qhtsg-35fb41-receiver.json",
+      "balance": "1599083747122043599999999",
+      "proposed_maximum_spare": "299083747122043599999999"
+    },
+    {
+      "label": "own prior fixed refund wallet",
+      "account_id": "refundxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+      "buffer": "10000000000000000000000",
+      "credential_reference": ".secrets/qa-benchmark-mw3qhtsg-35fb41-refund.json",
+      "balance": "597000000000000000000000",
+      "proposed_maximum_spare": "587000000000000000000000"
+    },
+    {
+      "label": "own abandoned-v2 fixed refund wallet",
+      "account_id": "refund89685bxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+      "buffer": "10000000000000000000000",
+      "credential_reference": ".secrets/qa-benchmark-mw3rk8hv-89685b-refund.json",
+      "balance": "600000000000000000000000",
+      "proposed_maximum_spare": "590000000000000000000000"
+    }
+  ],
+  "total_proposed_spare": "3049100488508195899999998",
+  "external_worker_QA_transfer_requested": "2000000000000000000000000",
+  "projected_total_if_both_explicitly_authorized": "6277739602072799099999723",
+  "planned_operations": "5300000000000000000000000",
+  "planned_principal": "20000000000000000000000",
+  "planned_refund_account_endowment": "100000000000000000000000",
+  "note": "No asset operation balances touched. Provider0/1 retain>=0.3each and receiver>=1.3. This preview is not trusted financial authorization; explicit parent/user approval is required before any proposed transfer."
+}

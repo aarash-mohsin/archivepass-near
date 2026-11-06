@@ -1,0 +1,19 @@
+node_modules/
+.release-backups/
+.release-restores/
+dist/
+target/
+data/
+.secrets/
+.env
+.env.*
+!.env.example
+*.db
+*.db-shm
+*.db-wal
+
+# Demo recordings are published separately
+demo/
+
+# Demo recordings are published separately
+demo/

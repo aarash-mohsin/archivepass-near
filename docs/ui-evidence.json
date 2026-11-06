@@ -1,0 +1,22 @@
+{
+  "observed_at": "2026-11-05T15:00:28.817Z",
+  "status": "passed",
+  "desktop": [
+    "actual2937bytefilechosenanduploaded",
+    "browser/serverhashagreement",
+    "immutablepolicyreviewandassetcreation",
+    "localfundingavailableupkeep0.008to0.009",
+    "actualkeeperAfullfiledownloadSHA256match",
+    "liveRPCtestnetownerBobepoch13keycount0codehashmatchpaid0.01"
+  ],
+  "mobile": {
+    "harness": "tests/integration/responsive.html",
+    "outerFrameWidth": 360,
+    "documentClientWidth": 345,
+    "documentScrollWidth": 345,
+    "flow": "recipientpreviewconfirmationordinaryNFTtransferAliceToBob",
+    "asset_id": "f8da800c-a9bb-4471-a05a-decc1cf3771e",
+    "owner_epoch_after": "1"
+  },
+  "screenshots": "Captured in browser tool output; no persistent screenshot file is claimed."
+}

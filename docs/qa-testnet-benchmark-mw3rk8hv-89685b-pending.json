@@ -1,0 +1,12 @@
+{
+  "run": "mw3rk8hv-89685b",
+  "started_at": "2026-11-05T16:33:38.097Z",
+  "status": "failed",
+  "purpose": "Actual same-parent-receipt dispatch then NFT transfer before asynchronous native payout/callback",
+  "steps": [],
+  "error": {
+    "message": "Primary benchmark failed: {\"jsonrpc\": \"2.0\", \"error\": {\"code\": -429, \"message\": \"Rate limits exceeded. For higher rate limits get a subscription at https://fastnear.com\"}, \"id\": \"1\"}",
+    "stack": "Error: Primary benchmark failed: {\"jsonrpc\": \"2.0\", \"error\": {\"code\": -429, \"message\": \"Rate limits exceeded. For higher rate limits get a subscription at https://fastnear.com\"}, \"id\": \"1\"}\n    at until (file:///C:/CryptoProject/archivepass/scripts/qa-testnet-benchmark-pending.mjs:25:97)\n    at async file:///C:/CryptoProject/archivepass/scripts/qa-testnet-benchmark-pending.mjs:33:19"
+  },
+  "failed_at": "2026-11-05T16:34:28.295Z"
+}

@@ -1,0 +1,65 @@
+{
+  "observed_at": "2026-11-05T22:24:26.991Z",
+  "scope": "Local final-review recovery fixes; no new public chain writes",
+  "historical_live_source": "docs/RELEASE_WORKERS-source.json",
+  "historical_live_source_sha256": "d4b6ed5c885e472e4d0c67c271377e02e7e55e571abc21171a7a634d508f3f3e",
+  "source_files": [
+    {
+      "path": "keeper/testnet-adapter.ts",
+      "sha256": "ba1cd28e3a31e18d561e51fc4a20a363779ae2ab655cbd52937d63f09aa2054c"
+    },
+    {
+      "path": "keeper/testnet-main.ts",
+      "sha256": "58de63218799d9f8b749eb38276227b7309f492b1847dc9baaddcb7977785b56"
+    },
+    {
+      "path": "keeper/testnet-content.ts",
+      "sha256": "63660b315e1fe9a0abe6d8fe8e587e87de26022c2be5017a2c3ecb7518a96d78"
+    },
+    {
+      "path": "keeper/service.ts",
+      "sha256": "4321e4ef84e47f907e48d8aee9a37d654d1aaea0ad84ef811485356bbbd30561"
+    },
+    {
+      "path": "scripts/near-operator.mjs",
+      "sha256": "d38458a3e3a736d554d281062b0723b068d4d592d33ab59f636e041823ac5b23"
+    },
+    {
+      "path": "tests/server/testnet-worker.test.mjs",
+      "sha256": "c6e43640260b280b9729edf33c87d0d21ccb6f5510a29338cbf6cb10e6e8aa87"
+    },
+    {
+      "path": "tests/server/testnet-recovery.test.mjs",
+      "sha256": "16cc2dc6603aa1dc1ee64dafca8fe52359f7608cc97a54fd078b72c7fe3a1916"
+    }
+  ],
+  "targeted_tests": {
+    "command": "node --test tests/server/testnet-worker.test.mjs tests/server/testnet-recovery.test.mjs",
+    "passed": 18,
+    "failed": 0,
+    "skipped": 0
+  },
+  "full_tests": {
+    "command": "node scripts/test.mjs",
+    "passed": 75,
+    "failed": 0,
+    "skipped": 0,
+    "log": "../release-qa/archivepass-recovery-final-tests.log",
+    "log_sha256": "ded6a466050475dc88f80c0b33a0e65cfd13481476386f039847cc625825d61b"
+  },
+  "typecheck": {
+    "command": "node scripts/typecheck.mjs",
+    "exit_code": 0
+  },
+  "process_test": {
+    "entrypoint": "keeper/testnet-main.ts",
+    "source": "real local HTTP source stopped before child startup",
+    "chain": "explicit mocked fixed-RPC transport; signed claim does not claim live execution",
+    "assertions": [
+      "retained Ready import",
+      "complete HTTP download equals original bytes",
+      "automatic signed fixed-credit claim dispatched to mock",
+      "worker process remains alive and polled"
+    ]
+  }
+}

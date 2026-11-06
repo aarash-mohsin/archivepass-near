@@ -1,0 +1,151 @@
+{
+  "name": "Create and deploy dedicated receiver fixture",
+  "network": "testnet",
+  "at": "2026-11-05T16:02:49.444Z",
+  "expected_failure": false,
+  "outcome": {
+    "final_execution_status": "FINAL",
+    "receipts_outcome": [
+      {
+        "block_hash": "rk1pPPeJK6FVUBksAuQg5hcAEpCekmB3rgohfHw1hmu",
+        "id": "9VsVyiCWb4YQP3qvdKqXXEQ4uYYF4H11zmT5FN5pdtEt",
+        "outcome": {
+          "executor_id": "receiverxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+          "gas_burnt": 15468023513212,
+          "logs": [],
+          "metadata": {
+            "contracts": [
+              null,
+              null,
+              null,
+              null
+            ],
+            "gas_profile": [],
+            "version": 4
+          },
+          "receipt_ids": [
+            "FCsD2kZFa3m2Me25JbNBKbheV4mDwSaoP78vqgzzJWNj"
+          ],
+          "status": {
+            "SuccessValue": ""
+          },
+          "tokens_burnt": "7826802351321200000000"
+        },
+        "proof": [
+          {
+            "direction": "Right",
+            "hash": "5r5vhjpWEFWRDGAx5zJhZZ4LYJCZN787RN4zSz6FpT9W"
+          }
+        ]
+      },
+      {
+        "block_hash": "EnRsYfApFkC1bMasuVwqTocGC4rLqdsr5FcX75Byj4i6",
+        "id": "FCsD2kZFa3m2Me25JbNBKbheV4mDwSaoP78vqgzzJWNj",
+        "outcome": {
+          "executor_id": "qab-mw3qhtsg-35fb41.testnet",
+          "gas_burnt": 223182562500,
+          "logs": [],
+          "metadata": {
+            "contracts": [
+              null
+            ],
+            "gas_profile": [],
+            "version": 4
+          },
+          "receipt_ids": [],
+          "status": {
+            "SuccessValue": ""
+          },
+          "tokens_burnt": "0"
+        },
+        "proof": [
+          {
+            "direction": "Left",
+            "hash": "99dwNpKnpdqUB8eTFqZ64LNLE51HXY1TCb2uDKixVM9p"
+          }
+        ]
+      }
+    ],
+    "status": {
+      "SuccessValue": ""
+    },
+    "transaction": {
+      "actions": [
+        "CreateAccount",
+        {
+          "Transfer": {
+            "deposit": "1600000000000000000000000"
+          }
+        },
+        {
+          "AddKey": {
+            "access_key": {
+              "nonce": 0,
+              "permission": "FullAccess"
+            },
+            "public_key": "ed25519:HKirHGcpVYTFeycpfgewYWnbJn8F6RzHLoZ8UxLermFf"
+          }
+        },
+        {
+          "DeployContract": {
+            "code": "3VnjE5WHNo/kvYAEAlMOnJqL/MrPCNpSMToXq4iy3Xk="
+          }
+        }
+      ],
+      "hash": "RicSW4eUATUUNTqLvMcpADE51ThAXCAwzrHhWni8JkJ",
+      "nonce": 276363042000002,
+      "priority_fee": 0,
+      "public_key": "ed25519:76RRFtxrFPyspm2tPJFPnAmyDJmcph3SMEgFhXUKuJZn",
+      "receiver_id": "receiverxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+      "signature": "ed25519:45iUm7xqSPGDZbfDGpwxj4DBne152f6h7rqKpLb6FwbBgP84URXWJ3gdsKrAcbWNp33bQUqq9MRYEUWHyqUL6vpS",
+      "signer_id": "qab-mw3qhtsg-35fb41.testnet"
+    },
+    "transaction_outcome": {
+      "block_hash": "HXAYKRB5EWRomZDKtoZtkHH8xwXkyqz9x7LNM4bdKwRj",
+      "id": "RicSW4eUATUUNTqLvMcpADE51ThAXCAwzrHhWni8JkJ",
+      "outcome": {
+        "executor_id": "qab-mw3qhtsg-35fb41.testnet",
+        "gas_burnt": 6738816427320,
+        "logs": [],
+        "metadata": {
+          "gas_profile": null,
+          "version": 1
+        },
+        "receipt_ids": [
+          "9VsVyiCWb4YQP3qvdKqXXEQ4uYYF4H11zmT5FN5pdtEt"
+        ],
+        "status": {
+          "SuccessReceiptId": "9VsVyiCWb4YQP3qvdKqXXEQ4uYYF4H11zmT5FN5pdtEt"
+        },
+        "tokens_burnt": "673881642732000000000"
+      },
+      "proof": [
+        {
+          "direction": "Right",
+          "hash": "7FVisYM74e8ntRTrrRNmLZJRcptgHEeVHqjVvER5i9rt"
+        }
+      ]
+    }
+  },
+  "total_receipt_gas_burnt": "15691206075712",
+  "receipts": [
+    {
+      "receipt_id": "9VsVyiCWb4YQP3qvdKqXXEQ4uYYF4H11zmT5FN5pdtEt",
+      "executor_id": "receiverxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+      "gas_burnt": 15468023513212,
+      "status": {
+        "SuccessValue": ""
+      },
+      "callback": null
+    },
+    {
+      "receipt_id": "FCsD2kZFa3m2Me25JbNBKbheV4mDwSaoP78vqgzzJWNj",
+      "executor_id": "qab-mw3qhtsg-35fb41.testnet",
+      "gas_burnt": 223182562500,
+      "status": {
+        "SuccessValue": ""
+      },
+      "callback": null
+    }
+  ]
+}

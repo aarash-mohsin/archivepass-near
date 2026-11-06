@@ -1,0 +1,430 @@
+{
+  "mode": "local",
+  "started_at": "2026-11-05T14:36:45.732Z",
+  "steps": [
+    {
+      "name": "Created funded immutable asset with four accepted commitments",
+      "at": "2026-11-05T14:36:46.480Z",
+      "data": {
+        "asset_id": "9e9433ba-0f5d-448c-ad22-f0a40aa0b73d",
+        "manifest": {
+          "title": "Handover and real keeper outage",
+          "filename": "stewardship-guide.txt",
+          "media_type": "text/plain",
+          "license_note": "CC0-1.0",
+          "schema": "archivepass-manifest-v1",
+          "version_id": "v1",
+          "size_bytes": "2937",
+          "chunk_size": 1024,
+          "chunk_count": 3,
+          "file_sha256": "613d3d09c8774dd2af511845c984555d9c6017cc470243ea181bce76818023f4",
+          "merkle_root": "dc891c97cec1f21834ae5f028122c160d9ed290863b4c3663d0a4d43f8a83a6f",
+          "manifest_sha256": "88fd8598dc43c1771a1e43bb51d7b07d4e2de519c6b2bd3166a4259a8db40eaa"
+        },
+        "policy": {
+          "service_origin": "1793889416037000000",
+          "period_duration": "30000000000",
+          "max_provider_rate": "1000000000000000000000",
+          "max_slot_spend": "2000000000000000000000",
+          "fund_expiry": "1793889476037000000",
+          "refund_beneficiary": "refund.archivepass.testnet",
+          "eligible_providers": [
+            "keeper-a.archivepass.testnet",
+            "keeper-b.archivepass.testnet"
+          ],
+          "max_nonterminal_commitments": 16,
+          "max_total_commitments": 256,
+          "max_pending_payouts": 8
+        },
+        "commitments": [
+          {
+            "commitment_id": "1",
+            "provider_id": "keeper-a.archivepass.testnet",
+            "payee": "keeper-a.archivepass.testnet",
+            "slot": "0",
+            "start": "1793889416037000000",
+            "end": "1793889446037000000",
+            "rate": "1000000000000000000000",
+            "version_id": "v1",
+            "manifest_sha256": "88fd8598dc43c1771a1e43bb51d7b07d4e2de519c6b2bd3166a4259a8db40eaa",
+            "merkle_root": "dc891c97cec1f21834ae5f028122c160d9ed290863b4c3663d0a4d43f8a83a6f",
+            "endpoint": "http://127.0.0.1:8791",
+            "proposed_owner_epoch": "0",
+            "state": "Proposed",
+            "challenge": null,
+            "accepted_at": null,
+            "settled_at": null,
+            "missed_reason": null
+          },
+          {
+            "commitment_id": "2",
+            "provider_id": "keeper-b.archivepass.testnet",
+            "payee": "keeper-b.archivepass.testnet",
+            "slot": "0",
+            "start": "1793889416037000000",
+            "end": "1793889446037000000",
+            "rate": "1000000000000000000000",
+            "version_id": "v1",
+            "manifest_sha256": "88fd8598dc43c1771a1e43bb51d7b07d4e2de519c6b2bd3166a4259a8db40eaa",
+            "merkle_root": "dc891c97cec1f21834ae5f028122c160d9ed290863b4c3663d0a4d43f8a83a6f",
+            "endpoint": "http://127.0.0.1:8792",
+            "proposed_owner_epoch": "0",
+            "state": "Proposed",
+            "challenge": null,
+            "accepted_at": null,
+            "settled_at": null,
+            "missed_reason": null
+          },
+          {
+            "commitment_id": "3",
+            "provider_id": "keeper-a.archivepass.testnet",
+            "payee": "keeper-a.archivepass.testnet",
+            "slot": "1",
+            "start": "1793889446037000000",
+            "end": "1793889476037000000",
+            "rate": "1000000000000000000000",
+            "version_id": "v1",
+            "manifest_sha256": "88fd8598dc43c1771a1e43bb51d7b07d4e2de519c6b2bd3166a4259a8db40eaa",
+            "merkle_root": "dc891c97cec1f21834ae5f028122c160d9ed290863b4c3663d0a4d43f8a83a6f",
+            "endpoint": "http://127.0.0.1:8791",
+            "proposed_owner_epoch": "0",
+            "state": "Proposed",
+            "challenge": null,
+            "accepted_at": null,
+            "settled_at": null,
+            "missed_reason": null
+          },
+          {
+            "commitment_id": "4",
+            "provider_id": "keeper-b.archivepass.testnet",
+            "payee": "keeper-b.archivepass.testnet",
+            "slot": "1",
+            "start": "1793889446037000000",
+            "end": "1793889476037000000",
+            "rate": "1000000000000000000000",
+            "version_id": "v1",
+            "manifest_sha256": "88fd8598dc43c1771a1e43bb51d7b07d4e2de519c6b2bd3166a4259a8db40eaa",
+            "merkle_root": "dc891c97cec1f21834ae5f028122c160d9ed290863b4c3663d0a4d43f8a83a6f",
+            "endpoint": "http://127.0.0.1:8792",
+            "proposed_owner_epoch": "0",
+            "state": "Proposed",
+            "challenge": null,
+            "accepted_at": null,
+            "settled_at": null,
+            "missed_reason": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "Actual keeper proof earned across transfer; stale owner and replay rejected",
+      "at": "2026-11-05T14:36:56.187Z",
+      "data": {
+        "asset": {
+          "asset_id": "9e9433ba-0f5d-448c-ad22-f0a40aa0b73d",
+          "mode": "local",
+          "network_domain": "archivepass-local-v1",
+          "contract_id": "local:9e9433ba-0f5d-448c-ad22-f0a40aa0b73d",
+          "token_id": "archive",
+          "protocol_version": "archivepass-v1",
+          "manifest": {
+            "title": "Handover and real keeper outage",
+            "filename": "stewardship-guide.txt",
+            "media_type": "text/plain",
+            "license_note": "CC0-1.0",
+            "schema": "archivepass-manifest-v1",
+            "version_id": "v1",
+            "size_bytes": "2937",
+            "chunk_size": 1024,
+            "chunk_count": 3,
+            "file_sha256": "613d3d09c8774dd2af511845c984555d9c6017cc470243ea181bce76818023f4",
+            "merkle_root": "dc891c97cec1f21834ae5f028122c160d9ed290863b4c3663d0a4d43f8a83a6f",
+            "manifest_sha256": "88fd8598dc43c1771a1e43bb51d7b07d4e2de519c6b2bd3166a4259a8db40eaa"
+          },
+          "policy": {
+            "service_origin": "1793889416037000000",
+            "period_duration": "30000000000",
+            "max_provider_rate": "1000000000000000000000",
+            "max_slot_spend": "2000000000000000000000",
+            "fund_expiry": "1793889476037000000",
+            "refund_beneficiary": "refund.archivepass.testnet",
+            "eligible_providers": [
+              "keeper-a.archivepass.testnet",
+              "keeper-b.archivepass.testnet"
+            ],
+            "max_nonterminal_commitments": 16,
+            "max_total_commitments": 256,
+            "max_pending_payouts": 8
+          },
+          "owner_id": "bob.archivepass.testnet",
+          "owner_epoch": "1",
+          "transfer_call_pending": null,
+          "reserve_expired": false,
+          "providers": [
+            {
+              "provider_id": "keeper-a.archivepass.testnet",
+              "label": "Keeper A",
+              "endpoint": "http://127.0.0.1:8791",
+              "enabled": true
+            },
+            {
+              "provider_id": "keeper-b.archivepass.testnet",
+              "label": "Keeper B",
+              "endpoint": "http://127.0.0.1:8792",
+              "enabled": true
+            }
+          ],
+          "credits": [
+            {
+              "kind": "provider",
+              "creditor": "keeper-a.archivepass.testnet",
+              "available": "1000000000000000000000",
+              "pending": "0",
+              "paid": "0",
+              "pending_operation_id": null
+            }
+          ],
+          "created_at": "1793889406059000000",
+          "observed_at": "1793889416190000000",
+          "deployment": {
+            "code_hash": null,
+            "key_status": "local",
+            "verified_at": null
+          },
+          "ledger": {
+            "principal_in": "10000000000000000000000",
+            "available_upkeep": "6000000000000000000000",
+            "reserved_upkeep": "3000000000000000000000",
+            "earned_credit": "1000000000000000000000",
+            "refund_credit": "0",
+            "pending_payments": "0",
+            "principal_paid": "0",
+            "conservation_residual": "0",
+            "operations_funded": "0",
+            "security_deposits": "5"
+          }
+        },
+        "proof": {
+          "commitment_id": "1",
+          "version_id": "v1",
+          "chunk_index": 1,
+          "chunk_base64": "dCBhbmQgbGVuZ3RoIHdpdGggdGhlIG1hbmlmZXN0LiBSZWNvcmQgdGhlIGhvc3QgYW5kIHRpbWUuIEEgZ3JlZW4gY2hlY2sgaXMgYW4gb2JzZXJ2YXRpb24gYWJvdXQgdGhhdCBjb21wbGV0ZWQgZG93bmxvYWQsIG5vdCBhIHByb21pc2UgdGhhdCB0b21vcnJvdydzIGRvd25sb2FkIHdpbGwgc3VjY2VlZC4gS2VlcCBhIGxvY2FsIGNvcHkgaWYgdGhlIG1hdGVyaWFsIG1hdHRlcnMgdG8geW91LgoKNC4gVW5kZXJzdGFuZCBhIHNhbXBsZWQgcmVzcG9uc2UKQSBwcm92aWRlciBlYXJucyBhIGZpeGVkIHBlcmlvZCBwYXltZW50IG9ubHkgYWZ0ZXIgYW4gYXV0aG9yaXplZCByZXNwb25zZSBzdXBwbGllcyB0aGUgY2hhbGxlbmdlZCBjaHVuayBhbmQgaXRzIE1lcmtsZSBzaWJsaW5ncyBiZWZvcmUgdGhlIGRlYWRsaW5lLiBBIHZhbGlkIHJlc3BvbnNlIHNob3dzIGtub3dsZWRnZSBvZiB0aG9zZSBieXRlcyBhdCB0aGF0IG1vbWVudC4gSXQgZG9lcyBub3Qgc2hvdyBhIGNvbXBsZXRlIHJlcGxpY2EsIGluZGVwZW5kZW50IGluZnJhc3RydWN0dXJlLCBvciBjb250aW51b3VzIEhUVFAgc2VydmljZS4gUHJvdmlkZXJzIGNhbiBmZXRjaCBwdWJsaWMgYnl0ZXMgZnJvbSBvbmUgYW5vdGhlci4gRG8gbm90IG1hcmtldCB0aGlzIGNoZWNrIGFzIHBlcm1hbmVudCBzdG9yYWdlLgoKNS4gVHJhbnNmZXIgcmVzcG9uc2liaWxpdHkgd2l0aG91dCByZXdyaXRpbmcgZGVidHMKQmVmb3JlIHRyYW5zZmVyLCBpbnNwZWN0IHRoZSBjdXJyZW50IGNhcmV0YWtlciwgb3duZXJzaGlwIGVwb2NoLCBhdmFpbGFibGUgdXBrZWVwLCByZXNlcnZlZCBjb21taXRtZW50cywgZWFybmVkIGNsYWltcywgcGVuZGluZyBwYXlvdXRzLCBleHBpcnksIGFuZCBmaXhlZCByZWZ1bmQgYmVuZWZpY2lhcnkuIEV4aXN0aW5nIGNvbW1pdG1lbnRzIGtlZXAgdGhlaXIgcHJvdmlkZXIsIGNvbnRlbnQsIHJhdGUsIGFuZCBkZWFkbGluZS4gVGhlIGZvcm1lciBjYXJldGFrZXIgbG9zZXMgZnV0dXJlIGNvbmZpZ3VyYXRpb24gYXV0aG9yaXR5LiBBIHRlbQ==",
+          "siblings": [
+            "18f1ad1f6ee2fa2ff04f9a64eed3f86e2bf047934810fa6293d6bfc176d3ff2e",
+            "465c21b7f40217464f90ab0183debe02afeed7bcc1623e32a83b493a9b6029b8"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Simulated failed local payout restored fixed credit; retry paid exactly once",
+      "at": "2026-11-05T14:36:57.786Z",
+      "data": {
+        "asset_id": "9e9433ba-0f5d-448c-ad22-f0a40aa0b73d",
+        "mode": "local",
+        "network_domain": "archivepass-local-v1",
+        "contract_id": "local:9e9433ba-0f5d-448c-ad22-f0a40aa0b73d",
+        "token_id": "archive",
+        "protocol_version": "archivepass-v1",
+        "manifest": {
+          "title": "Handover and real keeper outage",
+          "filename": "stewardship-guide.txt",
+          "media_type": "text/plain",
+          "license_note": "CC0-1.0",
+          "schema": "archivepass-manifest-v1",
+          "version_id": "v1",
+          "size_bytes": "2937",
+          "chunk_size": 1024,
+          "chunk_count": 3,
+          "file_sha256": "613d3d09c8774dd2af511845c984555d9c6017cc470243ea181bce76818023f4",
+          "merkle_root": "dc891c97cec1f21834ae5f028122c160d9ed290863b4c3663d0a4d43f8a83a6f",
+          "manifest_sha256": "88fd8598dc43c1771a1e43bb51d7b07d4e2de519c6b2bd3166a4259a8db40eaa"
+        },
+        "policy": {
+          "service_origin": "1793889416037000000",
+          "period_duration": "30000000000",
+          "max_provider_rate": "1000000000000000000000",
+          "max_slot_spend": "2000000000000000000000",
+          "fund_expiry": "1793889476037000000",
+          "refund_beneficiary": "refund.archivepass.testnet",
+          "eligible_providers": [
+            "keeper-a.archivepass.testnet",
+            "keeper-b.archivepass.testnet"
+          ],
+          "max_nonterminal_commitments": 16,
+          "max_total_commitments": 256,
+          "max_pending_payouts": 8
+        },
+        "owner_id": "bob.archivepass.testnet",
+        "owner_epoch": "1",
+        "transfer_call_pending": null,
+        "reserve_expired": false,
+        "providers": [
+          {
+            "provider_id": "keeper-a.archivepass.testnet",
+            "label": "Keeper A",
+            "endpoint": "http://127.0.0.1:8791",
+            "enabled": true
+          },
+          {
+            "provider_id": "keeper-b.archivepass.testnet",
+            "label": "Keeper B",
+            "endpoint": "http://127.0.0.1:8792",
+            "enabled": true
+          }
+        ],
+        "credits": [
+          {
+            "kind": "provider",
+            "creditor": "keeper-a.archivepass.testnet",
+            "available": "0",
+            "pending": "0",
+            "paid": "1000000000000000000000",
+            "pending_operation_id": null
+          }
+        ],
+        "created_at": "1793889406059000000",
+        "observed_at": "1793889417788000000",
+        "deployment": {
+          "code_hash": null,
+          "key_status": "local",
+          "verified_at": null
+        },
+        "ledger": {
+          "principal_in": "10000000000000000000000",
+          "available_upkeep": "6000000000000000000000",
+          "reserved_upkeep": "3000000000000000000000",
+          "earned_credit": "0",
+          "refund_credit": "0",
+          "pending_payments": "0",
+          "principal_paid": "1000000000000000000000",
+          "conservation_residual": "0",
+          "operations_funded": "0",
+          "security_deposits": "5"
+        }
+      }
+    },
+    {
+      "name": "Keeper A actually stopped serving and proving",
+      "at": "2026-11-05T14:36:57.845Z",
+      "data": {
+        "http_status": 503
+      }
+    },
+    {
+      "name": "Keeper B still returns the exact full archive",
+      "at": "2026-11-05T14:37:26.325Z",
+      "data": {
+        "bytes": 2937,
+        "file_sha256": "613d3d09c8774dd2af511845c984555d9c6017cc470243ea181bce76818023f4"
+      }
+    },
+    {
+      "name": "Missed period unpaid; fixed expiry refund and all principal reconcile",
+      "at": "2026-11-05T14:37:57.836Z",
+      "data": {
+        "asset_id": "9e9433ba-0f5d-448c-ad22-f0a40aa0b73d",
+        "mode": "local",
+        "network_domain": "archivepass-local-v1",
+        "contract_id": "local:9e9433ba-0f5d-448c-ad22-f0a40aa0b73d",
+        "token_id": "archive",
+        "protocol_version": "archivepass-v1",
+        "manifest": {
+          "title": "Handover and real keeper outage",
+          "filename": "stewardship-guide.txt",
+          "media_type": "text/plain",
+          "license_note": "CC0-1.0",
+          "schema": "archivepass-manifest-v1",
+          "version_id": "v1",
+          "size_bytes": "2937",
+          "chunk_size": 1024,
+          "chunk_count": 3,
+          "file_sha256": "613d3d09c8774dd2af511845c984555d9c6017cc470243ea181bce76818023f4",
+          "merkle_root": "dc891c97cec1f21834ae5f028122c160d9ed290863b4c3663d0a4d43f8a83a6f",
+          "manifest_sha256": "88fd8598dc43c1771a1e43bb51d7b07d4e2de519c6b2bd3166a4259a8db40eaa"
+        },
+        "policy": {
+          "service_origin": "1793889416037000000",
+          "period_duration": "30000000000",
+          "max_provider_rate": "1000000000000000000000",
+          "max_slot_spend": "2000000000000000000000",
+          "fund_expiry": "1793889476037000000",
+          "refund_beneficiary": "refund.archivepass.testnet",
+          "eligible_providers": [
+            "keeper-a.archivepass.testnet",
+            "keeper-b.archivepass.testnet"
+          ],
+          "max_nonterminal_commitments": 16,
+          "max_total_commitments": 256,
+          "max_pending_payouts": 8
+        },
+        "owner_id": "bob.archivepass.testnet",
+        "owner_epoch": "1",
+        "transfer_call_pending": null,
+        "reserve_expired": true,
+        "providers": [
+          {
+            "provider_id": "keeper-a.archivepass.testnet",
+            "label": "Keeper A",
+            "endpoint": "http://127.0.0.1:8791",
+            "enabled": true
+          },
+          {
+            "provider_id": "keeper-b.archivepass.testnet",
+            "label": "Keeper B",
+            "endpoint": "http://127.0.0.1:8792",
+            "enabled": true
+          }
+        ],
+        "credits": [
+          {
+            "kind": "provider",
+            "creditor": "keeper-a.archivepass.testnet",
+            "available": "0",
+            "pending": "0",
+            "paid": "1000000000000000000000",
+            "pending_operation_id": null
+          },
+          {
+            "kind": "provider",
+            "creditor": "keeper-b.archivepass.testnet",
+            "available": "0",
+            "pending": "0",
+            "paid": "2000000000000000000000",
+            "pending_operation_id": null
+          },
+          {
+            "kind": "refund",
+            "creditor": "refund.archivepass.testnet",
+            "available": "0",
+            "pending": "0",
+            "paid": "7000000000000000000000",
+            "pending_operation_id": null
+          }
+        ],
+        "created_at": "1793889406059000000",
+        "observed_at": "1793889477824000000",
+        "deployment": {
+          "code_hash": null,
+          "key_status": "local",
+          "verified_at": null
+        },
+        "ledger": {
+          "principal_in": "10000000000000000000000",
+          "available_upkeep": "0",
+          "reserved_upkeep": "0",
+          "earned_credit": "0",
+          "refund_credit": "0",
+          "pending_payments": "0",
+          "principal_paid": "10000000000000000000000",
+          "conservation_residual": "0",
+          "operations_funded": "0",
+          "security_deposits": "5"
+        }
+      }
+    }
+  ],
+  "finished_at": "2026-11-05T14:37:57.843Z",
+  "status": "passed",
+  "asset_id": "9e9433ba-0f5d-448c-ad22-f0a40aa0b73d"
+}

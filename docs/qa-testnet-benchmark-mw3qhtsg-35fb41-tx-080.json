@@ -1,0 +1,161 @@
+{
+  "name": "Create original fixed refund account without redirecting claim",
+  "network": "testnet",
+  "at": "2026-11-05T16:21:04.145Z",
+  "expected_failure": false,
+  "outcome": {
+    "final_execution_status": "FINAL",
+    "receipts_outcome": [
+      {
+        "block_hash": "97YELYnFNdYx2zgo19jea4Wcwj9pmv37geGJjNFQBuDe",
+        "id": "DwYB4oXn7J9Vw4ahRPghoSbzLGDpJnE2MthqdKmPbU7n",
+        "outcome": {
+          "executor_id": "refundxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+          "gas_burnt": 7524947687500,
+          "logs": [],
+          "metadata": {
+            "contracts": [
+              null,
+              null,
+              null
+            ],
+            "gas_profile": [],
+            "version": 4
+          },
+          "receipt_ids": [
+            "5v9cNcaoDE1HYK3vNY8ggZCc1QhtsfMW7WrEvYtPF1HJ"
+          ],
+          "status": {
+            "SuccessValue": ""
+          },
+          "tokens_burnt": "7032494768750000000000"
+        },
+        "proof": [
+          {
+            "direction": "Right",
+            "hash": "6oPfcBJ7YB1NR2zm9kSvVAEAaurfE9HaQThJUmawUKtv"
+          },
+          {
+            "direction": "Left",
+            "hash": "GCbqE6YnJ5bpCJegPrGc5fZAAwcXEhqdKKL4iJxtabe5"
+          }
+        ]
+      },
+      {
+        "block_hash": "5oe6m86JCeWi6EFgL8DYkZi2y1Zi2RXecj25PvXQTB6K",
+        "id": "5v9cNcaoDE1HYK3vNY8ggZCc1QhtsfMW7WrEvYtPF1HJ",
+        "outcome": {
+          "executor_id": "qab-mw3qhtsg-35fb41.testnet",
+          "gas_burnt": 223182562500,
+          "logs": [],
+          "metadata": {
+            "contracts": [
+              null
+            ],
+            "gas_profile": [],
+            "version": 4
+          },
+          "receipt_ids": [],
+          "status": {
+            "SuccessValue": ""
+          },
+          "tokens_burnt": "0"
+        },
+        "proof": [
+          {
+            "direction": "Left",
+            "hash": "6eETyzSvZjmmwuPiZh2fwgKGE6dJNvFeNSGVDLrFSM4r"
+          },
+          {
+            "direction": "Left",
+            "hash": "9s4d7pLkZSss3MhSxwxLainq4Y4DRj62pXpfmqniwMKm"
+          }
+        ]
+      }
+    ],
+    "status": {
+      "SuccessValue": ""
+    },
+    "transaction": {
+      "actions": [
+        "CreateAccount",
+        {
+          "Transfer": {
+            "deposit": "300000000000000000000000"
+          }
+        },
+        {
+          "AddKey": {
+            "access_key": {
+              "nonce": 0,
+              "permission": "FullAccess"
+            },
+            "public_key": "ed25519:3Bqjgvz5h7tMU44ZTzVaW31jPjcrbXiE3ZfTqKivdfnG"
+          }
+        }
+      ],
+      "hash": "FJEfmQhTV8M3FxmVPqrPYRS3mtmbdQTQSQXehgLngoPa",
+      "nonce": 276363042000078,
+      "priority_fee": 0,
+      "public_key": "ed25519:76RRFtxrFPyspm2tPJFPnAmyDJmcph3SMEgFhXUKuJZn",
+      "receiver_id": "refundxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+      "signature": "ed25519:5b7h6NXaRdpz5G2vM3SLZTAduFxSG6AwpHVsgikUBTDfA2Wx62T45Uwe9LvZoPkQEE87ZGGhCL4YvWQgHr53PCAh",
+      "signer_id": "qab-mw3qhtsg-35fb41.testnet"
+    },
+    "transaction_outcome": {
+      "block_hash": "5eMefh3Kzs78X8zMoQSArpzsZLxS3NbiHU8fkt5Jgz2a",
+      "id": "FJEfmQhTV8M3FxmVPqrPYRS3mtmbdQTQSQXehgLngoPa",
+      "outcome": {
+        "executor_id": "qab-mw3qhtsg-35fb41.testnet",
+        "gas_burnt": 824947687500,
+        "logs": [],
+        "metadata": {
+          "gas_profile": null,
+          "version": 1
+        },
+        "receipt_ids": [
+          "DwYB4oXn7J9Vw4ahRPghoSbzLGDpJnE2MthqdKmPbU7n"
+        ],
+        "status": {
+          "SuccessReceiptId": "DwYB4oXn7J9Vw4ahRPghoSbzLGDpJnE2MthqdKmPbU7n"
+        },
+        "tokens_burnt": "82494768750000000000"
+      },
+      "proof": [
+        {
+          "direction": "Right",
+          "hash": "7sfG9dNteayogErKYr3L3AHVtE55TpiQxC9dbidzLx1a"
+        },
+        {
+          "direction": "Right",
+          "hash": "3YZkMWYc7zzYNC1VL1ocvV4DSsvGkiSqJGPuUCVZjbf5"
+        },
+        {
+          "direction": "Right",
+          "hash": "EMsTdwLf5feSDE7eGAWgj74nQsw4fLjR9NfTeciraiDX"
+        }
+      ]
+    }
+  },
+  "total_receipt_gas_burnt": "7748130250000",
+  "receipts": [
+    {
+      "receipt_id": "DwYB4oXn7J9Vw4ahRPghoSbzLGDpJnE2MthqdKmPbU7n",
+      "executor_id": "refundxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+      "gas_burnt": 7524947687500,
+      "status": {
+        "SuccessValue": ""
+      },
+      "callback": null
+    },
+    {
+      "receipt_id": "5v9cNcaoDE1HYK3vNY8ggZCc1QhtsfMW7WrEvYtPF1HJ",
+      "executor_id": "qab-mw3qhtsg-35fb41.testnet",
+      "gas_burnt": 223182562500,
+      "status": {
+        "SuccessValue": ""
+      },
+      "callback": null
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "name": "Create dedicated real provider",
+  "network": "testnet",
+  "at": "2026-11-05T16:02:45.073Z",
+  "expected_failure": false,
+  "outcome": {
+    "final_execution_status": "FINAL",
+    "receipts_outcome": [
+      {
+        "block_hash": "GTinorJ6h3GqDQ5BeauJ5kJwPav2wjymJ8KcQiKxGPmw",
+        "id": "6wAbagN4ppS2rrd7oJHiCEJE1QmbCC7NBYCrw2BAcCT6",
+        "outcome": {
+          "executor_id": "p0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+          "gas_burnt": 7524947687500,
+          "logs": [],
+          "metadata": {
+            "contracts": [
+              null,
+              null,
+              null
+            ],
+            "gas_profile": [],
+            "version": 4
+          },
+          "receipt_ids": [
+            "7JwxQxZ3eVHKMGkAFuZza8L7LRpswJCuSWF9EDGvUFJ2"
+          ],
+          "status": {
+            "SuccessValue": ""
+          },
+          "tokens_burnt": "7032494768750000000000"
+        },
+        "proof": [
+          {
+            "direction": "Right",
+            "hash": "DjFbEnWpRtR7YrMrSE1gtySLgiJ5axp8DjZXTptGjQNv"
+          }
+        ]
+      },
+      {
+        "block_hash": "26fAu8XMQy7nzS6zKNhC75JxkikhCKVTML5M8RmkrntL",
+        "id": "7JwxQxZ3eVHKMGkAFuZza8L7LRpswJCuSWF9EDGvUFJ2",
+        "outcome": {
+          "executor_id": "qab-mw3qhtsg-35fb41.testnet",
+          "gas_burnt": 223182562500,
+          "logs": [],
+          "metadata": {
+            "contracts": [
+              null
+            ],
+            "gas_profile": [],
+            "version": 4
+          },
+          "receipt_ids": [],
+          "status": {
+            "SuccessValue": ""
+          },
+          "tokens_burnt": "0"
+        },
+        "proof": [
+          {
+            "direction": "Left",
+            "hash": "HCeLx88FG31yw1G6nJXTuGhq9Fu1ZTo7H5eJw6x5nBZL"
+          }
+        ]
+      }
+    ],
+    "status": {
+      "SuccessValue": ""
+    },
+    "transaction": {
+      "actions": [
+        "CreateAccount",
+        {
+          "Transfer": {
+            "deposit": "600000000000000000000000"
+          }
+        },
+        {
+          "AddKey": {
+            "access_key": {
+              "nonce": 0,
+              "permission": "FullAccess"
+            },
+            "public_key": "ed25519:HKPd9YkWZtzhegBzxPGCi842BuNvEEStC4izD6zNXGDP"
+          }
+        }
+      ],
+      "hash": "EDRxmTPtA8wY8tt5TZu52qs3mPzFdjWMEQgawKwqUHgJ",
+      "nonce": 276363042000001,
+      "priority_fee": 0,
+      "public_key": "ed25519:76RRFtxrFPyspm2tPJFPnAmyDJmcph3SMEgFhXUKuJZn",
+      "receiver_id": "p0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+      "signature": "ed25519:5aB5bQ5ocpmD1kLaJfC1XpuTnsDcDCSpQuXeZQKGx5DEPQY7ASiQYusynV4zWKP27bfyN8YoxbQHVs3weukWwSqA",
+      "signer_id": "qab-mw3qhtsg-35fb41.testnet"
+    },
+    "transaction_outcome": {
+      "block_hash": "2mngb8mhQRVWMW9z2Gj8Ki77mem1Wah7bn879DTQW83e",
+      "id": "EDRxmTPtA8wY8tt5TZu52qs3mPzFdjWMEQgawKwqUHgJ",
+      "outcome": {
+        "executor_id": "qab-mw3qhtsg-35fb41.testnet",
+        "gas_burnt": 824947687500,
+        "logs": [],
+        "metadata": {
+          "gas_profile": null,
+          "version": 1
+        },
+        "receipt_ids": [
+          "6wAbagN4ppS2rrd7oJHiCEJE1QmbCC7NBYCrw2BAcCT6"
+        ],
+        "status": {
+          "SuccessReceiptId": "6wAbagN4ppS2rrd7oJHiCEJE1QmbCC7NBYCrw2BAcCT6"
+        },
+        "tokens_burnt": "82494768750000000000"
+      },
+      "proof": []
+    }
+  },
+  "total_receipt_gas_burnt": "7748130250000",
+  "receipts": [
+    {
+      "receipt_id": "6wAbagN4ppS2rrd7oJHiCEJE1QmbCC7NBYCrw2BAcCT6",
+      "executor_id": "p0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+      "gas_burnt": 7524947687500,
+      "status": {
+        "SuccessValue": ""
+      },
+      "callback": null
+    },
+    {
+      "receipt_id": "7JwxQxZ3eVHKMGkAFuZza8L7LRpswJCuSWF9EDGvUFJ2",
+      "executor_id": "qab-mw3qhtsg-35fb41.testnet",
+      "gas_burnt": 223182562500,
+      "status": {
+        "SuccessValue": ""
+      },
+      "callback": null
+    }
+  ]
+}

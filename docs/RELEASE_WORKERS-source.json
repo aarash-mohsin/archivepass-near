@@ -1,0 +1,40 @@
+{
+  "observed_at": "2026-11-05T16:58:35.165Z",
+  "source_files": [
+    {
+      "path": "keeper/testnet-adapter.ts",
+      "sha256": "9b6f4ca9a692b7887f4b67a4b6b3ca07ea34c0657ba36b358021ddbd948f8596"
+    },
+    {
+      "path": "keeper/testnet-main.ts",
+      "sha256": "da2eca97f1eeb5fab9ce85724193fdc2c34b26df09c31b6f9a47673f7a065164"
+    },
+    {
+      "path": "keeper/service.ts",
+      "sha256": "7f0c803bd6b69766f9f4825eec2b13b2d1bd7c3d053898112743c4140b8b1e87"
+    },
+    {
+      "path": "scripts/near-operator.mjs",
+      "sha256": "d38458a3e3a736d554d281062b0723b068d4d592d33ab59f636e041823ac5b23"
+    },
+    {
+      "path": "scripts/qa-testnet-workers.mjs",
+      "sha256": "e2b8038f83518be4cbb8ab99e0c457523b55b09c1d2f640cd051ba4d9888ace0"
+    },
+    {
+      "path": "tests/server/testnet-worker.test.mjs",
+      "sha256": "56c821aea1655cf2c0fde10545638cbd134a7b84fedea56f879dd8c73ebcbb7b"
+    }
+  ],
+  "focused_tests": {
+    "signed_worker": 9,
+    "existing_keeper_http": 4,
+    "status": "passed"
+  },
+  "artifact": {
+    "primary_wasm_sha256": "6b35856cc8d713b123a5431b525a6f3dc6393110d3f11a46e50f64cf9a07cad3",
+    "code_hash": "8DVxZxb2nD3zST8tky1jPTbWvLJfs8vfLXzrB7AMgSNN"
+  },
+  "actual_flow": "docs/RELEASE_WORKERS-final-evidence.json",
+  "private_keys_in_public_evidence": false
+}

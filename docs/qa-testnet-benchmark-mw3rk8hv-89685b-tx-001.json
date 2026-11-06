@@ -1,0 +1,123 @@
+{
+  "name": "Dedicated gas faucet provisioning",
+  "network": "testnet",
+  "at": "2026-11-05T16:32:24.233Z",
+  "expected_failure": false,
+  "outcome": {
+    "final_execution_status": "FINAL",
+    "receipts_outcome": [
+      {
+        "block_hash": "EQBdcaHsiDqksTnth7yryfZGAuSN7AMUfPLes3sAYHSp",
+        "id": "CwUvGZuFC7y5QLQfH9c7Rv8f5Vd3UFoxGHgzZkp5RMrj",
+        "outcome": {
+          "executor_id": "qab-mw3qhtsg-35fb41.testnet",
+          "gas_burnt": 223182562500,
+          "logs": [],
+          "metadata": {
+            "contracts": [
+              null
+            ],
+            "gas_profile": [],
+            "version": 4
+          },
+          "receipt_ids": [
+            "He1hZuhF9X65ZQAp7aEZxE9bEMHMMtfGKiPrQQ8bAHMx"
+          ],
+          "status": {
+            "SuccessValue": ""
+          },
+          "tokens_burnt": "22318256250000000000"
+        },
+        "proof": [
+          {
+            "direction": "Right",
+            "hash": "AN9aHfheQG6HuTcZS2CTi24WAJJhA96XqfWufQDiPQLb"
+          }
+        ]
+      },
+      {
+        "block_hash": "5yy9i182S4vDei27NTsrMJNPL8o1WRWU9L7iHGGmbAqE",
+        "id": "He1hZuhF9X65ZQAp7aEZxE9bEMHMMtfGKiPrQQ8bAHMx",
+        "outcome": {
+          "executor_id": "qag-mw3qhtsg-35fb41.testnet",
+          "gas_burnt": 223182562500,
+          "logs": [],
+          "metadata": {
+            "contracts": [
+              null
+            ],
+            "gas_profile": [],
+            "version": 4
+          },
+          "receipt_ids": [],
+          "status": {
+            "SuccessValue": ""
+          },
+          "tokens_burnt": "0"
+        },
+        "proof": []
+      }
+    ],
+    "status": {
+      "SuccessValue": ""
+    },
+    "transaction": {
+      "actions": [
+        {
+          "Transfer": {
+            "deposit": "2000000000000000000000000"
+          }
+        }
+      ],
+      "hash": "JAuKDhageqkNUssuo9JT5r8rgegYy4tm4cjjFwNQggCM",
+      "nonce": 276363050000002,
+      "priority_fee": 0,
+      "public_key": "ed25519:yAZX3LQuwHT5Tohs6DwLMBHCJ7nJmPJCGbZbT1UgeAs",
+      "receiver_id": "qab-mw3qhtsg-35fb41.testnet",
+      "signature": "ed25519:NGXnvGhqquon8DL5yTutZX2ta3kQEXz7tXDU4xR4vTXkumKowepG7G4vmya1rEfpFYYAUm14AtG6i7mrMBJeLHh",
+      "signer_id": "qag-mw3qhtsg-35fb41.testnet"
+    },
+    "transaction_outcome": {
+      "block_hash": "AnS1WE4eM2HXM1vSvETi3ChbMwMmTrvfXfDW82d3dUKs",
+      "id": "JAuKDhageqkNUssuo9JT5r8rgegYy4tm4cjjFwNQggCM",
+      "outcome": {
+        "executor_id": "qag-mw3qhtsg-35fb41.testnet",
+        "gas_burnt": 223182562500,
+        "logs": [],
+        "metadata": {
+          "gas_profile": null,
+          "version": 1
+        },
+        "receipt_ids": [
+          "CwUvGZuFC7y5QLQfH9c7Rv8f5Vd3UFoxGHgzZkp5RMrj"
+        ],
+        "status": {
+          "SuccessReceiptId": "CwUvGZuFC7y5QLQfH9c7Rv8f5Vd3UFoxGHgzZkp5RMrj"
+        },
+        "tokens_burnt": "22318256250000000000"
+      },
+      "proof": []
+    }
+  },
+  "total_receipt_gas_burnt": "446365125000",
+  "receipts": [
+    {
+      "receipt_id": "CwUvGZuFC7y5QLQfH9c7Rv8f5Vd3UFoxGHgzZkp5RMrj",
+      "executor_id": "qab-mw3qhtsg-35fb41.testnet",
+      "gas_burnt": 223182562500,
+      "status": {
+        "SuccessValue": ""
+      },
+      "callback": null
+    },
+    {
+      "receipt_id": "He1hZuhF9X65ZQAp7aEZxE9bEMHMMtfGKiPrQQ8bAHMx",
+      "executor_id": "qag-mw3qhtsg-35fb41.testnet",
+      "gas_burnt": 223182562500,
+      "status": {
+        "SuccessValue": ""
+      },
+      "callback": null
+    }
+  ]
+}

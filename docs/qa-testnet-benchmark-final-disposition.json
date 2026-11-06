@@ -1,0 +1,31 @@
+{
+  "status": "unverified-user-accepted-scope-exclusion",
+  "user_decision": "Leave the final capacity test unverified.",
+  "final_artifact_sha256": "6b35856cc8d713b123a5431b525a6f3dc6393110d3f11a46e50f64cf9a07cad3",
+  "final_artifact_callback_gas": "50000000000000",
+  "final_artifact_256_actual_commitments": "unverified; not passed",
+  "verified_baseline": {
+    "run": "mw3qhtsg-35fb41",
+    "callback_gas": "25000000000000",
+    "actual_commitments": 256,
+    "result": "Contract cases passed after documented harness continuation; inadequate callback headroom led to revised artifact. Does not verify revised artifact at capacity.",
+    "evidence": "qa-testnet-benchmark-mw3qhtsg-35fb41-result.json"
+  },
+  "verified_final_artifact_partial": {
+    "run": "mw3rk8hv-89685b",
+    "actual_commitments": 16,
+    "result": "Real partial setup; full actual native failed-refund restoration, original fixed-beneficiary retry and principal settlement verified. Full-capacity run interrupted by RPC rate limiting.",
+    "evidence": "qa-testnet-benchmark-mw3rk8hv-89685b-cleanup-maintenance.json"
+  },
+  "approved_funding": {
+    "recipient": "qab-mw3qhtsg-35fb41.testnet",
+    "amount_testnet_near": "2",
+    "transaction_hash": "39N7QB5sq4NN3X3WqUmvXwPdku93SPpEPSwhagB14xuE",
+    "evidence": "RELEASE_WORKERS-spare-gas-transfer.json",
+    "disposition": "Remains dedicated-root funding unspent for proposed retest; no refund requested or performed."
+  },
+  "consolidation": "Automatic approval review rejected additional six-wallet transfers for missing exact user authorization. Command did not execute; no consolidation occurred. User subsequently stopped the retest.",
+  "further_funding_or_chain_mutations": "stopped by user decision",
+  "capacity_release_readiness": "not established for final artifact",
+  "public_evidence_preservation": "All original failures, old-artifact recovery, final-artifact partial cleanup and funding receipts retained separately."
+}

@@ -1,0 +1,2 @@
+import {readFileSync} from 'node:fs';import {testnetOnly,view,state,keys} from './testnet-common.mjs';
+await testnetOnly();const c=JSON.parse(readFileSync('docs/testnet-config.json','utf8'));const [asset,account,access]=await Promise.all([view(c.asset_id,'get_asset'),state(c.asset_id),keys(c.asset_id)]);console.log(JSON.stringify({network:'testnet',contract_id:c.asset_id,observed_at:new Date().toISOString(),code_hash:account.code_hash,code_hash_matches:account.code_hash===c.code_hash,access_keys:access.keys,asset},null,2));

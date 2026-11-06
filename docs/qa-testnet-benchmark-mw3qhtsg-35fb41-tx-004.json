@@ -1,0 +1,279 @@
+{
+  "name": "Atomic keyless asset create, operations, deploy and initialize",
+  "network": "testnet",
+  "at": "2026-11-05T16:02:54.708Z",
+  "expected_failure": false,
+  "outcome": {
+    "final_execution_status": "FINAL",
+    "receipts_outcome": [
+      {
+        "block_hash": "9PxtvLnaYz82B7x9QvBo7EdBz6bo7FCBUgDH1PSH77Kv",
+        "id": "CN8BuiDQEdMdAqKR8k6syjZkenFvJ343zQdxggoHLwwb",
+        "outcome": {
+          "executor_id": "asset.qab-mw3qhtsg-35fb41.testnet",
+          "gas_burnt": 27009068106331,
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"archivepass\",\"version\":\"1.0.0\",\"event\":\"asset_created\",\"data\":[{\"owner_id\":\"qab-mw3qhtsg-35fb41.testnet\",\"manifest_sha256\":\"1ddadaef0d961b7f7a9ade20c2d6739dde25e7a119b8dabcf1a1bbcc97fd3a7f\"}]}",
+            "EVENT_JSON:{\"standard\":\"nep171\",\"version\":\"1.0.0\",\"event\":\"nft_mint\",\"data\":[{\"owner_id\":\"qab-mw3qhtsg-35fb41.testnet\",\"token_ids\":[\"archive\"]}]}"
+          ],
+          "metadata": {
+            "contracts": [
+              null,
+              null,
+              null,
+              {
+                "local": "ECKSoerzM2iUiXhX1tnmcBCF4N3Jx63aGVv997Qb3JNv"
+              }
+            ],
+            "gas_profile": [
+              {
+                "cost": "BASE",
+                "cost_category": "WASM_HOST_COST",
+                "gas_used": "3706753554"
+              },
+              {
+                "cost": "CONTRACT_LOADING_BASE",
+                "cost_category": "WASM_HOST_COST",
+                "gas_used": "35445963"
+              },
+              {
+                "cost": "CONTRACT_LOADING_BYTES",
+                "cost_category": "WASM_HOST_COST",
+                "gas_used": "290025883045"
+              },
+              {
+                "cost": "LOG_BASE",
+                "cost_category": "WASM_HOST_COST",
+                "gas_used": "7086626100"
+              },
+              {
+                "cost": "LOG_BYTE",
+                "cost_category": "WASM_HOST_COST",
+                "gas_used": "4764763551"
+              },
+              {
+                "cost": "READ_MEMORY_BASE",
+                "cost_category": "WASM_HOST_COST",
+                "gas_used": "15659179200"
+              },
+              {
+                "cost": "READ_MEMORY_BYTE",
+                "cost_category": "WASM_HOST_COST",
+                "gas_used": "23458025943"
+              },
+              {
+                "cost": "READ_REGISTER_BASE",
+                "cost_category": "WASM_HOST_COST",
+                "gas_used": "5034330372"
+              },
+              {
+                "cost": "READ_REGISTER_BYTE",
+                "cost_category": "WASM_HOST_COST",
+                "gas_used": "520013112"
+              },
+              {
+                "cost": "SHA256_BASE",
+                "cost_category": "WASM_HOST_COST",
+                "gas_used": "4540970250"
+              },
+              {
+                "cost": "SHA256_BYTE",
+                "cost_category": "WASM_HOST_COST",
+                "gas_used": "4895822253"
+              },
+              {
+                "cost": "STORAGE_HAS_KEY_BASE",
+                "cost_category": "WASM_HOST_COST",
+                "gas_used": "54039896625"
+              },
+              {
+                "cost": "STORAGE_HAS_KEY_BYTE",
+                "cost_category": "WASM_HOST_COST",
+                "gas_used": "153954225"
+              },
+              {
+                "cost": "STORAGE_WRITE_BASE",
+                "cost_category": "WASM_HOST_COST",
+                "gas_used": "64196736000"
+              },
+              {
+                "cost": "STORAGE_WRITE_KEY_BYTE",
+                "cost_category": "WASM_HOST_COST",
+                "gas_used": "352414335"
+              },
+              {
+                "cost": "STORAGE_WRITE_VALUE_BYTE",
+                "cost_category": "WASM_HOST_COST",
+                "gas_used": "173610762783"
+              },
+              {
+                "cost": "TOUCHING_TRIE_NODE",
+                "cost_category": "WASM_HOST_COST",
+                "gas_used": "36480000000"
+              },
+              {
+                "cost": "UTF8_DECODING_BASE",
+                "cost_category": "WASM_HOST_COST",
+                "gas_used": "6223558122"
+              },
+              {
+                "cost": "UTF8_DECODING_BYTE",
+                "cost_category": "WASM_HOST_COST",
+                "gas_used": "105260552919"
+              },
+              {
+                "cost": "WASM_INSTRUCTION",
+                "cost_category": "WASM_HOST_COST",
+                "gas_used": "582358215384"
+              },
+              {
+                "cost": "WRITE_MEMORY_BASE",
+                "cost_category": "WASM_HOST_COST",
+                "gas_used": "14018974305"
+              },
+              {
+                "cost": "WRITE_MEMORY_BYTE",
+                "cost_category": "WASM_HOST_COST",
+                "gas_used": "14501362128"
+              },
+              {
+                "cost": "WRITE_REGISTER_BASE",
+                "cost_category": "WASM_HOST_COST",
+                "gas_used": "5731044972"
+              },
+              {
+                "cost": "WRITE_REGISTER_BYTE",
+                "cost_category": "WASM_HOST_COST",
+                "gas_used": "121650048"
+              }
+            ],
+            "version": 4
+          },
+          "receipt_ids": [
+            "E1UnuEav27HdPFChhw56QwGvnqbG7dS8z1i3YTx9LfGF"
+          ],
+          "status": {
+            "SuccessValue": ""
+          },
+          "tokens_burnt": "8980906810633100000000"
+        },
+        "proof": []
+      },
+      {
+        "block_hash": "Bzb8PN8he4G3jqw2aDKGgg7nSftKDuDgYZBrrBUong4x",
+        "id": "E1UnuEav27HdPFChhw56QwGvnqbG7dS8z1i3YTx9LfGF",
+        "outcome": {
+          "executor_id": "qab-mw3qhtsg-35fb41.testnet",
+          "gas_burnt": 223182562500,
+          "logs": [],
+          "metadata": {
+            "contracts": [
+              null
+            ],
+            "gas_profile": [],
+            "version": 4
+          },
+          "receipt_ids": [],
+          "status": {
+            "SuccessValue": ""
+          },
+          "tokens_burnt": "0"
+        },
+        "proof": [
+          {
+            "direction": "Left",
+            "hash": "9v1aLDsN6SRC8zRQT6rxNpgKAkJiRgWhniUznJMXfvU1"
+          }
+        ]
+      }
+    ],
+    "status": {
+      "SuccessValue": ""
+    },
+    "transaction": {
+      "actions": [
+        "CreateAccount",
+        {
+          "Transfer": {
+            "deposit": "6500000000000000000000000"
+          }
+        },
+        {
+          "DeployContract": {
+            "code": "xA4stouBAcHfB0IvgHR9IptM2FcxoWR06J9mMccfgas="
+          }
+        },
+        {
+          "FunctionCall": {
+            "args": "eyJvd25lcl9pZCI6InFhYi1tdzNxaHRzZy0zNWZiNDEudGVzdG5ldCIsIm1hbmlmZXN0Ijp7InRpdGxlIjoiQXJjaGl2ZVBhc3MgdmVjdG9yIDE2Nzc3MjE2IiwiZmlsZW5hbWUiOiJ2ZWN0b3ItMTY3NzcyMTYuYmluIiwibWVkaWFfdHlwZSI6ImFwcGxpY2F0aW9uL29jdGV0LXN0cmVhbSIsImxpY2Vuc2Vfbm90ZSI6IkNDMC0xLjAiLCJzY2hlbWEiOiJhcmNoaXZlcGFzcy1tYW5pZmVzdC12MSIsInZlcnNpb25faWQiOiJ2MSIsInNpemVfYnl0ZXMiOiIxNjc3NzIxNiIsImNodW5rX3NpemUiOjEwMjQsImNodW5rX2NvdW50IjoxNjM4NCwiZmlsZV9zaGEyNTYiOiIyODc1MDdmNDAzMTc2ZjFmNWIyMmI5YTRkOWNiNDlmN2Q3Zjg4YWMxOWU0MDZiNWFlODdjZTEwOTU2NDg0NmJkIiwibWVya2xlX3Jvb3QiOiI5ODU5ZDIxNmJjNDY1OWQ2ODc3Y2ZmZmI5MjYzYjNjOTA3MmRiODNjYzNjYTI3M2JmNGMzOWEzMjk0MDUyMTIyIiwibWFuaWZlc3Rfc2hhMjU2IjoiMWRkYWRhZWYwZDk2MWI3ZjdhOWFkZTIwYzJkNjczOWRkZTI1ZTdhMTE5YjhkYWJjZjFhMWJiY2M5N2ZkM2E3ZiJ9LCJwb2xpY3kiOnsic2VydmljZV9vcmlnaW4iOiIxNzkzODk0NjU3NTczOTM4OTM2IiwicGVyaW9kX2R1cmF0aW9uIjoiMzAwMDAwMDAwMDAiLCJtYXhfcHJvdmlkZXJfcmF0ZSI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJtYXhfc2xvdF9zcGVuZCI6IjgwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJmdW5kX2V4cGlyeSI6IjE3OTM4OTU2NDc1NzM5Mzg5MzYiLCJyZWZ1bmRfYmVuZWZpY2lhcnkiOiJyZWZ1bmR4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHgucWFiLW13M3FodHNnLTM1ZmI0MS50ZXN0bmV0IiwiZWxpZ2libGVfcHJvdmlkZXJzIjpbInAweHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eC5xYWItbXczcWh0c2ctMzVmYjQxLnRlc3RuZXQiLCJwMXh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHgucWFiLW13M3FodHNnLTM1ZmI0MS50ZXN0bmV0IiwicDJ4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4LnFhYi1tdzNxaHRzZy0zNWZiNDEudGVzdG5ldCIsInAzeHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eC5xYWItbXczcWh0c2ctMzVmYjQxLnRlc3RuZXQiLCJwNHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHgucWFiLW13M3FodHNnLTM1ZmI0MS50ZXN0bmV0IiwicDV4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4LnFhYi1tdzNxaHRzZy0zNWZiNDEudGVzdG5ldCIsInA2eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eC5xYWItbXczcWh0c2ctMzVmYjQxLnRlc3RuZXQiLCJwN3h4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHgucWFiLW13M3FodHNnLTM1ZmI0MS50ZXN0bmV0Il0sIm1heF9ub250ZXJtaW5hbF9jb21taXRtZW50cyI6MTYsIm1heF90b3RhbF9jb21taXRtZW50cyI6MjU2LCJtYXhfcGVuZGluZ19wYXlvdXRzIjo4fSwicHJvdmlkZXJzIjpbeyJwcm92aWRlcl9pZCI6InAweHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eC5xYWItbXczcWh0c2ctMzVmYjQxLnRlc3RuZXQiLCJsYWJlbCI6IkJlbmNobWFyayBwcm92aWRlciAwIHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4IiwiZW5kcG9pbnQiOiJodHRwOi8vMTI3LjAuMC4xOjg5OTEvYmVuY2htYXJrLWFkdmlzb3J5L3h4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4IiwiZW5hYmxlZCI6dHJ1ZX0seyJwcm92aWRlcl9pZCI6InAxeHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eC5xYWItbXczcWh0c2ctMzVmYjQxLnRlc3RuZXQiLCJsYWJlbCI6IkJlbmNobWFyayBwcm92aWRlciAxIHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4IiwiZW5kcG9pbnQiOiJodHRwOi8vMTI3LjAuMC4xOjg5OTIvYmVuY2htYXJrLWFkdmlzb3J5L3h4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4IiwiZW5hYmxlZCI6dHJ1ZX0seyJwcm92aWRlcl9pZCI6InAyeHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eC5xYWItbXczcWh0c2ctMzVmYjQxLnRlc3RuZXQiLCJsYWJlbCI6IkJlbmNobWFyayBwcm92aWRlciAyIHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4IiwiZW5kcG9pbnQiOiJodHRwOi8vMTI3LjAuMC4xOjg5OTEvYmVuY2htYXJrLWFkdmlzb3J5L3h4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4IiwiZW5hYmxlZCI6dHJ1ZX0seyJwcm92aWRlcl9pZCI6InAzeHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eC5xYWItbXczcWh0c2ctMzVmYjQxLnRlc3RuZXQiLCJsYWJlbCI6IkJlbmNobWFyayBwcm92aWRlciAzIHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4IiwiZW5kcG9pbnQiOiJodHRwOi8vMTI3LjAuMC4xOjg5OTIvYmVuY2htYXJrLWFkdmlzb3J5L3h4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4IiwiZW5hYmxlZCI6dHJ1ZX0seyJwcm92aWRlcl9pZCI6InA0eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eC5xYWItbXczcWh0c2ctMzVmYjQxLnRlc3RuZXQiLCJsYWJlbCI6IkJlbmNobWFyayBwcm92aWRlciA0IHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4IiwiZW5kcG9pbnQiOiJodHRwOi8vMTI3LjAuMC4xOjg5OTEvYmVuY2htYXJrLWFkdmlzb3J5L3h4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4IiwiZW5hYmxlZCI6dHJ1ZX0seyJwcm92aWRlcl9pZCI6InA1eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eC5xYWItbXczcWh0c2ctMzVmYjQxLnRlc3RuZXQiLCJsYWJlbCI6IkJlbmNobWFyayBwcm92aWRlciA1IHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4IiwiZW5kcG9pbnQiOiJodHRwOi8vMTI3LjAuMC4xOjg5OTIvYmVuY2htYXJrLWFkdmlzb3J5L3h4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4IiwiZW5hYmxlZCI6dHJ1ZX0seyJwcm92aWRlcl9pZCI6InA2eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eC5xYWItbXczcWh0c2ctMzVmYjQxLnRlc3RuZXQiLCJsYWJlbCI6IkJlbmNobWFyayBwcm92aWRlciA2IHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4IiwiZW5kcG9pbnQiOiJodHRwOi8vMTI3LjAuMC4xOjg5OTEvYmVuY2htYXJrLWFkdmlzb3J5L3h4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4IiwiZW5hYmxlZCI6dHJ1ZX0seyJwcm92aWRlcl9pZCI6InA3eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eC5xYWItbXczcWh0c2ctMzVmYjQxLnRlc3RuZXQiLCJsYWJlbCI6IkJlbmNobWFyayBwcm92aWRlciA3IHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4IiwiZW5kcG9pbnQiOiJodHRwOi8vMTI3LjAuMC4xOjg5OTIvYmVuY2htYXJrLWFkdmlzb3J5L3h4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4IiwiZW5hYmxlZCI6dHJ1ZX1dLCJuZXR3b3JrX2RvbWFpbiI6Im5lYXItdGVzdG5ldCIsInByb3RvY29sX3ZlcnNpb24iOiJhcmNoaXZlcGFzcy12MSJ9",
+            "deposit": "0",
+            "gas": 150000000000000,
+            "method_name": "new"
+          }
+        }
+      ],
+      "hash": "CCtC7xGW5iMb8U4Ded9iUgQnUJ6SsEnEy1VjK34gkBw7",
+      "nonce": 276363042000003,
+      "priority_fee": 0,
+      "public_key": "ed25519:76RRFtxrFPyspm2tPJFPnAmyDJmcph3SMEgFhXUKuJZn",
+      "receiver_id": "asset.qab-mw3qhtsg-35fb41.testnet",
+      "signature": "ed25519:2q1gpitPU8NtewmDRAVideiNKe3UfQZe2bYsb7wXv4oLzqfTcPvtFTWAfqx2n3ZG1uFSjRz3vQeQHNBns9W6D9WD",
+      "signer_id": "qab-mw3qhtsg-35fb41.testnet"
+    },
+    "transaction_outcome": {
+      "block_hash": "CsJ866Rgdvp38LXvzQtiA7p838xNDLBywVttxaaWzChd",
+      "id": "CCtC7xGW5iMb8U4Ded9iUgQnUJ6SsEnEy1VjK34gkBw7",
+      "outcome": {
+        "executor_id": "qab-mw3qhtsg-35fb41.testnet",
+        "gas_burnt": 14053981567570,
+        "logs": [],
+        "metadata": {
+          "gas_profile": null,
+          "version": 1
+        },
+        "receipt_ids": [
+          "CN8BuiDQEdMdAqKR8k6syjZkenFvJ343zQdxggoHLwwb"
+        ],
+        "status": {
+          "SuccessReceiptId": "CN8BuiDQEdMdAqKR8k6syjZkenFvJ343zQdxggoHLwwb"
+        },
+        "tokens_burnt": "1405398156757000000000"
+      },
+      "proof": [
+        {
+          "direction": "Left",
+          "hash": "7GJQsgpp1X3KpQZxGi2n53X58oRpT5YfY38kYJZXVK91"
+        },
+        {
+          "direction": "Right",
+          "hash": "BPiFW3yi8gbhCJB2x5rLhczW5v3G6qcRL6fs2cZkd2PA"
+        },
+        {
+          "direction": "Right",
+          "hash": "5R7ZsVnZPGCg5UrZrh3mtr4DRZ8NDSrc2VDGktLi6gYm"
+        }
+      ]
+    }
+  },
+  "total_receipt_gas_burnt": "27232250668831",
+  "receipts": [
+    {
+      "receipt_id": "CN8BuiDQEdMdAqKR8k6syjZkenFvJ343zQdxggoHLwwb",
+      "executor_id": "asset.qab-mw3qhtsg-35fb41.testnet",
+      "gas_burnt": 27009068106331,
+      "status": {
+        "SuccessValue": ""
+      },
+      "callback": null
+    },
+    {
+      "receipt_id": "E1UnuEav27HdPFChhw56QwGvnqbG7dS8z1i3YTx9LfGF",
+      "executor_id": "qab-mw3qhtsg-35fb41.testnet",
+      "gas_burnt": 223182562500,
+      "status": {
+        "SuccessValue": ""
+      },
+      "callback": null
+    }
+  ]
+}

@@ -1,0 +1,517 @@
+{
+  "run": "mw3rk8hv-89685b",
+  "reused_dedicated_run": "mw3qhtsg-35fb41",
+  "started_at": "2026-11-05T16:32:17.156Z",
+  "network": "testnet",
+  "rpc": "https://test.rpc.fastnear.com",
+  "status": "failed",
+  "scope": "fresh keyless account; largest Merkle proof; actual bounded state; receipt gas; native failure restoration and retry",
+  "steps": [
+    {
+      "name": "Dedicated gas faucet provisioning",
+      "at": "2026-11-05T16:32:24.243Z",
+      "transaction_hash": "JAuKDhageqkNUssuo9JT5r8rgegYy4tm4cjjFwNQggCM",
+      "evidence_file": "qa-testnet-benchmark-mw3rk8hv-89685b-tx-001.json",
+      "expected_failure": false,
+      "actual_failure": false,
+      "total_receipt_gas_burnt": "446365125000",
+      "receipts": [
+        {
+          "receipt_id": "CwUvGZuFC7y5QLQfH9c7Rv8f5Vd3UFoxGHgzZkp5RMrj",
+          "executor_id": "qab-mw3qhtsg-35fb41.testnet",
+          "gas_burnt": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "callback": null
+        },
+        {
+          "receipt_id": "He1hZuhF9X65ZQAp7aEZxE9bEMHMMtfGKiPrQQ8bAHMx",
+          "executor_id": "qag-mw3qhtsg-35fb41.testnet",
+          "gas_burnt": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "callback": null
+        }
+      ]
+    },
+    {
+      "name": "Redeploy current dedicated receiver artifact with its own retained fixture key",
+      "at": "2026-11-05T16:32:28.715Z",
+      "transaction_hash": "G6XhkpH6JCn25vywXraQzYpFEMgf3HU6NKB4t5JYYyhs",
+      "evidence_file": "qa-testnet-benchmark-mw3rk8hv-89685b-tx-002.json",
+      "expected_failure": false,
+      "actual_failure": false,
+      "total_receipt_gas_burnt": "8274317888212",
+      "receipts": [
+        {
+          "receipt_id": "DJGtu7YxgkMye2jhnuASPDWsZpHeqSS1hDxDLwL1GEKA",
+          "executor_id": "receiverxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+          "gas_burnt": 8051135325712,
+          "status": {
+            "SuccessValue": ""
+          },
+          "callback": null
+        },
+        {
+          "receipt_id": "4iCkvqZbdWvarqULXURfMEtq4t82RBdHQnJi4wVoQvn7",
+          "executor_id": "receiverxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+          "gas_burnt": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "callback": null
+        }
+      ]
+    },
+    {
+      "name": "Atomic keyless asset create, operations, deploy and initialize",
+      "at": "2026-11-05T16:32:34.017Z",
+      "transaction_hash": "DpPZWQGHdUrZWmRHLYx46x5ByRej2vZsqB9Z51euppXs",
+      "evidence_file": "qa-testnet-benchmark-mw3rk8hv-89685b-tx-003.json",
+      "expected_failure": false,
+      "actual_failure": false,
+      "total_receipt_gas_burnt": "27234680171674",
+      "receipts": [
+        {
+          "receipt_id": "5y5aNz5oN3NLg5X2swGHZQZKncJupbk2HxKh9JcCUpwb",
+          "executor_id": "asset-v2-mw3rk8hv-89685b.qab-mw3qhtsg-35fb41.testnet",
+          "gas_burnt": 27011497609174,
+          "status": {
+            "SuccessValue": ""
+          },
+          "callback": null
+        },
+        {
+          "receipt_id": "4Aju1DFA9nCb7NPzcBPWhfc2kTUfKpoq2XS6ZZWr3bVn",
+          "executor_id": "qab-mw3qhtsg-35fb41.testnet",
+          "gas_burnt": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "callback": null
+        }
+      ]
+    },
+    {
+      "name": "Fund actual restricted benchmark upkeep 0.3 NEAR",
+      "at": "2026-11-05T16:32:39.085Z",
+      "transaction_hash": "13mvFLtbyDNoxMTYrG5Fk7Tbb3E62Hq7FDZAXcZUsR3V",
+      "evidence_file": "qa-testnet-benchmark-mw3rk8hv-89685b-tx-004.json",
+      "expected_failure": false,
+      "actual_failure": false,
+      "total_receipt_gas_burnt": "2481853336116",
+      "receipts": [
+        {
+          "receipt_id": "8Cki1DrLZymGjiXykdexdSy6EP9G9ZvT1h2RDgBFLBGA",
+          "executor_id": "asset-v2-mw3rk8hv-89685b.qab-mw3qhtsg-35fb41.testnet",
+          "gas_burnt": 2258670773616,
+          "status": {
+            "SuccessValue": "eyJwcmluY2lwYWxfaW4iOiIzMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGVfdXBrZWVwIjoiMzAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwIiwicmVzZXJ2ZWRfdXBrZWVwIjoiMCIsImVhcm5lZF9jcmVkaXQiOiIwIiwicmVmdW5kX2NyZWRpdCI6IjAiLCJwZW5kaW5nX3BheW1lbnRzIjoiMCIsInByaW5jaXBhbF9wYWlkIjoiMCIsImNvbnNlcnZhdGlvbl9yZXNpZHVhbCI6IjAiLCJvcGVyYXRpb25zX2Z1bmRlZCI6IjY1MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJzZWN1cml0eV9kZXBvc2l0cyI6IjAifQ=="
+          },
+          "callback": null
+        },
+        {
+          "receipt_id": "6jmuiRha4NnxDRaJn7VcGtsNMgFZufEkskssR5eGDk9m",
+          "executor_id": "qab-mw3qhtsg-35fb41.testnet",
+          "gas_burnt": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "callback": null
+        }
+      ]
+    },
+    {
+      "name": "Propose eight immutable commitments slot 0",
+      "at": "2026-11-05T16:32:43.396Z",
+      "transaction_hash": "CYjvCM8jrpy78kScyG8PdTWwFmzLJG2XNVkbciwNKUZg",
+      "evidence_file": "qa-testnet-benchmark-mw3rk8hv-89685b-tx-005.json",
+      "expected_failure": false,
+      "actual_failure": false,
+      "total_receipt_gas_burnt": "22716864894676",
+      "receipts": [
+        {
+          "receipt_id": "FovDJbDxmyV6cBLMUneuCvVP78dtNSr7ubYbfZQNn5SU",
+          "executor_id": "asset-v2-mw3rk8hv-89685b.qab-mw3qhtsg-35fb41.testnet",
+          "gas_burnt": 22493682332176,
+          "status": {
+            "SuccessValue": "eyJjb21taXRtZW50X2lkIjoiNyIsInByb3ZpZGVyX2lkIjoicDd4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4LnFhYi1tdzNxaHRzZy0zNWZiNDEudGVzdG5ldCIsInBheWVlIjoicDd4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4LnFhYi1tdzNxaHRzZy0zNWZiNDEudGVzdG5ldCIsInNsb3QiOiIwIiwic3RhcnQiOiIxNzkzODk2NDM2MjYzMTY0MDY1IiwiZW5kIjoiMTc5Mzg5NjQ2NjI2MzE2NDA2NSIsInJhdGUiOiIxMDAwMDAwMDAwMDAwMDAwMDAwMDAwIiwidmVyc2lvbl9pZCI6InYxIiwibWFuaWZlc3Rfc2hhMjU2IjoiMWRkYWRhZWYwZDk2MWI3ZjdhOWFkZTIwYzJkNjczOWRkZTI1ZTdhMTE5YjhkYWJjZjFhMWJiY2M5N2ZkM2E3ZiIsIm1lcmtsZV9yb290IjoiOTg1OWQyMTZiYzQ2NTlkNjg3N2NmZmZiOTI2M2IzYzkwNzJkYjgzY2MzY2EyNzNiZjRjMzlhMzI5NDA1MjEyMiIsImVuZHBvaW50IjoiaHR0cDovLzEyNy4wLjAuMTo4OTkyL2JlbmNobWFyay1hZHZpc29yeS94eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eCIsInByb3Bvc2VkX293bmVyX2Vwb2NoIjoiMCIsInN0YXRlIjoiUHJvcG9zZWQiLCJjaGFsbGVuZ2UiOm51bGwsImFjY2VwdGVkX2F0IjpudWxsLCJzZXR0bGVkX2F0IjpudWxsLCJtaXNzZWRfcmVhc29uIjpudWxsfQ=="
+          },
+          "callback": null
+        },
+        {
+          "receipt_id": "CWEgpPPL8h3YtjdRD1QTNEUbLG82ggFoibXRsUNNCxar",
+          "executor_id": "qab-mw3qhtsg-35fb41.testnet",
+          "gas_burnt": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "callback": null
+        }
+      ]
+    },
+    {
+      "name": "Propose eight immutable commitments slot 1",
+      "at": "2026-11-05T16:32:47.524Z",
+      "transaction_hash": "9aDi9JxJnRHbv9z1nLUACmzgBmDQBYkCRvHaYZ8s8hqq",
+      "evidence_file": "qa-testnet-benchmark-mw3rk8hv-89685b-tx-006.json",
+      "expected_failure": false,
+      "actual_failure": false,
+      "total_receipt_gas_burnt": "27413097110248",
+      "receipts": [
+        {
+          "receipt_id": "Eni9soRfVvkZ6sDUecnotbeZrpdi5HdNVTqzLt9fpRnT",
+          "executor_id": "asset-v2-mw3rk8hv-89685b.qab-mw3qhtsg-35fb41.testnet",
+          "gas_burnt": 27189914547748,
+          "status": {
+            "SuccessValue": "eyJjb21taXRtZW50X2lkIjoiMTUiLCJwcm92aWRlcl9pZCI6InA3eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eC5xYWItbXczcWh0c2ctMzVmYjQxLnRlc3RuZXQiLCJwYXllZSI6InA3eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eC5xYWItbXczcWh0c2ctMzVmYjQxLnRlc3RuZXQiLCJzbG90IjoiMSIsInN0YXJ0IjoiMTc5Mzg5NjQ2NjI2MzE2NDA2NSIsImVuZCI6IjE3OTM4OTY0OTYyNjMxNjQwNjUiLCJyYXRlIjoiMTAwMDAwMDAwMDAwMDAwMDAwMDAwMCIsInZlcnNpb25faWQiOiJ2MSIsIm1hbmlmZXN0X3NoYTI1NiI6IjFkZGFkYWVmMGQ5NjFiN2Y3YTlhZGUyMGMyZDY3MzlkZGUyNWU3YTExOWI4ZGFiY2YxYTFiYmNjOTdmZDNhN2YiLCJtZXJrbGVfcm9vdCI6Ijk4NTlkMjE2YmM0NjU5ZDY4NzdjZmZmYjkyNjNiM2M5MDcyZGI4M2NjM2NhMjczYmY0YzM5YTMyOTQwNTIxMjIiLCJlbmRwb2ludCI6Imh0dHA6Ly8xMjcuMC4wLjE6ODk5Mi9iZW5jaG1hcmstYWR2aXNvcnkveHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHgiLCJwcm9wb3NlZF9vd25lcl9lcG9jaCI6IjAiLCJzdGF0ZSI6IlByb3Bvc2VkIiwiY2hhbGxlbmdlIjpudWxsLCJhY2NlcHRlZF9hdCI6bnVsbCwic2V0dGxlZF9hdCI6bnVsbCwibWlzc2VkX3JlYXNvbiI6bnVsbH0="
+          },
+          "callback": null
+        },
+        {
+          "receipt_id": "EMNa9Z7KHG5LMkGZZuPaAUtisWzW4x6zDtUMAiBe7g8D",
+          "executor_id": "qab-mw3qhtsg-35fb41.testnet",
+          "gas_burnt": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "callback": null
+        }
+      ]
+    },
+    {
+      "name": "Seventeenth active commitment rejected",
+      "at": "2026-11-05T16:32:52.118Z",
+      "transaction_hash": "4Pf4XpQ7DicXv8XqeJXvaC5PnqcYbgAPtvMwC7RDgNq9",
+      "evidence_file": "qa-testnet-benchmark-mw3rk8hv-89685b-tx-007.json",
+      "expected_failure": true,
+      "actual_failure": true,
+      "total_receipt_gas_burnt": "2318374572625",
+      "receipts": [
+        {
+          "receipt_id": "D2Yc9Xe8LodH1RppXxJp1e6Kp6mgFK9UmMNeDtXY7FeX",
+          "executor_id": "asset-v2-mw3rk8hv-89685b.qab-mw3qhtsg-35fb41.testnet",
+          "gas_burnt": 1872009447625,
+          "status": {
+            "Failure": {
+              "ActionError": {
+                "index": 0,
+                "kind": {
+                  "FunctionCallError": {
+                    "ExecutionError": "Smart contract panicked: CAPACITY_REACHED"
+                  }
+                }
+              }
+            }
+          },
+          "callback": null
+        },
+        {
+          "receipt_id": "8hWMjq9ZB8KSg39bhbfn4h9EHywfqbKnTrFo7PAyRiQk",
+          "executor_id": "qab-mw3qhtsg-35fb41.testnet",
+          "gas_burnt": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "callback": null
+        },
+        {
+          "receipt_id": "2UMt51SPZ79qBPo5KurX1FZHNMND6sYybUaKFgjczv3F",
+          "executor_id": "qab-mw3qhtsg-35fb41.testnet",
+          "gas_burnt": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "callback": null
+        }
+      ]
+    }
+  ],
+  "limits": {
+    "max_file_bytes": 16777216,
+    "merkle_depth": 14,
+    "target_lifetime_commitments": 256,
+    "max_nonterminal": 16,
+    "period_seconds": 30,
+    "callback_allocated_gas": "50000000000000"
+  },
+  "native_workspace": {
+    "tests_passed": 21,
+    "command": "node scripts/contract.mjs test",
+    "count_source": "Parent supplied actual final native-run result"
+  },
+  "keepers": {
+    "ports": [
+      8991,
+      8992
+    ],
+    "separate_processes": true,
+    "independent_infrastructure": false,
+    "description": "Isolated HTTP fixture processes with separately copied/recomputed actual files, not automatic product testnet schedulers"
+  },
+  "artifacts": {
+    "primary": {
+      "bytes": 266288,
+      "sha256": "6b35856cc8d713b123a5431b525a6f3dc6393110d3f11a46e50f64cf9a07cad3"
+    },
+    "receiver": {
+      "bytes": 120148,
+      "sha256": "dd59e3139587368fe4bd800402530e9c9a8bfccacf08da52313a17ab88b2dd79"
+    }
+  },
+  "manifest": {
+    "title": "ArchivePass vector 16777216",
+    "filename": "vector-16777216.bin",
+    "media_type": "application/octet-stream",
+    "license_note": "CC0-1.0",
+    "schema": "archivepass-manifest-v1",
+    "version_id": "v1",
+    "size_bytes": "16777216",
+    "chunk_size": 1024,
+    "chunk_count": 16384,
+    "file_sha256": "287507f403176f1f5b22b9a4d9cb49f7d7f88ac19e406b5ae87ce109564846bd",
+    "merkle_root": "9859d216bc4659d6877cfffb9263b3c9072db83cc3ca273bf4c39a3294052122",
+    "manifest_sha256": "1ddadaef0d961b7f7a9ade20c2d6739dde25e7a119b8dabcf1a1bbcc97fd3a7f"
+  },
+  "binding": {
+    "contract_id": "asset-v2-mw3rk8hv-89685b.qab-mw3qhtsg-35fb41.testnet",
+    "owner_id": "qab-mw3qhtsg-35fb41.testnet",
+    "provider_id": "p0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+    "receiver_id": "receiverxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+    "refund_id": "refund89685bxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+    "policy": {
+      "service_origin": "1793896436263164065",
+      "period_duration": "30000000000",
+      "max_provider_rate": "1000000000000000000000",
+      "max_slot_spend": "8000000000000000000000",
+      "fund_expiry": "1793897426263164065",
+      "refund_beneficiary": "refund89685bxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+      "eligible_providers": [
+        "p0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "p1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "p2xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "p3xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "p4xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "p5xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "p6xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "p7xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet"
+      ],
+      "max_nonterminal_commitments": 16,
+      "max_total_commitments": 256,
+      "max_pending_payouts": 8
+    },
+    "endpoint_note": "256-byte advisory stress strings; actual fixture HTTP routes are /archive/*, not these metadata paths"
+  },
+  "actual_lifetime_commitments": 16,
+  "snapshots": [
+    {
+      "label": "16-active initial state",
+      "at": "2026-11-05T16:32:52.667Z",
+      "asset": {
+        "network_domain": "near-testnet",
+        "contract_id": "asset-v2-mw3rk8hv-89685b.qab-mw3qhtsg-35fb41.testnet",
+        "token_id": "archive",
+        "protocol_version": "archivepass-v1",
+        "manifest": {
+          "schema": "archivepass-manifest-v1",
+          "version_id": "v1",
+          "title": "ArchivePass vector 16777216",
+          "filename": "vector-16777216.bin",
+          "media_type": "application/octet-stream",
+          "license_note": "CC0-1.0",
+          "size_bytes": "16777216",
+          "chunk_size": 1024,
+          "chunk_count": 16384,
+          "file_sha256": "287507f403176f1f5b22b9a4d9cb49f7d7f88ac19e406b5ae87ce109564846bd",
+          "merkle_root": "9859d216bc4659d6877cfffb9263b3c9072db83cc3ca273bf4c39a3294052122",
+          "manifest_sha256": "1ddadaef0d961b7f7a9ade20c2d6739dde25e7a119b8dabcf1a1bbcc97fd3a7f"
+        },
+        "policy": {
+          "service_origin": "1793896436263164065",
+          "period_duration": "30000000000",
+          "max_provider_rate": "1000000000000000000000",
+          "max_slot_spend": "8000000000000000000000",
+          "fund_expiry": "1793897426263164065",
+          "refund_beneficiary": "refund89685bxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+          "eligible_providers": [
+            "p0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+            "p1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+            "p2xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+            "p3xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+            "p4xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+            "p5xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+            "p6xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+            "p7xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet"
+          ],
+          "max_nonterminal_commitments": 16,
+          "max_total_commitments": 256,
+          "max_pending_payouts": 8
+        },
+        "owner_id": "qab-mw3qhtsg-35fb41.testnet",
+        "owner_epoch": "0",
+        "transfer_call_pending": null,
+        "reserve_expired": false,
+        "providers": [
+          {
+            "provider_id": "p0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+            "label": "Benchmark provider 0 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "endpoint": "http://127.0.0.1:8991/benchmark-advisory/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "enabled": true
+          },
+          {
+            "provider_id": "p1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+            "label": "Benchmark provider 1 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "endpoint": "http://127.0.0.1:8992/benchmark-advisory/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "enabled": true
+          },
+          {
+            "provider_id": "p2xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+            "label": "Benchmark provider 2 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "endpoint": "http://127.0.0.1:8991/benchmark-advisory/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "enabled": true
+          },
+          {
+            "provider_id": "p3xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+            "label": "Benchmark provider 3 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "endpoint": "http://127.0.0.1:8992/benchmark-advisory/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "enabled": true
+          },
+          {
+            "provider_id": "p4xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+            "label": "Benchmark provider 4 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "endpoint": "http://127.0.0.1:8991/benchmark-advisory/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "enabled": true
+          },
+          {
+            "provider_id": "p5xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+            "label": "Benchmark provider 5 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "endpoint": "http://127.0.0.1:8992/benchmark-advisory/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "enabled": true
+          },
+          {
+            "provider_id": "p6xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+            "label": "Benchmark provider 6 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "endpoint": "http://127.0.0.1:8991/benchmark-advisory/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "enabled": true
+          },
+          {
+            "provider_id": "p7xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+            "label": "Benchmark provider 7 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "endpoint": "http://127.0.0.1:8992/benchmark-advisory/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "enabled": true
+          }
+        ],
+        "ledger": {
+          "principal_in": "300000000000000000000000",
+          "available_upkeep": "284000000000000000000000",
+          "reserved_upkeep": "16000000000000000000000",
+          "earned_credit": "0",
+          "refund_credit": "0",
+          "pending_payments": "0",
+          "principal_paid": "0",
+          "conservation_residual": "0",
+          "operations_funded": "6500000000000000000000000",
+          "security_deposits": "16"
+        },
+        "credits": [
+          {
+            "kind": "provider",
+            "creditor": "p0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+            "available": "0",
+            "pending": "0",
+            "paid": "0",
+            "pending_operation_id": null
+          },
+          {
+            "kind": "provider",
+            "creditor": "p1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+            "available": "0",
+            "pending": "0",
+            "paid": "0",
+            "pending_operation_id": null
+          },
+          {
+            "kind": "provider",
+            "creditor": "p2xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+            "available": "0",
+            "pending": "0",
+            "paid": "0",
+            "pending_operation_id": null
+          },
+          {
+            "kind": "provider",
+            "creditor": "p3xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+            "available": "0",
+            "pending": "0",
+            "paid": "0",
+            "pending_operation_id": null
+          },
+          {
+            "kind": "provider",
+            "creditor": "p4xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+            "available": "0",
+            "pending": "0",
+            "paid": "0",
+            "pending_operation_id": null
+          },
+          {
+            "kind": "provider",
+            "creditor": "p5xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+            "available": "0",
+            "pending": "0",
+            "paid": "0",
+            "pending_operation_id": null
+          },
+          {
+            "kind": "provider",
+            "creditor": "p6xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+            "available": "0",
+            "pending": "0",
+            "paid": "0",
+            "pending_operation_id": null
+          },
+          {
+            "kind": "provider",
+            "creditor": "p7xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+            "available": "0",
+            "pending": "0",
+            "paid": "0",
+            "pending_operation_id": null
+          },
+          {
+            "kind": "refund",
+            "creditor": "refund89685bxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+            "available": "0",
+            "pending": "0",
+            "paid": "0",
+            "pending_operation_id": null
+          }
+        ],
+        "created_at": "1793896351039980694"
+      },
+      "storage": {
+        "storage_budget_bytes": "526388",
+        "future_state_budget_bytes": "260000",
+        "required_operational_yocto": "5263880000000000000000000",
+        "actual_storage_usage": "281614",
+        "serialized_application_bytes": "15181"
+      },
+      "account": {
+        "amount": "6800000000000000000000016",
+        "block_hash": "HnuKwP4WBAFz9izx31RC9kGU5Y4GadZysARB2bLfasHN",
+        "block_height": 276366223,
+        "code_hash": "8DVxZxb2nD3zST8tky1jPTbWvLJfs8vfLXzrB7AMgSNN",
+        "locked": "0",
+        "storage_paid_at": 0,
+        "storage_usage": 281614
+      }
+    }
+  ],
+  "error": {
+    "message": "{\"jsonrpc\": \"2.0\", \"error\": {\"code\": -429, \"message\": \"Rate limits exceeded. For higher rate limits get a subscription at https://fastnear.com\"}, \"id\": \"1\"}",
+    "stack": "Error: {\"jsonrpc\": \"2.0\", \"error\": {\"code\": -429, \"message\": \"Rate limits exceeded. For higher rate limits get a subscription at https://fastnear.com\"}, \"id\": \"1\"}\n    at file:///C:/CryptoProject/archivepass/node_modules/.pnpm/near-api-js@7.4.0/node_modules/near-api-js/lib/index.js:3073:13\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async backOff (file:///C:/CryptoProject/archivepass/node_modules/.pnpm/near-api-js@7.4.0/node_modules/near-api-js/lib/index.js:3022:14)\n    at async fetchJsonRpc (file:///C:/CryptoProject/archivepass/node_modules/.pnpm/near-api-js@7.4.0/node_modules/near-api-js/lib/index.js:3061:20)\n    at async JsonRpcProvider.sendJsonRpc (file:///C:/CryptoProject/archivepass/node_modules/.pnpm/near-api-js@7.4.0/node_modules/near-api-js/lib/index.js:3531:22)\n    at async Promise.all (index 1)\n    at async Account.createTransaction (file:///C:/CryptoProject/archivepass/node_modules/.pnpm/near-api-js@7.4.0/node_modules/near-api-js/lib/index.js:4215:44)\n    at async Account.createSignedTransaction (file:///C:/CryptoProject/archivepass/node_modules/.pnpm/near-api-js@7.4.0/node_modules/near-api-js/lib/index.js:4243:16)\n    at async Account.signAndSendTransaction (file:///C:/CryptoProject/archivepass/node_modules/.pnpm/near-api-js@7.4.0/node_modules/near-api-js/lib/index.js:4324:22)\n    at async send (file:///C:/CryptoProject/archivepass/scripts/qa-testnet-benchmark.mjs:52:19)"
+  },
+  "failed_at": "2026-11-05T16:34:27.877Z"
+}

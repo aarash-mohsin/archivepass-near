@@ -1,0 +1,295 @@
+{
+  "run": "mw3qhtsg-35fb41",
+  "started_at": "2026-11-05T16:10:47.108Z",
+  "status": "failed",
+  "purpose": "Actual same-parent-receipt dispatch then NFT transfer before asynchronous native payout/callback",
+  "steps": [
+    {
+      "name": "Create second actual eligible provider during root idle interval",
+      "at": "2026-11-05T16:11:02.094Z",
+      "transaction_hash": "9irDKS4dPeawyWWGvopTv9aKVw8n6G51S2QYvEoWJEKj",
+      "evidence_file": "qa-testnet-benchmark-mw3qhtsg-35fb41-pending-tx-001.json",
+      "failed": false
+    },
+    {
+      "name": "Second provider consents to early real content period",
+      "at": "2026-11-05T16:11:06.196Z",
+      "transaction_hash": "22jS6J37h8zA5FNGozue1TzTLN1LqcMvqPnowrc1yBx2",
+      "evidence_file": "qa-testnet-benchmark-mw3qhtsg-35fb41-pending-tx-002.json",
+      "failed": false
+    },
+    {
+      "name": "Early actual maximum-depth open actual challenge",
+      "at": "2026-11-05T16:11:23.348Z",
+      "transaction_hash": "8CKmXeCsKZ9ixEaYuhBdDWRfRR2orHuRqMxWPGGCRg83",
+      "evidence_file": "qa-testnet-benchmark-mw3qhtsg-35fb41-pending-tx-003.json",
+      "failed": false
+    },
+    {
+      "name": "Early actual maximum-depth actual depth14 HTTP proof",
+      "at": "2026-11-05T16:11:27.361Z",
+      "transaction_hash": "5Np4rNvJfbNkpcw6k8zZLLTiby2VRWeCVdXmL4VaPh7E",
+      "evidence_file": "qa-testnet-benchmark-mw3qhtsg-35fb41-pending-tx-004.json",
+      "failed": false
+    },
+    {
+      "name": "Early provider credit resolves through actual native callback",
+      "at": "2026-11-05T16:11:32.996Z",
+      "transaction_hash": "71chPQNAkqxEAbsW3hwTvRCvbPUG5QRELeeH8gmyUaWD",
+      "evidence_file": "qa-testnet-benchmark-mw3qhtsg-35fb41-pending-tx-005.json",
+      "failed": false
+    },
+    {
+      "name": "Second provider consents to final near-capacity period249",
+      "at": "2026-11-05T16:19:30.658Z",
+      "transaction_hash": "76gRHvWZHZe47R2zQWXjNLLkJnnmnJFtcf4XGDUFqhBf",
+      "evidence_file": "qa-testnet-benchmark-mw3qhtsg-35fb41-pending-tx-006.json",
+      "failed": false
+    },
+    {
+      "name": "Near-capacity actual maximum-depth open actual challenge",
+      "at": "2026-11-05T16:19:53.238Z",
+      "transaction_hash": "6cbUaZAQ7qcJBrvGLsNugmHpyJCjketq1aX9jZ3pt1cR",
+      "evidence_file": "qa-testnet-benchmark-mw3qhtsg-35fb41-pending-tx-007.json",
+      "failed": false
+    },
+    {
+      "name": "Near-capacity actual maximum-depth actual depth14 HTTP proof",
+      "at": "2026-11-05T16:19:57.505Z",
+      "transaction_hash": "4sK4bdshqamRwA855C6HTkjYtxoLvbS5vZauW6ddcDZr",
+      "evidence_file": "qa-testnet-benchmark-mw3qhtsg-35fb41-pending-tx-008.json",
+      "failed": false
+    }
+  ],
+  "early_proof": {
+    "commitment_id": "113",
+    "version_id": "v1",
+    "chunk_index": 8666,
+    "chunk_base64": "goOEhYaHiImKi4yNjo+QkZKTlJWWl5iZmpucnZ6foKGio6SlpqeoqaqrrK2ur7CxsrO0tba3uLm6u7y9vr/AwcLDxMXGx8jJysvMzc7P0NHS09TV1tfY2drb3N3e3+Dh4uPk5ebn6Onq6+zt7u/w8fLz9PX29/j5+gABAgMEBQYHCAkKCwwNDg8QERITFBUWFxgZGhscHR4fICEiIyQlJicoKSorLC0uLzAxMjM0NTY3ODk6Ozw9Pj9AQUJDREVGR0hJSktMTU5PUFFSU1RVVldYWVpbXF1eX2BhYmNkZWZnaGlqa2xtbm9wcXJzdHV2d3h5ent8fX5/gIGCg4SFhoeIiYqLjI2Oj5CRkpOUlZaXmJmam5ydnp+goaKjpKWmp6ipqqusra6vsLGys7S1tre4ubq7vL2+v8DBwsPExcbHyMnKy8zNzs/Q0dLT1NXW19jZ2tvc3d7f4OHi4+Tl5ufo6err7O3u7/Dx8vP09fb3+Pn6AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc4OTo7PD0+P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiY2RlZmdoaWprbG1ub3BxcnN0dXZ3eHl6e3x9fn+AgYKDhIWGh4iJiouMjY6PkJGSk5SVlpeYmZqbnJ2en6ChoqOkpaanqKmqq6ytrq+wsbKztLW2t7i5uru8vb6/wMHCw8TFxsfIycrLzM3Oz9DR0tPU1dbX2Nna29zd3t/g4eLj5OXm5+jp6uvs7e7v8PHy8/T19vf4+foAAQIDBAUGBwgJCgsMDQ4PEBESExQVFhcYGRobHB0eHyAhIiMkJSYnKCkqKywtLi8wMTIzNDU2Nzg5Ojs8PT4/QEFCQ0RFRkdISUpLTE1OT1BRUlNUVVZXWFlaW1xdXl9gYWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXp7fH1+f4CBgoOEhYaHiImKi4yNjo+QkZKTlJWWl5iZmpucnZ6foKGio6SlpqeoqaqrrK2ur7CxsrO0tba3uLm6u7y9vr/AwcLDxMXGx8jJysvMzc7P0NHS09TV1tfY2drb3N3e3+Dh4uPk5ebn6Onq6+zt7u/w8fLz9PX29/j5+gABAgMEBQYHCAkKCwwNDg8QERITFBUWFxgZGhscHR4fICEiIyQlJicoKSorLC0uLzAxMjM0NTY3ODk6Ozw9Pj9AQUJDREVGR0hJSktMTU5PUFFSU1RVVldYWVpbXF1eX2BhYmNkZWZnaGlqa2xtbm9wcXJzdHV2d3h5ent8fX5/gIGCg4SFhoeIiYqLjI2Oj5CRkpOUlQ==",
+    "siblings": [
+      "8339180c041b20572539b882a2f4439c99321726dafe9b9cc118174b5a027676",
+      "407657ad3f28452794de9368db2a32077fab660ae6c245f3a9da6695b4f74f29",
+      "1839ac504a390b4144d53b5679b94a0e757544c893ecc0cec3802fd6f84d852f",
+      "3da7129a3ccbcda7ebe23062192af040ff0acf53537385caad2a5d041274ddfb",
+      "3fd8e58d703bd6213c0f015111474179a5fcd8603366e8f0b783972eaa172d91",
+      "94f4cc612c8c720a7bde801d78cd65a67496f903f7a1aa5fd7d54437c1d7de7e",
+      "677e712fe9393c446eb86e940403fb89c77c66ddaaad0abe64b4a51cc1bc7ecb",
+      "1f360c5198b3591b08c190bbd9a04db0f32370432751e5cea40c10a64208d971",
+      "8c9fa9f92276e8e826a6225f26357e7ff6e98348d197f63820a851f16054d0f4",
+      "548607f242b7944f6bb88562b04c4facd25563de74a23517a8e7ab0d34ab6979",
+      "6207c66ccf10019f498fdbf529108e50b905737e8590351c53e62e2887b42d17",
+      "e2ae957622bfc9b49f268e5964d8093fda7b4cbba05e630c66316d4cd91f9141",
+      "3c3aee3a0b44a20e78ebe55e29088ee552760a4f9c0a1bcadc28d0f32b014397",
+      "ab24480649d20fc35f4d30822d9d3369f61cf2600f2651f6a8e0a37bf8020194"
+    ]
+  },
+  "early_asset": {
+    "network_domain": "near-testnet",
+    "contract_id": "asset.qab-mw3qhtsg-35fb41.testnet",
+    "token_id": "archive",
+    "protocol_version": "archivepass-v1",
+    "manifest": {
+      "schema": "archivepass-manifest-v1",
+      "version_id": "v1",
+      "title": "ArchivePass vector 16777216",
+      "filename": "vector-16777216.bin",
+      "media_type": "application/octet-stream",
+      "license_note": "CC0-1.0",
+      "size_bytes": "16777216",
+      "chunk_size": 1024,
+      "chunk_count": 16384,
+      "file_sha256": "287507f403176f1f5b22b9a4d9cb49f7d7f88ac19e406b5ae87ce109564846bd",
+      "merkle_root": "9859d216bc4659d6877cfffb9263b3c9072db83cc3ca273bf4c39a3294052122",
+      "manifest_sha256": "1ddadaef0d961b7f7a9ade20c2d6739dde25e7a119b8dabcf1a1bbcc97fd3a7f"
+    },
+    "policy": {
+      "service_origin": "1793894657573938936",
+      "period_duration": "30000000000",
+      "max_provider_rate": "1000000000000000000000",
+      "max_slot_spend": "8000000000000000000000",
+      "fund_expiry": "1793895647573938936",
+      "refund_beneficiary": "refundxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+      "eligible_providers": [
+        "p0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "p1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "p2xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "p3xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "p4xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "p5xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "p6xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "p7xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet"
+      ],
+      "max_nonterminal_commitments": 16,
+      "max_total_commitments": 256,
+      "max_pending_payouts": 8
+    },
+    "owner_id": "qab-mw3qhtsg-35fb41.testnet",
+    "owner_epoch": "0",
+    "transfer_call_pending": null,
+    "reserve_expired": false,
+    "providers": [
+      {
+        "provider_id": "p0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "label": "Benchmark provider 0 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "endpoint": "http://127.0.0.1:8991/benchmark-advisory/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "enabled": true
+      },
+      {
+        "provider_id": "p1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "label": "Benchmark provider 1 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "endpoint": "http://127.0.0.1:8992/benchmark-advisory/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "enabled": true
+      },
+      {
+        "provider_id": "p2xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "label": "Benchmark provider 2 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "endpoint": "http://127.0.0.1:8991/benchmark-advisory/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "enabled": true
+      },
+      {
+        "provider_id": "p3xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "label": "Benchmark provider 3 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "endpoint": "http://127.0.0.1:8992/benchmark-advisory/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "enabled": true
+      },
+      {
+        "provider_id": "p4xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "label": "Benchmark provider 4 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "endpoint": "http://127.0.0.1:8991/benchmark-advisory/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "enabled": true
+      },
+      {
+        "provider_id": "p5xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "label": "Benchmark provider 5 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "endpoint": "http://127.0.0.1:8992/benchmark-advisory/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "enabled": true
+      },
+      {
+        "provider_id": "p6xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "label": "Benchmark provider 6 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "endpoint": "http://127.0.0.1:8991/benchmark-advisory/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "enabled": true
+      },
+      {
+        "provider_id": "p7xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "label": "Benchmark provider 7 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "endpoint": "http://127.0.0.1:8992/benchmark-advisory/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "enabled": true
+      }
+    ],
+    "ledger": {
+      "principal_in": "300000000000000000000000",
+      "available_upkeep": "284000000000000000000000",
+      "reserved_upkeep": "15000000000000000000000",
+      "earned_credit": "0",
+      "refund_credit": "0",
+      "pending_payments": "0",
+      "principal_paid": "1000000000000000000000",
+      "conservation_residual": "0",
+      "operations_funded": "6500000000000000000000000",
+      "security_deposits": "128"
+    },
+    "credits": [
+      {
+        "kind": "provider",
+        "creditor": "p0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "available": "0",
+        "pending": "0",
+        "paid": "0",
+        "pending_operation_id": null
+      },
+      {
+        "kind": "provider",
+        "creditor": "p1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "available": "0",
+        "pending": "0",
+        "paid": "1000000000000000000000",
+        "pending_operation_id": null
+      },
+      {
+        "kind": "provider",
+        "creditor": "p2xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "available": "0",
+        "pending": "0",
+        "paid": "0",
+        "pending_operation_id": null
+      },
+      {
+        "kind": "provider",
+        "creditor": "p3xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "available": "0",
+        "pending": "0",
+        "paid": "0",
+        "pending_operation_id": null
+      },
+      {
+        "kind": "provider",
+        "creditor": "p4xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "available": "0",
+        "pending": "0",
+        "paid": "0",
+        "pending_operation_id": null
+      },
+      {
+        "kind": "provider",
+        "creditor": "p5xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "available": "0",
+        "pending": "0",
+        "paid": "0",
+        "pending_operation_id": null
+      },
+      {
+        "kind": "provider",
+        "creditor": "p6xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "available": "0",
+        "pending": "0",
+        "paid": "0",
+        "pending_operation_id": null
+      },
+      {
+        "kind": "provider",
+        "creditor": "p7xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "available": "0",
+        "pending": "0",
+        "paid": "0",
+        "pending_operation_id": null
+      },
+      {
+        "kind": "refund",
+        "creditor": "refundxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "available": "0",
+        "pending": "0",
+        "paid": "0",
+        "pending_operation_id": null
+      }
+    ],
+    "created_at": "1793894571666472702"
+  },
+  "final_proof": {
+    "commitment_id": "249",
+    "version_id": "v1",
+    "chunk_index": 3397,
+    "chunk_base64": "qqusra6vsLGys7S1tre4ubq7vL2+v8DBwsPExcbHyMnKy8zNzs/Q0dLT1NXW19jZ2tvc3d7f4OHi4+Tl5ufo6err7O3u7/Dx8vP09fb3+Pn6AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc4OTo7PD0+P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiY2RlZmdoaWprbG1ub3BxcnN0dXZ3eHl6e3x9fn+AgYKDhIWGh4iJiouMjY6PkJGSk5SVlpeYmZqbnJ2en6ChoqOkpaanqKmqq6ytrq+wsbKztLW2t7i5uru8vb6/wMHCw8TFxsfIycrLzM3Oz9DR0tPU1dbX2Nna29zd3t/g4eLj5OXm5+jp6uvs7e7v8PHy8/T19vf4+foAAQIDBAUGBwgJCgsMDQ4PEBESExQVFhcYGRobHB0eHyAhIiMkJSYnKCkqKywtLi8wMTIzNDU2Nzg5Ojs8PT4/QEFCQ0RFRkdISUpLTE1OT1BRUlNUVVZXWFlaW1xdXl9gYWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXp7fH1+f4CBgoOEhYaHiImKi4yNjo+QkZKTlJWWl5iZmpucnZ6foKGio6SlpqeoqaqrrK2ur7CxsrO0tba3uLm6u7y9vr/AwcLDxMXGx8jJysvMzc7P0NHS09TV1tfY2drb3N3e3+Dh4uPk5ebn6Onq6+zt7u/w8fLz9PX29/j5+gABAgMEBQYHCAkKCwwNDg8QERITFBUWFxgZGhscHR4fICEiIyQlJicoKSorLC0uLzAxMjM0NTY3ODk6Ozw9Pj9AQUJDREVGR0hJSktMTU5PUFFSU1RVVldYWVpbXF1eX2BhYmNkZWZnaGlqa2xtbm9wcXJzdHV2d3h5ent8fX5/gIGCg4SFhoeIiYqLjI2Oj5CRkpOUlZaXmJmam5ydnp+goaKjpKWmp6ipqqusra6vsLGys7S1tre4ubq7vL2+v8DBwsPExcbHyMnKy8zNzs/Q0dLT1NXW19jZ2tvc3d7f4OHi4+Tl5ufo6err7O3u7/Dx8vP09fb3+Pn6AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc4OTo7PD0+P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiY2RlZmdoaWprbG1ub3BxcnN0dXZ3eHl6e3x9fn+AgYKDhIWGh4iJiouMjY6PkJGSk5SVlpeYmZqbnJ2en6ChoqOkpaanqKmqq6ytrq+wsbKztLW2t7i5uru8vQ==",
+    "siblings": [
+      "6e322a4d5614821b7a0f33df47e2e7d6341c8b469f63ae81049786614a5834c3",
+      "a74779d6d1fc3e3bf7b899a9fd977a5bdf9627844f159942d5d0f9bca01a2cfe",
+      "f0e4b439d16dbf84501f8fda540bb99e8bf62e2ee5fd8421584385f1dd4eec01",
+      "d5ee5a4c44d64d30a07fb636685aa20f6286ea5f657101914de51fa0312ece4d",
+      "aac3be37349d445bf030bf4be4cfbd9f1465c2c46d086dbe16a1b16e4e968ed5",
+      "f69048adc0ee8df2b0b125356525f1334375d1d0f60b4e4f4dd9475e4a05849c",
+      "254d5ce3b5b8a4378e85e15e0c6b9900214b88a4dabf7abb32766898a43067e1",
+      "6d12a3c90bebdb8546b0900c334f7b3137f6269a2939994e79ca897f24b24a9e",
+      "aa6f9366447483c7c07d5bbad0cd1e16165c5df14189ee69e685a96dfd766e94",
+      "955fe4bd0e60797f159bbd6d4e400775a2404371dbd21504ed2e5c748bd71f1e",
+      "b5609feb8be5b0c21d59633eaa539532dee9526d0a366873b830172ab1f5d77f",
+      "7c38e0a326ff22b11434d0869c3eb0961b94831853beb1f8e07c5336ed2f4e29",
+      "f61487813d37aaf2f14c4b60f9c535d916c91f47195487626071e3bdd07d6642",
+      "3f4946a80ad7701b7fab22ab9181fb150feec5434632e3f3f152630a0b387553"
+    ]
+  },
+  "error": {
+    "message": "Unexpected non-whitespace character after JSON at position 198463 (line 3152 column 2)",
+    "stack": "SyntaxError: Unexpected non-whitespace character after JSON at position 198463 (line 3152 column 2)\n    at JSON.parse (<anonymous>)\n    at main (file:///C:/CryptoProject/archivepass/scripts/qa-testnet-benchmark-pending.mjs:15:21)\n    at until (file:///C:/CryptoProject/archivepass/scripts/qa-testnet-benchmark-pending.mjs:25:61)\n    at file:///C:/CryptoProject/archivepass/scripts/qa-testnet-benchmark-pending.mjs:41:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)"
+  },
+  "failed_at": "2026-11-05T16:19:57.553Z"
+}

@@ -1,0 +1,115 @@
+{
+  "name": "Create second actual eligible provider during root idle interval",
+  "outcome": {
+    "final_execution_status": "FINAL",
+    "receipts_outcome": [
+      {
+        "block_hash": "78RgzBZjhTVaApK9JBjf7Qwr48LRULxi5udTpxyXtbRk",
+        "id": "7dtGJrc3UYZ3BSvqoverZgPaRsGVmLgjZhgC5bs14ZjJ",
+        "outcome": {
+          "executor_id": "p1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+          "gas_burnt": 7524947687500,
+          "logs": [],
+          "metadata": {
+            "contracts": [
+              null,
+              null,
+              null
+            ],
+            "gas_profile": [],
+            "version": 4
+          },
+          "receipt_ids": [
+            "7ZKu7J2vVZzmyfL7uv3LcsXRe4Lf79XXqFVpk7882vwT"
+          ],
+          "status": {
+            "SuccessValue": ""
+          },
+          "tokens_burnt": "7032494768750000000000"
+        },
+        "proof": []
+      },
+      {
+        "block_hash": "DMC9WeqDzsXgu6mrBWUEDA6gF38t7fZftCVmNa49f2NE",
+        "id": "7ZKu7J2vVZzmyfL7uv3LcsXRe4Lf79XXqFVpk7882vwT",
+        "outcome": {
+          "executor_id": "qab-mw3qhtsg-35fb41.testnet",
+          "gas_burnt": 223182562500,
+          "logs": [],
+          "metadata": {
+            "contracts": [
+              null
+            ],
+            "gas_profile": [],
+            "version": 4
+          },
+          "receipt_ids": [],
+          "status": {
+            "SuccessValue": ""
+          },
+          "tokens_burnt": "0"
+        },
+        "proof": []
+      }
+    ],
+    "status": {
+      "SuccessValue": ""
+    },
+    "transaction": {
+      "actions": [
+        "CreateAccount",
+        {
+          "Transfer": {
+            "deposit": "600000000000000000000000"
+          }
+        },
+        {
+          "AddKey": {
+            "access_key": {
+              "nonce": 0,
+              "permission": "FullAccess"
+            },
+            "public_key": "ed25519:4JBnVq51es66XW2TTd37LCV1m8NX4kZZp5M1g3iBe3dd"
+          }
+        }
+      ],
+      "hash": "9irDKS4dPeawyWWGvopTv9aKVw8n6G51S2QYvEoWJEKj",
+      "nonce": 276363042000034,
+      "priority_fee": 0,
+      "public_key": "ed25519:76RRFtxrFPyspm2tPJFPnAmyDJmcph3SMEgFhXUKuJZn",
+      "receiver_id": "p1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+      "signature": "ed25519:3uWSd9SLqLUEhebzg9eM62ayRyrVGu37reaPNcW8Bb5bVGA8cbzr8Nivr7xLRBP8NhPKPyXs1Y5gBwESf7EGfwDq",
+      "signer_id": "qab-mw3qhtsg-35fb41.testnet"
+    },
+    "transaction_outcome": {
+      "block_hash": "4wxNTuFJokF2Jjn6PoNXpWTuJHPf27AvZRNQHSzAA5Rr",
+      "id": "9irDKS4dPeawyWWGvopTv9aKVw8n6G51S2QYvEoWJEKj",
+      "outcome": {
+        "executor_id": "qab-mw3qhtsg-35fb41.testnet",
+        "gas_burnt": 824947687500,
+        "logs": [],
+        "metadata": {
+          "gas_profile": null,
+          "version": 1
+        },
+        "receipt_ids": [
+          "7dtGJrc3UYZ3BSvqoverZgPaRsGVmLgjZhgC5bs14ZjJ"
+        ],
+        "status": {
+          "SuccessReceiptId": "7dtGJrc3UYZ3BSvqoverZgPaRsGVmLgjZhgC5bs14ZjJ"
+        },
+        "tokens_burnt": "82494768750000000000"
+      },
+      "proof": [
+        {
+          "direction": "Right",
+          "hash": "3JHrBjS6J2EtFoyvCtJPhFwJBNykEmWzm5RFuLsbtaVn"
+        },
+        {
+          "direction": "Right",
+          "hash": "EH9gvKizy9J1yR89beMy1PGFoSUEfacc8tLDKPZsV6wC"
+        }
+      ]
+    }
+  }
+}

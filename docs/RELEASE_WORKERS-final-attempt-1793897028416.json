@@ -1,0 +1,245 @@
+{
+  "network": "testnet",
+  "contract_id": "archive.apw-mw3re9ta.testnet",
+  "started_at": "2026-11-05T16:32:16.005Z",
+  "steps": [
+    {
+      "name": "Signed owner CLI root: fund_upkeep",
+      "at": "2026-11-05T16:32:28.115Z",
+      "data": {
+        "request_id": "117a527d-4d39-4a0a-9f67-df75e43377e0",
+        "receipt": {
+          "source": "near-testnet",
+          "status": "Succeeded",
+          "transaction_hash": "7J7nMyTf43sFer5gs6izPKxEAcsAbzpYjpojW2CNWbSy",
+          "receipt_ids": [
+            "CCMaY5aX8cjjS3SHyfdJL36hABHN7Je5SvxGAdj2R6Qo",
+            "6QUBtL62eeQr4S9eHFF1FNsPqu44uz2nnmXPyq518K3G"
+          ],
+          "local_event_id": null,
+          "explorer_url": null
+        },
+        "owner_id": "apw-mw3re9ta.testnet",
+        "owner_epoch": "0"
+      }
+    },
+    {
+      "name": "Signed owner CLI root: propose_period",
+      "at": "2026-11-05T16:32:36.707Z",
+      "data": {
+        "request_id": "7b6b5af3-4f3c-43e8-9f5e-b391412b4376",
+        "receipt": {
+          "source": "near-testnet",
+          "status": "Succeeded",
+          "transaction_hash": "GyJcBvY9748K9YUqLPMjYUJtT7MwEAh21ZFW9cv7sfxU",
+          "receipt_ids": [
+            "GLwbrtF7DpnXmGAFKP6ojfiQ3mfNsCYZeEs9wjV3ydUD",
+            "8RpTDF24ST3mQX8rsi4zVY3AYUAVc2Y2wZ7KBkYWH8bd"
+          ],
+          "local_event_id": null,
+          "explorer_url": null
+        },
+        "owner_id": "apw-mw3re9ta.testnet",
+        "owner_epoch": "0"
+      }
+    },
+    {
+      "name": "Signed owner CLI root: propose_period",
+      "at": "2026-11-05T16:32:44.764Z",
+      "data": {
+        "request_id": "29273c08-e32d-44b2-9dec-41c83e4edf14",
+        "receipt": {
+          "source": "near-testnet",
+          "status": "Succeeded",
+          "transaction_hash": "9DrwCEPehKYQEiLYtCgZ3QputzfFbgcDgyCGY7hDjQAh",
+          "receipt_ids": [
+            "HS7zT4ZWhQoru2pzCn8h7aPNeChF4sWPHudedGH4kDGv",
+            "4wwDNikYvRu2Q5NubmsiLF1CXtgd98YaBC4minCzQijY"
+          ],
+          "local_event_id": null,
+          "explorer_url": null
+        },
+        "owner_id": "apw-mw3re9ta.testnet",
+        "owner_epoch": "0"
+      }
+    },
+    {
+      "name": "Actual worker A broadcast succeeded but injected response loss persisted Unknown and exited",
+      "at": "2026-11-05T16:32:46.079Z",
+      "data": {
+        "attempt": {
+          "request_id": "3b29ee7e-40fb-4d03-a021-ad717e5c3690",
+          "command": {
+            "type": "accept_period",
+            "commitment_id": "0"
+          },
+          "phase": "Unknown",
+          "tx_hash": "D63yj3aqtCB6f2Fi24RZWG4uX2CPoKCKmw78XZ1Jio4o",
+          "nonce": "276364940000002",
+          "outcome": null,
+          "error": "Error: QA injected response loss after actual broadcast"
+        },
+        "process_exit_code": 86
+      }
+    },
+    {
+      "name": "Restart reconciled the same actual hash without a second acceptance transaction",
+      "at": "2026-11-05T16:32:50.298Z",
+      "data": {
+        "before_hash": "D63yj3aqtCB6f2Fi24RZWG4uX2CPoKCKmw78XZ1Jio4o",
+        "after_hash": "D63yj3aqtCB6f2Fi24RZWG4uX2CPoKCKmw78XZ1Jio4o"
+      }
+    },
+    {
+      "name": "Signed owner CLI root: nft_transfer",
+      "at": "2026-11-05T16:32:58.815Z",
+      "data": {
+        "request_id": "c40f1354-ff45-4e3d-892d-6d42449c80c7",
+        "receipt": {
+          "source": "near-testnet",
+          "status": "Succeeded",
+          "transaction_hash": "F2Lj6r6RwuED8bLPWP4nCxXQAL7Ds5A5qVGb88DwKwmS",
+          "receipt_ids": [
+            "4duDm8HDHTjtRQdZW7hepk8vM2mivYFMeaH3q5hdFyWp",
+            "6FTp9ohaSTJfMsD1JuL6zyMZq9GFHfsenEAUpovkLfBr"
+          ],
+          "local_event_id": null,
+          "explorer_url": null
+        },
+        "owner_id": "bob.apw-mw3r4y86.testnet",
+        "owner_epoch": "1"
+      }
+    },
+    {
+      "name": "Signed owner CLI bob: propose_period",
+      "at": "2026-11-05T16:33:07.677Z",
+      "data": {
+        "request_id": "b1710051-6e0e-47de-b85c-cb0f719f2b48",
+        "receipt": {
+          "source": "near-testnet",
+          "status": "Succeeded",
+          "transaction_hash": "BqWxjaJjdEAtvzPP8yPyWG7RPV1Qq8bjubnQ27773fTX",
+          "receipt_ids": [
+            "3zRLrtWdtRqc4ukwQg19pwezr6yM92JnLJDm59JUcAvn",
+            "3Sv3xppQXMZkSjazbYj8NUPL5NnMVybV3SnL4zjPepv4"
+          ],
+          "local_event_id": null,
+          "explorer_url": null
+        },
+        "owner_id": "bob.apw-mw3r4y86.testnet",
+        "owner_epoch": "1"
+      }
+    },
+    {
+      "name": "Signed owner CLI bob: propose_period",
+      "at": "2026-11-05T16:33:15.812Z",
+      "data": {
+        "request_id": "04480fa8-9da3-4a2e-b9ea-cf3f142a3d5e",
+        "receipt": {
+          "source": "near-testnet",
+          "status": "Succeeded",
+          "transaction_hash": "F1FipYAGEgkkpeaXB2dwzTTx46omCHwPQi3MtLtrU1NY",
+          "receipt_ids": [
+            "AP3KBU1trn8VJNk89qHKMDGeEG2pPUmvHyf1u2JX8S9o",
+            "DVNNihf5GkPmmS9V4mrAEFfitCttYYvgqDem3chCRU41"
+          ],
+          "local_event_id": null,
+          "explorer_url": null
+        },
+        "owner_id": "bob.apw-mw3r4y86.testnet",
+        "owner_epoch": "1"
+      }
+    },
+    {
+      "name": "Actual NFT handover preserved outstanding commitments; new owner scheduled the later slot",
+      "at": "2026-11-05T16:33:16.377Z",
+      "data": {
+        "owner_id": "bob.apw-mw3r4y86.testnet",
+        "commitments": [
+          {
+            "commitment_id": "0",
+            "provider_id": "a.apw-mw3r4y86.testnet",
+            "payee": "a.apw-mw3r4y86.testnet",
+            "slot": "0",
+            "start": "1793896477363287801",
+            "end": "1793896597363287801",
+            "rate": "1000000000000000000000",
+            "version_id": "v1",
+            "manifest_sha256": "78775dd9a9369986e660da98bd4b37b77756a1ca7e343dfe330a4d4b6157b142",
+            "merkle_root": "dc891c97cec1f21834ae5f028122c160d9ed290863b4c3663d0a4d43f8a83a6f",
+            "endpoint": "http://127.0.0.1:8981",
+            "proposed_owner_epoch": "0",
+            "state": "Accepted",
+            "challenge": null,
+            "accepted_at": "1793896361512398005",
+            "settled_at": null,
+            "missed_reason": null
+          },
+          {
+            "commitment_id": "1",
+            "provider_id": "b.apw-mw3r4y86.testnet",
+            "payee": "b.apw-mw3r4y86.testnet",
+            "slot": "0",
+            "start": "1793896477363287801",
+            "end": "1793896597363287801",
+            "rate": "1000000000000000000000",
+            "version_id": "v1",
+            "manifest_sha256": "78775dd9a9369986e660da98bd4b37b77756a1ca7e343dfe330a4d4b6157b142",
+            "merkle_root": "dc891c97cec1f21834ae5f028122c160d9ed290863b4c3663d0a4d43f8a83a6f",
+            "endpoint": "http://127.0.0.1:8982",
+            "proposed_owner_epoch": "0",
+            "state": "Accepted",
+            "challenge": null,
+            "accepted_at": "1793896367241997931",
+            "settled_at": null,
+            "missed_reason": null
+          },
+          {
+            "commitment_id": "2",
+            "provider_id": "a.apw-mw3r4y86.testnet",
+            "payee": "a.apw-mw3r4y86.testnet",
+            "slot": "1",
+            "start": "1793896597363287801",
+            "end": "1793896717363287801",
+            "rate": "1000000000000000000000",
+            "version_id": "v1",
+            "manifest_sha256": "78775dd9a9369986e660da98bd4b37b77756a1ca7e343dfe330a4d4b6157b142",
+            "merkle_root": "dc891c97cec1f21834ae5f028122c160d9ed290863b4c3663d0a4d43f8a83a6f",
+            "endpoint": "http://127.0.0.1:8981",
+            "proposed_owner_epoch": "1",
+            "state": "Accepted",
+            "challenge": null,
+            "accepted_at": "1793896391619276470",
+            "settled_at": null,
+            "missed_reason": null
+          },
+          {
+            "commitment_id": "3",
+            "provider_id": "b.apw-mw3r4y86.testnet",
+            "payee": "b.apw-mw3r4y86.testnet",
+            "slot": "1",
+            "start": "1793896597363287801",
+            "end": "1793896717363287801",
+            "rate": "1000000000000000000000",
+            "version_id": "v1",
+            "manifest_sha256": "78775dd9a9369986e660da98bd4b37b77756a1ca7e343dfe330a4d4b6157b142",
+            "merkle_root": "dc891c97cec1f21834ae5f028122c160d9ed290863b4c3663d0a4d43f8a83a6f",
+            "endpoint": "http://127.0.0.1:8982",
+            "proposed_owner_epoch": "1",
+            "state": "Proposed",
+            "challenge": null,
+            "accepted_at": null,
+            "settled_at": null,
+            "missed_reason": null
+          }
+        ]
+      }
+    }
+  ],
+  "limitations": [
+    "Both keeper HTTP processes run on one computer.",
+    "Response loss is an explicit post-broadcast QA transport injection; actual transaction execution is real."
+  ],
+  "status": "failed",
+  "error": "Error: {\"code\":-429,\"message\":\"Rate limits exceeded. For higher rate limits get a subscription at https://fastnear.com\"}"
+}

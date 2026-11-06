@@ -1,0 +1,61 @@
+{
+  "network": "testnet",
+  "rpc": "https://test.rpc.fastnear.com",
+  "root_slot": "release-worker-final-root",
+  "accounts": {
+    "owner": "apw-mw3re9ta.testnet",
+    "a": "a.apw-mw3r4y86.testnet",
+    "b": "b.apw-mw3r4y86.testnet",
+    "bob": "bob.apw-mw3r4y86.testnet",
+    "refund": "refund.apw-mw3r4y86.testnet"
+  },
+  "contract_id": "archive.apw-mw3re9ta.testnet",
+  "source_origin": "http://127.0.0.1:8788",
+  "source_asset_id": "e30b8c8a-0ba5-42b4-9556-1d02db6784fd",
+  "manifest": {
+    "title": "Public stewardship field guide",
+    "filename": "stewardship-guide.txt",
+    "media_type": "text/plain",
+    "license_note": "CC0-1.0",
+    "schema": "archivepass-manifest-v1",
+    "version_id": "v1",
+    "size_bytes": "2937",
+    "chunk_size": 1024,
+    "chunk_count": 3,
+    "file_sha256": "613d3d09c8774dd2af511845c984555d9c6017cc470243ea181bce76818023f4",
+    "merkle_root": "dc891c97cec1f21834ae5f028122c160d9ed290863b4c3663d0a4d43f8a83a6f",
+    "manifest_sha256": "78775dd9a9369986e660da98bd4b37b77756a1ca7e343dfe330a4d4b6157b142"
+  },
+  "outcomes": [],
+  "deployed": true,
+  "policy": {
+    "service_origin": "1793896477363287801",
+    "period_duration": "120000000000",
+    "max_provider_rate": "1000000000000000000000",
+    "max_slot_spend": "2000000000000000000000",
+    "fund_expiry": "1793982877363287801",
+    "refund_beneficiary": "refund.apw-mw3r4y86.testnet",
+    "eligible_providers": [
+      "a.apw-mw3r4y86.testnet",
+      "b.apw-mw3r4y86.testnet"
+    ],
+    "max_nonterminal_commitments": 16,
+    "max_total_commitments": 256,
+    "max_pending_payouts": 8
+  },
+  "providers": [
+    {
+      "provider_id": "a.apw-mw3r4y86.testnet",
+      "label": "Release keeper A",
+      "endpoint": "http://127.0.0.1:8981",
+      "enabled": true
+    },
+    {
+      "provider_id": "b.apw-mw3r4y86.testnet",
+      "label": "Release keeper B",
+      "endpoint": "http://127.0.0.1:8982",
+      "enabled": true
+    }
+  ],
+  "binding_path": "docs/RELEASE_WORKERS-final-config.json"
+}

@@ -1,0 +1,140 @@
+{
+  "name": "Redeploy current dedicated receiver artifact with its own retained fixture key",
+  "network": "testnet",
+  "at": "2026-11-05T16:32:28.642Z",
+  "expected_failure": false,
+  "outcome": {
+    "final_execution_status": "FINAL",
+    "receipts_outcome": [
+      {
+        "block_hash": "3aZYoNkU8jVgPRMKFzZwf5mtTnd9AoiJuJ67j7tLX2pP",
+        "id": "DJGtu7YxgkMye2jhnuASPDWsZpHeqSS1hDxDLwL1GEKA",
+        "outcome": {
+          "executor_id": "receiverxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+          "gas_burnt": 8051135325712,
+          "logs": [],
+          "metadata": {
+            "contracts": [
+              {
+                "local": "Fu4bfo6tJMVYsp1EPdfDiPzvKUoryBBgJe6J9JwbMrQY"
+              }
+            ],
+            "gas_profile": [],
+            "version": 4
+          },
+          "receipt_ids": [
+            "4iCkvqZbdWvarqULXURfMEtq4t82RBdHQnJi4wVoQvn7"
+          ],
+          "status": {
+            "SuccessValue": ""
+          },
+          "tokens_burnt": "805113532571200000000"
+        },
+        "proof": [
+          {
+            "direction": "Left",
+            "hash": "CoJvt4HMF1S4bFigWs66ijSmoPQXZxgSzvGMxS4dj14C"
+          },
+          {
+            "direction": "Right",
+            "hash": "2AQgZTFhqTgNEfkgAjXyeymqxN6LB371SBQvYyH1XWGg"
+          }
+        ]
+      },
+      {
+        "block_hash": "5hMA7s8sf2LfRbdkVHo1CdNCuckQsE1jQp2h3R6YVFFS",
+        "id": "4iCkvqZbdWvarqULXURfMEtq4t82RBdHQnJi4wVoQvn7",
+        "outcome": {
+          "executor_id": "receiverxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+          "gas_burnt": 223182562500,
+          "logs": [],
+          "metadata": {
+            "contracts": [
+              {
+                "local": "Fu4bfo6tJMVYsp1EPdfDiPzvKUoryBBgJe6J9JwbMrQY"
+              }
+            ],
+            "gas_profile": [],
+            "version": 4
+          },
+          "receipt_ids": [],
+          "status": {
+            "SuccessValue": ""
+          },
+          "tokens_burnt": "0"
+        },
+        "proof": []
+      }
+    ],
+    "status": {
+      "SuccessValue": ""
+    },
+    "transaction": {
+      "actions": [
+        {
+          "DeployContract": {
+            "code": "3VnjE5WHNo/kvYAEAlMOnJqL/MrPCNpSMToXq4iy3Xk="
+          }
+        }
+      ],
+      "hash": "G6XhkpH6JCn25vywXraQzYpFEMgf3HU6NKB4t5JYYyhs",
+      "nonce": 276363071000001,
+      "priority_fee": 0,
+      "public_key": "ed25519:HKirHGcpVYTFeycpfgewYWnbJn8F6RzHLoZ8UxLermFf",
+      "receiver_id": "receiverxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+      "signature": "ed25519:ceoRmGnsE6X3uFQG1B1L2k4nvbfMV3hZYX4Ca5FBc52TTWarEditmQZFSSKo6mhv82s25xTf9Q9z64EkShboHtc",
+      "signer_id": "receiverxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet"
+    },
+    "transaction_outcome": {
+      "block_hash": "3aZYoNkU8jVgPRMKFzZwf5mtTnd9AoiJuJ67j7tLX2pP",
+      "id": "G6XhkpH6JCn25vywXraQzYpFEMgf3HU6NKB4t5JYYyhs",
+      "outcome": {
+        "executor_id": "receiverxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "gas_burnt": 1111393453852,
+        "logs": [],
+        "metadata": {
+          "gas_profile": null,
+          "version": 1
+        },
+        "receipt_ids": [
+          "DJGtu7YxgkMye2jhnuASPDWsZpHeqSS1hDxDLwL1GEKA"
+        ],
+        "status": {
+          "SuccessReceiptId": "DJGtu7YxgkMye2jhnuASPDWsZpHeqSS1hDxDLwL1GEKA"
+        },
+        "tokens_burnt": "111139345385200000000"
+      },
+      "proof": [
+        {
+          "direction": "Right",
+          "hash": "37FateyKVfuehuoqu7h9dHRo2eL7putcEHXqNcgyk1bK"
+        },
+        {
+          "direction": "Right",
+          "hash": "2AQgZTFhqTgNEfkgAjXyeymqxN6LB371SBQvYyH1XWGg"
+        }
+      ]
+    }
+  },
+  "total_receipt_gas_burnt": "8274317888212",
+  "receipts": [
+    {
+      "receipt_id": "DJGtu7YxgkMye2jhnuASPDWsZpHeqSS1hDxDLwL1GEKA",
+      "executor_id": "receiverxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+      "gas_burnt": 8051135325712,
+      "status": {
+        "SuccessValue": ""
+      },
+      "callback": null
+    },
+    {
+      "receipt_id": "4iCkvqZbdWvarqULXURfMEtq4t82RBdHQnJi4wVoQvn7",
+      "executor_id": "receiverxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+      "gas_burnt": 223182562500,
+      "status": {
+        "SuccessValue": ""
+      },
+      "callback": null
+    }
+  ]
+}

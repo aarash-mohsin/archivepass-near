@@ -1,0 +1,15 @@
+{
+  "scope": "offline source-level crash/restart reproduction; no live execution",
+  "journal": {
+    "phase": "Unknown",
+    "lookups": 3,
+    "signs": 0,
+    "sends": 0
+  },
+  "sourceRestart": {
+    "before": "Ready",
+    "after": "Failed",
+    "bytesStillIntact": true
+  },
+  "temporaryData": "<local temporary directory>"
+}

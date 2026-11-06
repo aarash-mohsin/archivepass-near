@@ -1,0 +1,17 @@
+import { mkdirSync, readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { randomBytes } from 'node:crypto';
+export interface KeeperBinding {provider_id:string;origin:string}
+export interface AppConfig {data_dir:string;port:number;host:string;mode:'local'|'testnet';web_origins:string[];operator_token:string;keeper_bindings:KeeperBinding[];dev_faults:boolean;payment_interval_ms:number;static_dir?:string;}
+export const LOCAL_ACTORS=['alice.archivepass.testnet','bob.archivepass.testnet','keeper-a.archivepass.testnet','keeper-b.archivepass.testnet','refund.archivepass.testnet'];
+export function integerSetting(value:string|undefined,fallback:number,name:string,min=1,max=65535):number{if(value===undefined)return fallback;if(!/^[0-9]+$/.test(value))throw new Error(`${name} must be an integer.`);const n=Number(value);if(!Number.isSafeInteger(n)||n<min||n>max)throw new Error(`${name} must be ${min} through ${max}.`);return n;}
+export function modeSetting(value:string|undefined):'local'|'testnet'{if(value===undefined)return'local';if(value!=='local'&&value!=='testnet')throw new Error('ARCHIVEPASS_MODE must be local or testnet.');return value;}
+export function originSetting(value:string,name:string):string{let u:URL;try{u=new URL(value);}catch{throw new Error(`${name} must be an HTTP(S) origin.`);}if(!['http:','https:'].includes(u.protocol)||u.username||u.password||u.hash||u.search||u.pathname!=='/')throw new Error(`${name} must be an HTTP(S) origin without credentials, path, query or fragment.`);return u.origin;}
+export function flagSetting(value:string|undefined,name:string):boolean{if(value===undefined||value==='0')return false;if(value==='1')return true;throw new Error(`${name} must be 0 or 1.`);}
+export function loadConfig(env=process.env):AppConfig{
+ const port=integerSetting(env.ARCHIVEPASS_API_PORT??env.PORT,8788,'ARCHIVEPASS_API_PORT'),mode=modeSetting(env.ARCHIVEPASS_MODE),dev_faults=flagSetting(env.ARCHIVEPASS_DEV_FAULTS,'ARCHIVEPASS_DEV_FAULTS');if(mode==='testnet'&&dev_faults)throw new Error('Development faults cannot be enabled in testnet mode.');
+ const origins=(env.ARCHIVEPASS_KEEPER_ORIGINS??'http://127.0.0.1:8791,http://127.0.0.1:8792').split(',').map(s=>originSetting(s.trim(),'ARCHIVEPASS_KEEPER_ORIGINS'));if(origins.length!==2||new Set(origins).size!==2)throw new Error('This release supports exactly two distinct configured keeper origins.');
+ const web_origins=[...new Set([...(env.ARCHIVEPASS_WEB_ORIGIN??'http://127.0.0.1:5174').split(',').map(s=>originSetting(s.trim(),'ARCHIVEPASS_WEB_ORIGIN')),`http://127.0.0.1:${port}`])],data_dir=resolve(env.ARCHIVEPASS_DATA_DIR??'data/app');
+ let token=env.ARCHIVEPASS_OPERATOR_TOKEN;if(token!==undefined&&(token.length<16||token.length>256||/[\r\n]/.test(token)))throw new Error('ARCHIVEPASS_OPERATOR_TOKEN must contain 16 through 256 characters without newlines.');mkdirSync(data_dir,{recursive:true});if(!token){const path=resolve(data_dir,'operator-token');if(!existsSync(path))writeFileSync(path,randomBytes(32).toString('hex'),{mode:0o600,flag:'wx'});token=readFileSync(path,'utf8').trim();}if(token.length<16||token.length>256)throw new Error('The persisted operator token is invalid.');
+ return{data_dir,port,host:'127.0.0.1',mode,web_origins,operator_token:token,keeper_bindings:origins.map((origin,i)=>({provider_id:LOCAL_ACTORS[i+2]!,origin})),dev_faults,payment_interval_ms:500,static_dir:resolve(env.ARCHIVEPASS_STATIC_DIR??'dist/web')};
+}

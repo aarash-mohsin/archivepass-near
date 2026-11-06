@@ -1,0 +1,263 @@
+{
+  "run": "mw3qhtsg-35fb41",
+  "contract_id": "asset.qab-mw3qhtsg-35fb41.testnet",
+  "status": "contract_cases_passed_after_harness_continuation_callback_budget_fix_required",
+  "release_approved": false,
+  "original_harness_status": "failed",
+  "original_harness_error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ '299000000000000000000000'\n- '300000000000000000000000'\n",
+  "recovery_status": "passed",
+  "artifact": {
+    "bytes": 266251,
+    "sha256": "c40e2cb68b8101c1df07422f80747d229b4cd85731a16474e89f6631c71f81ab"
+  },
+  "actual_lifetime_commitments": 256,
+  "max_depth": 14,
+  "early_and_final_provider_proofs": 3,
+  "callbacks": [
+    {
+      "step": "Actual fixed native provider payout at near-capacity state",
+      "receipt_id": "2sJVKV4DfF7TgTqoRCbebVhnQ6wgLpLbRjn38YU13nH9",
+      "gas_burnt": "21070752792033",
+      "allocated_gas": "25000000000000",
+      "headroom_gas": "3929247207967"
+    },
+    {
+      "step": "Actual near-capacity transfer-call return and private resolver",
+      "receipt_id": "AJvMVvNYxJhKV5ko6X4qmuK2GJJHRmPfYmZJob9eRDaL",
+      "gas_burnt": "21183152328164",
+      "allocated_gas": "25000000000000",
+      "headroom_gas": "3816847671836"
+    },
+    {
+      "step": "Actual near-capacity transfer-call forwarding and private resolver",
+      "receipt_id": "9UthWsc5GtTVabFjTKufEqNwD7ZwN399sucmpSYQ7TTN",
+      "gas_burnt": "21037374236087",
+      "allocated_gas": "25000000000000",
+      "headroom_gas": "3962625763913"
+    },
+    {
+      "step": "Actual native payout fails to nonexistent named beneficiary",
+      "receipt_id": "Egc7m87qW3LzHpwKtk6NhBvRv9Kz3jWf11yLdDnLHgT9",
+      "gas_burnt": "21130883161830",
+      "allocated_gas": "25000000000000",
+      "headroom_gas": "3869116838170"
+    },
+    {
+      "step": "Retry original fixed refund after actual failed receipt",
+      "receipt_id": "7Q3YkXcyCaWx7Yfajs7vWKqY33LBAqc7tGwTS2iC3N6J",
+      "gas_burnt": "21139554194349",
+      "allocated_gas": "25000000000000",
+      "headroom_gas": "3860445805651"
+    },
+    {
+      "step": "Actual same-parent pending handover",
+      "receipt_id": "GVoi1bmn5ZrGCRH2GmCkss64vtwsxktSiYLMRU6bHmHa",
+      "gas_burnt": "21143459316591",
+      "allocated_gas": "25000000000000",
+      "headroom_gas": "3856540683409"
+    }
+  ],
+  "max_callback_gas_burnt": "21183152328164",
+  "minimum_callback_headroom_gas": "3816847671836",
+  "minimum_callback_headroom_percent": 15.267390687344001,
+  "final_asset": {
+    "network_domain": "near-testnet",
+    "contract_id": "asset.qab-mw3qhtsg-35fb41.testnet",
+    "token_id": "archive",
+    "protocol_version": "archivepass-v1",
+    "manifest": {
+      "schema": "archivepass-manifest-v1",
+      "version_id": "v1",
+      "title": "ArchivePass vector 16777216",
+      "filename": "vector-16777216.bin",
+      "media_type": "application/octet-stream",
+      "license_note": "CC0-1.0",
+      "size_bytes": "16777216",
+      "chunk_size": 1024,
+      "chunk_count": 16384,
+      "file_sha256": "287507f403176f1f5b22b9a4d9cb49f7d7f88ac19e406b5ae87ce109564846bd",
+      "merkle_root": "9859d216bc4659d6877cfffb9263b3c9072db83cc3ca273bf4c39a3294052122",
+      "manifest_sha256": "1ddadaef0d961b7f7a9ade20c2d6739dde25e7a119b8dabcf1a1bbcc97fd3a7f"
+    },
+    "policy": {
+      "service_origin": "1793894657573938936",
+      "period_duration": "30000000000",
+      "max_provider_rate": "1000000000000000000000",
+      "max_slot_spend": "8000000000000000000000",
+      "fund_expiry": "1793895647573938936",
+      "refund_beneficiary": "refundxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+      "eligible_providers": [
+        "p0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "p1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "p2xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "p3xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "p4xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "p5xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "p6xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "p7xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet"
+      ],
+      "max_nonterminal_commitments": 16,
+      "max_total_commitments": 256,
+      "max_pending_payouts": 8
+    },
+    "owner_id": "qab-mw3qhtsg-35fb41.testnet",
+    "owner_epoch": "6",
+    "transfer_call_pending": null,
+    "reserve_expired": true,
+    "providers": [
+      {
+        "provider_id": "p0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "label": "Benchmark provider 0 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "endpoint": "http://127.0.0.1:8991/benchmark-advisory/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "enabled": true
+      },
+      {
+        "provider_id": "p1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "label": "Benchmark provider 1 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "endpoint": "http://127.0.0.1:8992/benchmark-advisory/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "enabled": true
+      },
+      {
+        "provider_id": "p2xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "label": "Benchmark provider 2 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "endpoint": "http://127.0.0.1:8991/benchmark-advisory/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "enabled": true
+      },
+      {
+        "provider_id": "p3xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "label": "Benchmark provider 3 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "endpoint": "http://127.0.0.1:8992/benchmark-advisory/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "enabled": true
+      },
+      {
+        "provider_id": "p4xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "label": "Benchmark provider 4 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "endpoint": "http://127.0.0.1:8991/benchmark-advisory/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "enabled": true
+      },
+      {
+        "provider_id": "p5xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "label": "Benchmark provider 5 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "endpoint": "http://127.0.0.1:8992/benchmark-advisory/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "enabled": true
+      },
+      {
+        "provider_id": "p6xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "label": "Benchmark provider 6 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "endpoint": "http://127.0.0.1:8991/benchmark-advisory/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "enabled": true
+      },
+      {
+        "provider_id": "p7xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "label": "Benchmark provider 7 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "endpoint": "http://127.0.0.1:8992/benchmark-advisory/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "enabled": true
+      }
+    ],
+    "ledger": {
+      "principal_in": "300000000000000000000000",
+      "available_upkeep": "0",
+      "reserved_upkeep": "0",
+      "earned_credit": "0",
+      "refund_credit": "0",
+      "pending_payments": "0",
+      "principal_paid": "300000000000000000000000",
+      "conservation_residual": "0",
+      "operations_funded": "6500000000000000000000000",
+      "security_deposits": "261"
+    },
+    "credits": [
+      {
+        "kind": "provider",
+        "creditor": "p0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "available": "0",
+        "pending": "0",
+        "paid": "1000000000000000000000",
+        "pending_operation_id": null
+      },
+      {
+        "kind": "provider",
+        "creditor": "p1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "available": "0",
+        "pending": "0",
+        "paid": "2000000000000000000000",
+        "pending_operation_id": null
+      },
+      {
+        "kind": "provider",
+        "creditor": "p2xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "available": "0",
+        "pending": "0",
+        "paid": "0",
+        "pending_operation_id": null
+      },
+      {
+        "kind": "provider",
+        "creditor": "p3xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "available": "0",
+        "pending": "0",
+        "paid": "0",
+        "pending_operation_id": null
+      },
+      {
+        "kind": "provider",
+        "creditor": "p4xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "available": "0",
+        "pending": "0",
+        "paid": "0",
+        "pending_operation_id": null
+      },
+      {
+        "kind": "provider",
+        "creditor": "p5xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "available": "0",
+        "pending": "0",
+        "paid": "0",
+        "pending_operation_id": null
+      },
+      {
+        "kind": "provider",
+        "creditor": "p6xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "available": "0",
+        "pending": "0",
+        "paid": "0",
+        "pending_operation_id": null
+      },
+      {
+        "kind": "provider",
+        "creditor": "p7xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "available": "0",
+        "pending": "0",
+        "paid": "0",
+        "pending_operation_id": null
+      },
+      {
+        "kind": "refund",
+        "creditor": "refundxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.qab-mw3qhtsg-35fb41.testnet",
+        "available": "0",
+        "pending": "0",
+        "paid": "297000000000000000000000",
+        "pending_operation_id": null
+      }
+    ],
+    "created_at": "1793894571666472702"
+  },
+  "final_storage": {
+    "storage_budget_bytes": "526351",
+    "future_state_budget_bytes": "260000",
+    "required_operational_yocto": "5263510000000000000000000",
+    "actual_storage_usage": "432057",
+    "serialized_application_bytes": "165661"
+  },
+  "final_account": {
+    "amount": "6500000000000000000000261",
+    "block_hash": "3Trs1FbVSLAWP473xbCm4jZMoAjuxHjFvL9h59mWomoT",
+    "block_height": 276365358,
+    "code_hash": "ECKSoerzM2iUiXhX1tnmcBCF4N3Jx63aGVv997Qb3JNv",
+    "locked": "0",
+    "storage_paid_at": 0,
+    "storage_usage": 432057
+  },
+  "access_keys": [],
+  "conclusion": "Original25Tgas callbacks succeeded in this near-capacity shape but ~15percent headroom was judged inadequate. Parent raised callbacks to50Tgas and is requiring a fresh v2 capacity run. Original harness read race and continuation receipts preserved."
+}

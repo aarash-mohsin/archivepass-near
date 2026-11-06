@@ -1,0 +1,17 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {mkdtempSync,rmSync} from 'node:fs';import {tmpdir} from 'node:os';import {join,resolve,sep} from 'node:path';import {randomUUID} from 'node:crypto';
+import {createApplication} from '../../server/http.ts';import {buildArchive} from '../../shared/protocol.ts';import {OperationJournal,postMutation} from '../../web/src/operations.ts';
+test('actual HTTP commit then dropped response survives client reload without accepting funding twice',async t=>{
+  const dir=mkdtempSync(join(tmpdir(),'archivepass-browser-retry-'));const token='release-test-only-operator-token';const app=createApplication({data_dir:dir,port:0,host:'127.0.0.1',mode:'local',web_origins:[],operator_token:token,keeper_bindings:[],dev_faults:false,payment_interval_ms:500});
+  await new Promise<void>((done,reject)=>{app.server.once('error',reject);app.server.listen(0,'127.0.0.1',done);});
+  t.after(async()=>{await app.close();assert.ok(resolve(dir).startsWith(resolve(tmpdir())+sep));rmSync(dir,{recursive:true,force:true});});
+  const bytes=new TextEncoder().encode('Original public test guide.'),meta={title:'Dropped response regression',filename:'guide.txt',media_type:'text/plain',license_note:'CC0'},built=await buildArchive(bytes,meta);
+  const draft=await app.domain.upload(bytes,{...meta,public_distribution_attested:true,expected_file_sha256:built.manifest.file_sha256,expected_merkle_root:built.manifest.merkle_root,expected_manifest_sha256:built.manifest.manifest_sha256},randomUUID());
+  const now=BigInt(Date.now())*1000000n,providers=['keeper-a.testnet','keeper-b.testnet'];const asset=app.domain.create({draft_id:draft.draft_id,owner_id:'alice.testnet',policy:{service_origin:String(now+60000000000n),period_duration:'30000000000',fund_expiry:String(now+3600000000000n),max_provider_rate:'100',max_slot_spend:'200',refund_beneficiary:'refund.testnet',eligible_providers:providers,max_nonterminal_commitments:16,max_total_commitments:256,max_pending_payouts:8},providers:providers.map((provider_id,i)=>({provider_id,label:'Keeper '+i,endpoint:'http://127.0.0.1:'+String(8791+i),enabled:true}))},randomUUID());
+  const store=new Map<string,string>(),storage={getItem:(key:string)=>store.get(key)??null,setItem:(key:string,value:string)=>{store.set(key,value);}};
+  const path=`http://127.0.0.1:${(app.server.address() as {port:number}).port}/api/v1/assets/${asset.asset_id}/commands`;
+  const input={actor:'alice.testnet',path,token,body:{actor_id:'alice.testnet',command:{type:'fund_upkeep',amount:'100',version_id:'v1'}}};
+  let drop=true;const transport=(async(url:any,options:any)=>{const response=await fetch(url,options);assert.equal(response.status,200);if(drop){drop=false;await response.text();throw new Error('Response deliberately lost after actual HTTP commit');}return response;}) as typeof fetch;
+  await assert.rejects(postMutation(new OperationJournal(storage),input,transport),/lost/);assert.equal(app.domain.asset(asset.asset_id).ledger.principal_in,'100');
+  const reloaded=new OperationJournal(storage);assert.equal(reloaded.pending().length,1);await postMutation(reloaded,input,transport);assert.equal(app.domain.asset(asset.asset_id).ledger.principal_in,'100');assert.equal(reloaded.pending().length,0);
+  await postMutation(reloaded,input,transport);assert.equal(app.domain.asset(asset.asset_id).ledger.principal_in,'200','A new confirmed user intent remains possible.');
+});

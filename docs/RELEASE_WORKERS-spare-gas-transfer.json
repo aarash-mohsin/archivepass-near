@@ -1,0 +1,139 @@
+{
+  "purpose": "Explicit user-approved 2 valueless testnet NEAR from generated ArchivePass QA root for final benchmark",
+  "network": "testnet",
+  "rpc": "https://test.rpc.fastnear.com",
+  "from": "apw-mw3re9ta.testnet",
+  "to": "qab-mw3qhtsg-35fb41.testnet",
+  "amount_yocto": "2000000000000000000000000",
+  "before": {
+    "amount": "3467175231544439299999994",
+    "block_hash": "6FabeHqBkcMLFMwXN4fqVs6PGA9x9VBzENceLHN26Jb6",
+    "block_height": 276400505,
+    "code_hash": "11111111111111111111111111111111",
+    "locked": "0",
+    "storage_paid_at": 0,
+    "storage_usage": 182
+  },
+  "tx_hash": "39N7QB5sq4NN3X3WqUmvXwPdku93SPpEPSwhagB14xuE",
+  "nonce": "276365676000013",
+  "prepared_at": "2026-11-05T22:05:47.989Z",
+  "phase": "Final",
+  "outcome": {
+    "final_execution_status": "FINAL",
+    "receipts_outcome": [
+      {
+        "block_hash": "F95y6AzJEjfDuvMoJP1P3xaM7Xy31y1o6BBmUheyE3mg",
+        "id": "qm2WPfovYe6JSyxySJYXtrWzSFUMkuZu3hmhNE5DjfK",
+        "outcome": {
+          "executor_id": "qab-mw3qhtsg-35fb41.testnet",
+          "gas_burnt": 223182562500,
+          "logs": [],
+          "metadata": {
+            "contracts": [
+              null
+            ],
+            "gas_profile": [],
+            "version": 4
+          },
+          "receipt_ids": [
+            "8QXRzcqqwxNfy3cVCaZs71ByfyBUJeVhxwcZWxdvSSt"
+          ],
+          "status": {
+            "SuccessValue": ""
+          },
+          "tokens_burnt": "22318256250000000000"
+        },
+        "proof": [
+          {
+            "direction": "Right",
+            "hash": "Ciph3DdLtWaLXRKMF2W89RK6JwZ58J5HT2oZLhHv3KQn"
+          },
+          {
+            "direction": "Left",
+            "hash": "3qL59UD5KQdCeoo88KG3DsYYw984u6tu94kakHD6LBLX"
+          },
+          {
+            "direction": "Left",
+            "hash": "CUEy24K2o5DXmnTSSzQKmDhrd92uFk2k8Ny7eLLutScG"
+          },
+          {
+            "direction": "Left",
+            "hash": "ARfcF6or4hXX1Ui5Y9tiAuWwAd4ts4NduDLXpLF2P8yB"
+          }
+        ]
+      },
+      {
+        "block_hash": "5FMyk1AwR1dcvE7wxVeLSuhK7xMXjs9VZbzZ6reaFASg",
+        "id": "8QXRzcqqwxNfy3cVCaZs71ByfyBUJeVhxwcZWxdvSSt",
+        "outcome": {
+          "executor_id": "apw-mw3re9ta.testnet",
+          "gas_burnt": 223182562500,
+          "logs": [],
+          "metadata": {
+            "contracts": [
+              null
+            ],
+            "gas_profile": [],
+            "version": 4
+          },
+          "receipt_ids": [],
+          "status": {
+            "SuccessValue": ""
+          },
+          "tokens_burnt": "0"
+        },
+        "proof": []
+      }
+    ],
+    "status": {
+      "SuccessValue": ""
+    },
+    "transaction": {
+      "actions": [
+        {
+          "Transfer": {
+            "deposit": "2000000000000000000000000"
+          }
+        }
+      ],
+      "hash": "39N7QB5sq4NN3X3WqUmvXwPdku93SPpEPSwhagB14xuE",
+      "nonce": 276365676000013,
+      "priority_fee": 0,
+      "public_key": "ed25519:F2QhDioocRYUaddgh7j9RHaQucEzbC6ZLNKVfkitu9EG",
+      "receiver_id": "qab-mw3qhtsg-35fb41.testnet",
+      "signature": "ed25519:4iPQD8qtzA3tUdgifoorkmx92jMfpdLdgwocPs6bcqw2tsZgCvEJP3MXhYeNiqdoXpvWkycoKXQ8XoCvrokaYc2T",
+      "signer_id": "apw-mw3re9ta.testnet"
+    },
+    "transaction_outcome": {
+      "block_hash": "6u5pTPMbePvrWymQeNuCc6LGkm9REUsop7b9U7F9VGWm",
+      "id": "39N7QB5sq4NN3X3WqUmvXwPdku93SPpEPSwhagB14xuE",
+      "outcome": {
+        "executor_id": "apw-mw3re9ta.testnet",
+        "gas_burnt": 223182562500,
+        "logs": [],
+        "metadata": {
+          "gas_profile": null,
+          "version": 1
+        },
+        "receipt_ids": [
+          "qm2WPfovYe6JSyxySJYXtrWzSFUMkuZu3hmhNE5DjfK"
+        ],
+        "status": {
+          "SuccessReceiptId": "qm2WPfovYe6JSyxySJYXtrWzSFUMkuZu3hmhNE5DjfK"
+        },
+        "tokens_burnt": "22318256250000000000"
+      },
+      "proof": []
+    }
+  },
+  "finalized_at": "2026-11-05T22:05:51.323Z",
+  "after": {
+    "amount": "1467130595031939299999994",
+    "block_hash": "5FMyk1AwR1dcvE7wxVeLSuhK7xMXjs9VZbzZ6reaFASg",
+    "block_height": 276400516,
+    "code_hash": "11111111111111111111111111111111",
+    "locked": "0",
+    "storage_paid_at": 0,
+    "storage_usage": 182
+  }
+}

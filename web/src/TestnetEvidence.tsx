@@ -1,0 +1,47 @@
+import {useEffect,useState} from 'react';
+import type {ChainAsset} from '../../shared/types.ts';
+import {formatNear} from '../../shared/amounts.ts';
+import {displayTime,utcTime} from './helpers.ts';
+
+interface LiveTestnet {
+  network:'testnet';rpc:string;contract_id:string;observed_at:string;code_hash:string;
+  code_hash_matches:boolean;key_status:'verified_keyless'|'retained'|'unknown';access_key_count:number;
+  asset:ChainAsset;source:'live-rpc';signing:'documented-cli';http_keepers:'localhost';evidence_path:string;
+}
+function Fingerprint({label,value}:{label:string;value:string}){
+  const[copied,setCopied]=useState(false),[error,setError]=useState(false);
+  return <div className="hash"><span>{label}</span><code>{value}</code><button className="text-button" onClick={()=>void navigator.clipboard.writeText(value).then(()=>{setCopied(true);setError(false);setTimeout(()=>setCopied(false),2000);}).catch(()=>setError(true))}>{copied?'Copied':error?'Copy unavailable':'Copy'}</button></div>;
+}
+export default function TestnetEvidence(){
+  const[value,setValue]=useState<LiveTestnet|null>(null),[error,setError]=useState(''),[loading,setLoading]=useState(true),[refresh,setRefresh]=useState(0);
+  useEffect(()=>{
+    const controller=new AbortController();setLoading(true);setError('');setValue(null);
+    void (async()=>{
+      try{
+        const response=await fetch('/api/v1/testnet',{signal:AbortSignal.any([controller.signal,AbortSignal.timeout(25000)]),cache:'no-store'});
+        if(!response.ok){const failure=await response.json().catch(()=>null);throw new Error(failure?.error?`${failure.error.code}: ${failure.error.message}`:`Live RPC view failed (HTTP ${response.status}).`);}
+        const result=await response.json() as LiveTestnet;
+        if(result.network!=='testnet'||result.source!=='live-rpc'||!result.asset)throw new Error('The service did not return a live NEAR testnet observation.');
+        if(!controller.signal.aborted)setValue(result);
+      }catch(cause){if(!controller.signal.aborted)setError(cause instanceof Error?cause.message:String(cause));}
+      finally{if(!controller.signal.aborted)setLoading(false);}
+    })();return()=>controller.abort();
+  },[refresh]);
+  const asset=value?.asset;
+  return <section>
+    <a href="#/" className="back-link">← Local archive library</a>
+    <div className="page-heading"><p className="eyebrow">LIVE RPC / READ-ONLY</p><h1>Testnet evidence.</h1><p className="lead">Inspect the actual deployed NFT, fixed service rules and reserve. This view is separate from the local demo ledger.</p></div>
+    <div className="notice info"><strong>NEAR testnet · faucet funds.</strong> Read-only live state. Signing uses documented CLI commands; the demo identity selector does not sign blockchain transactions.</div>
+    <div className="section-heading"><h2>Deployment observation</h2><button className="button secondary" disabled={loading} onClick={()=>setRefresh(n=>n+1)}>{loading?'Reading live RPC…':'Refresh live state ↻'}</button></div>
+    <div aria-live="polite">{loading&&<div className="notice working"><span className="spinner"/>Querying NEAR testnet. No local fallback is used.</div>}{error&&<div className="notice error" role="alert">{error} No current chain state is displayed. Retry when RPC is available.</div>}</div>
+    {value&&asset&&<>
+      {!value.code_hash_matches&&<div className="notice error" role="alert">The deployed code hash does not match the recorded artifact. Treat the deployment as unverified.</div>}
+      {value.key_status==='retained'&&<div className="notice warning">Prototype deployment key retained: the deployer can replace the contract or move funds.</div>}
+      <div className="two-column"><section className="panel"><p className="eyebrow">ACTUAL ASSET ACCOUNT</p><h2>{asset.manifest.title}</h2><Fingerprint label="Testnet contract account" value={value.contract_id}/><div className="steward-strip"><span><small>CURRENT NFT OWNER</small><strong>{asset.owner_id}</strong></span><span><small>OWNERSHIP EPOCH</small><strong>{asset.owner_epoch}</strong></span><span><small>OBSERVED AT</small><strong><time dateTime={utcTime(value.observed_at)} title={utcTime(value.observed_at)}>{displayTime(value.observed_at)}</time></strong></span></div><p className="fineprint">Source: live RPC · {value.rpc}<br/>NFT token: {asset.token_id} · network domain: {asset.network_domain}</p>{asset.transfer_call_pending&&<div className="notice warning">Transfer-call pending; future service controls locked.</div>}</section>
+      <section className="panel"><p className="eyebrow">CODE AND ACCOUNT KEYS</p><h2>Verify the custody boundary.</h2><div className="button-row"><span className={`tag ${value.code_hash_matches?'positive':'danger'}`}>{value.code_hash_matches?'Code hash matches':'Code hash mismatch'}</span><span className={`tag ${value.key_status==='verified_keyless'&&value.access_key_count===0?'positive':'neutral'}`}>{value.key_status==='verified_keyless'&&value.access_key_count===0?'Verified keyless':value.key_status==='retained'?'Key retained':'Key status unverified'}</span></div><Fingerprint label="Observed code hash" value={value.code_hash}/><p>Access-key list: <strong>{value.access_key_count} keys</strong>.</p><p className="fineprint">An empty access-key list is an observed account property, not an independent audit. Contract behavior, provider collusion and sampled-response limitations still apply.</p></section></div>
+      <section className="section"><p className="eyebrow">ACTUAL CONTRACT LEDGER</p><div className="ledger-grid">{[['Available upkeep',asset.ledger.available_upkeep],['Reserved',asset.ledger.reserved_upkeep],['Earned',asset.ledger.earned_credit],['Pending',asset.ledger.pending_payments],['Paid',asset.ledger.principal_paid]].map(([label,amount])=><article className="balance" key={label}><small>{label}</small><span className="amount" title={`${amount} yoctoNEAR`}>{formatNear(amount)} <small>NEAR</small></span></article>)}</div><div className="panel reconciliation"><h3>Recorded principal conservation</h3><p className="equation">Principal in = available + reserved + earned + refund + pending + paid</p><dl>{Object.entries(asset.ledger).map(([key,amount])=><div key={key}><dt>{key.replaceAll('_',' ')}</dt><dd><code>{amount}</code> yoctoNEAR</dd></div>)}</dl><span className={`tag ${asset.ledger.conservation_residual==='0'?'positive':'danger'}`}>Conservation residual: {asset.ledger.conservation_residual}</span><p className="fineprint">Operational funding and security deposits are separate. A pending native payment may have left the account before its callback. This is the contract ledger, not a claim that gross account balance equals upkeep principal.</p></div></section>
+      <div className="two-column"><section className="panel"><p className="eyebrow">IMMUTABLE ARCHIVE IDENTITY</p><h2>The funded content.</h2><p className="wrap">{asset.manifest.filename} · {asset.manifest.size_bytes} bytes · {asset.manifest.chunk_count} chunks</p><Fingerprint label="File SHA-256" value={asset.manifest.file_sha256}/><Fingerprint label="Merkle root" value={asset.manifest.merkle_root}/><Fingerprint label="Manifest SHA-256" value={asset.manifest.manifest_sha256}/></section><section className="panel"><p className="eyebrow">FIXED SERVICE POLICY</p><h2>Rules that survive transfer.</h2><dl className="review-list"><div><dt>Period duration</dt><dd>{(BigInt(asset.policy.period_duration)/1_000_000_000n).toString()} seconds</dd></div><div><dt>Maximum provider payment</dt><dd>{formatNear(asset.policy.max_provider_rate)} NEAR</dd></div><div><dt>Maximum slot spending</dt><dd>{formatNear(asset.policy.max_slot_spend)} NEAR</dd></div><div><dt>First slot</dt><dd>{displayTime(asset.policy.service_origin)}</dd></div><div><dt>Reserve expiry</dt><dd>{displayTime(asset.policy.fund_expiry)}</dd></div><div><dt>Fixed refund beneficiary</dt><dd>{asset.policy.refund_beneficiary}</dd></div><div><dt>Reserve state</dt><dd>{asset.reserve_expired?'Expired':'Not finalized as expired'}</dd></div></dl><h3>Eligible provider accounts</h3>{asset.policy.eligible_providers.map(provider=><p className="wrap" key={provider}><code>{provider}</code></p>)}</section></div>
+      <section className="panel quiet"><p className="eyebrow">REPRODUCE AND INSPECT</p><h3>Inspect the live asset.</h3><pre>node scripts/testnet-view.mjs</pre><p>Run from the ArchivePass project folder. Finalized workflow receipts are recorded in <code>{value.evidence_path}</code>.</p><p>Automatic signed keepers accept commitments, submit proofs and claim fixed payments. Owner operations use an explicit signer and transaction journal. Setup and verified receipts are documented in <code>docs/RELEASE_WORKERS.md</code>; this browser remains read-only.</p><details><summary>Separate fresh-deployment scenario</summary><pre>node scripts/testnet-scenario.mjs</pre><p>This script performs mutable testnet actions. It is for a fresh workflow, not a replay command after the recorded scenario has completed. Use the read-only view command to inspect the existing asset.</p></details><p className="fineprint">Testnet settlement uses two local HTTP keeper processes on this same computer. This is not public decentralized hosting or evidence of independent operators. Accepted sampled responses do not prove continuous uptime, full-file availability or independent replicas.</p></section>
+    </>}
+  </section>;
+}

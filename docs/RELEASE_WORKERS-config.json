@@ -1,0 +1,15 @@
+{
+  "network": "testnet",
+  "rpc": "https://test.rpc.fastnear.com",
+  "contract_id": "archive.apw-mw3r4y86.testnet",
+  "code_hash": "ECKSoerzM2iUiXhX1tnmcBCF4N3Jx63aGVv997Qb3JNv",
+  "manifest_sha256": "78775dd9a9369986e660da98bd4b37b77756a1ca7e343dfe330a4d4b6157b142",
+  "policy_sha256": "0f23f11f678d115f8105752805be3609af905acd1f363822d5fd6c963222be6a",
+  "provider_ids": [
+    "a.apw-mw3r4y86.testnet",
+    "b.apw-mw3r4y86.testnet"
+  ],
+  "source_origin": "http://127.0.0.1:8788",
+  "source_asset_id": "e30b8c8a-0ba5-42b4-9556-1d02db6784fd",
+  "qa_fixture": true
+}

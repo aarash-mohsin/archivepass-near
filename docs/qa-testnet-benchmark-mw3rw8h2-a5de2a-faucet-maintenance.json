@@ -1,0 +1,20 @@
+{
+  "run": "mw3rw8h2-a5de2a",
+  "mode": "faucet",
+  "started_at": "2026-11-05T16:50:00.837Z",
+  "status": "cooldown",
+  "steps": [
+    {
+      "at": "2026-11-05T16:50:08.321Z",
+      "account_id": "qab-mw3rw8h2-a5de2a.testnet",
+      "http_status": 429,
+      "retry_after": "30148",
+      "body": "Rate limit exceeded, retry in 8 hours.",
+      "truncated": false
+    }
+  ],
+  "server_retry_after_seconds": 30148,
+  "account_id": "qab-mw3rw8h2-a5de2a.testnet",
+  "note": "Same saved key/account retained. No alternate faucet, proxy, account cycling or rate-limit bypass was attempted.",
+  "next_allowed_at": "2026-11-06T01:12:36.321Z"
+}

@@ -1,0 +1,161 @@
+{
+  "network": "testnet",
+  "rpc": "https://test.rpc.fastnear.com",
+  "accounts": {
+    "owner": "ap-mw3n08w6.testnet",
+    "bob": "bob.ap-mw3n08w6.testnet",
+    "keeper-a": "keeper-a.ap-mw3n08w6.testnet",
+    "keeper-b": "keeper-b.ap-mw3n08w6.testnet",
+    "refund": "refund.ap-mw3n08w6.testnet",
+    "receiver": "receiver.ap-mw3n08w6.testnet"
+  },
+  "asset_id": "archive.ap-mw3n08w6.testnet",
+  "fixture_asset_id": "expiry.ap-mw3n0te5.testnet",
+  "manifest": {
+    "title": "Public stewardship field guide",
+    "filename": "stewardship-guide.txt",
+    "media_type": "text/plain",
+    "license_note": "CC0-1.0",
+    "schema": "archivepass-manifest-v1",
+    "version_id": "v1",
+    "size_bytes": "2937",
+    "chunk_size": 1024,
+    "chunk_count": 3,
+    "file_sha256": "613d3d09c8774dd2af511845c984555d9c6017cc470243ea181bce76818023f4",
+    "merkle_root": "dc891c97cec1f21834ae5f028122c160d9ed290863b4c3663d0a4d43f8a83a6f",
+    "manifest_sha256": "78775dd9a9369986e660da98bd4b37b77756a1ca7e343dfe330a4d4b6157b142"
+  },
+  "bytes_path": "fixtures/stewardship-guide.txt",
+  "key_status": "verified_keyless",
+  "policy": {
+    "service_origin": "1793889756091478852",
+    "period_duration": "60000000000",
+    "max_provider_rate": "1000000000000000000000",
+    "max_slot_spend": "2000000000000000000000",
+    "fund_expiry": "1793889936091478852",
+    "refund_beneficiary": "refund.ap-mw3n08w6.testnet",
+    "eligible_providers": [
+      "keeper-a.ap-mw3n08w6.testnet",
+      "keeper-b.ap-mw3n08w6.testnet"
+    ],
+    "max_nonterminal_commitments": 16,
+    "max_total_commitments": 256,
+    "max_pending_payouts": 8
+  },
+  "providers": [
+    {
+      "provider_id": "keeper-a.ap-mw3n08w6.testnet",
+      "label": "Test keeper A",
+      "endpoint": "http://127.0.0.1:8791",
+      "enabled": true
+    },
+    {
+      "provider_id": "keeper-b.ap-mw3n08w6.testnet",
+      "label": "Test keeper B",
+      "endpoint": "http://127.0.0.1:8792",
+      "enabled": true
+    }
+  ],
+  "code_hash": "2iRwF8XgJr95YHmxbiLtSTe5Rae47o84aH7b1N5yrn2X",
+  "key_verified_at": "2026-11-05T14:41:45.373Z",
+  "access_keys": [],
+  "storage_quote": {
+    "storage_budget_bytes": "519751",
+    "future_state_budget_bytes": "260000",
+    "required_operational_yocto": "5197510000000000000000000",
+    "actual_storage_usage": "260886",
+    "serialized_application_bytes": "1090"
+  },
+  "initial_asset": {
+    "network_domain": "near-testnet",
+    "contract_id": "archive.ap-mw3n08w6.testnet",
+    "token_id": "archive",
+    "protocol_version": "archivepass-v1",
+    "manifest": {
+      "schema": "archivepass-manifest-v1",
+      "version_id": "v1",
+      "title": "Public stewardship field guide",
+      "filename": "stewardship-guide.txt",
+      "media_type": "text/plain",
+      "license_note": "CC0-1.0",
+      "size_bytes": "2937",
+      "chunk_size": 1024,
+      "chunk_count": 3,
+      "file_sha256": "613d3d09c8774dd2af511845c984555d9c6017cc470243ea181bce76818023f4",
+      "merkle_root": "dc891c97cec1f21834ae5f028122c160d9ed290863b4c3663d0a4d43f8a83a6f",
+      "manifest_sha256": "78775dd9a9369986e660da98bd4b37b77756a1ca7e343dfe330a4d4b6157b142"
+    },
+    "policy": {
+      "service_origin": "1793889756091478852",
+      "period_duration": "60000000000",
+      "max_provider_rate": "1000000000000000000000",
+      "max_slot_spend": "2000000000000000000000",
+      "fund_expiry": "1793889936091478852",
+      "refund_beneficiary": "refund.ap-mw3n08w6.testnet",
+      "eligible_providers": [
+        "keeper-a.ap-mw3n08w6.testnet",
+        "keeper-b.ap-mw3n08w6.testnet"
+      ],
+      "max_nonterminal_commitments": 16,
+      "max_total_commitments": 256,
+      "max_pending_payouts": 8
+    },
+    "owner_id": "ap-mw3n08w6.testnet",
+    "owner_epoch": "0",
+    "transfer_call_pending": null,
+    "reserve_expired": false,
+    "providers": [
+      {
+        "provider_id": "keeper-a.ap-mw3n08w6.testnet",
+        "label": "Test keeper A",
+        "endpoint": "http://127.0.0.1:8791",
+        "enabled": true
+      },
+      {
+        "provider_id": "keeper-b.ap-mw3n08w6.testnet",
+        "label": "Test keeper B",
+        "endpoint": "http://127.0.0.1:8792",
+        "enabled": true
+      }
+    ],
+    "ledger": {
+      "principal_in": "0",
+      "available_upkeep": "0",
+      "reserved_upkeep": "0",
+      "earned_credit": "0",
+      "refund_credit": "0",
+      "pending_payments": "0",
+      "principal_paid": "0",
+      "conservation_residual": "0",
+      "operations_funded": "6500000000000000000000000",
+      "security_deposits": "0"
+    },
+    "credits": [
+      {
+        "kind": "provider",
+        "creditor": "keeper-a.ap-mw3n08w6.testnet",
+        "available": "0",
+        "pending": "0",
+        "paid": "0",
+        "pending_operation_id": null
+      },
+      {
+        "kind": "provider",
+        "creditor": "keeper-b.ap-mw3n08w6.testnet",
+        "available": "0",
+        "pending": "0",
+        "paid": "0",
+        "pending_operation_id": null
+      },
+      {
+        "kind": "refund",
+        "creditor": "refund.ap-mw3n08w6.testnet",
+        "available": "0",
+        "pending": "0",
+        "paid": "0",
+        "pending_operation_id": null
+      }
+    ],
+    "created_at": "1793889701516804308"
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "network": "testnet",
+  "contract_id": "archive.apw-mw3r4y86.testnet",
+  "started_at": "2026-11-05T16:25:34.516Z",
+  "steps": [
+    {
+      "name": "Signed owner CLI root: fund_upkeep",
+      "at": "2026-11-05T16:25:43.841Z",
+      "data": {
+        "request_id": "cc2f80e6-9345-43ac-8854-237af7783623",
+        "receipt": {
+          "source": "near-testnet",
+          "status": "Succeeded",
+          "transaction_hash": "AmeTZLiQJCk2SKPGis5qoPSR9PNK3dAAwhCgBZ6pvBzn",
+          "receipt_ids": [
+            "F2FMN65X8ki1qN7KJEymC4hD5vsADAZ1MSR6Sy7uqqrp",
+            "5xvYZHxj3RnngdXz1L2Cv9wV61cWkg6chmvsGrj6PKxJ"
+          ],
+          "local_event_id": null,
+          "explorer_url": null
+        },
+        "owner_id": "apw-mw3r4y86.testnet",
+        "owner_epoch": "0"
+      }
+    },
+    {
+      "name": "Signed owner CLI root: propose_period",
+      "at": "2026-11-05T16:25:51.140Z",
+      "data": {
+        "request_id": "b5d6e9a0-23f3-4fa4-9c9d-40c19da8ace1",
+        "receipt": {
+          "source": "near-testnet",
+          "status": "Succeeded",
+          "transaction_hash": "58tPsAx3ZhEVX7WzW6Ze2RYXFG4JfuWV7z9yTvrNvecy",
+          "receipt_ids": [
+            "2zntGw2Fd4ya2wiHouVaLDMhdw7WZDXu7RtqPuziUhs3",
+            "CbExKTY73xwLRnfW4MTPZJVwUCEcvmGshJ4N8bi7n3Gs"
+          ],
+          "local_event_id": null,
+          "explorer_url": null
+        },
+        "owner_id": "apw-mw3r4y86.testnet",
+        "owner_epoch": "0"
+      }
+    },
+    {
+      "name": "Signed owner CLI root: propose_period",
+      "at": "2026-11-05T16:25:57.807Z",
+      "data": {
+        "request_id": "dcbd1e2c-b313-400d-9566-bee010984e6d",
+        "receipt": {
+          "source": "near-testnet",
+          "status": "Succeeded",
+          "transaction_hash": "GPgEDYM7kNwQ2mB3pLUvtg7H5HVKjLt2HR5ShhmxsDwN",
+          "receipt_ids": [
+            "6HGTVhuQjUEWsYVRsvFtRUUd7rqctqaJZ6c2uTaMMqbR",
+            "HYLFFEMW4xj6TenvpLefWMzMBn1sET1GqejvDAC1KDW8"
+          ],
+          "local_event_id": null,
+          "explorer_url": null
+        },
+        "owner_id": "apw-mw3r4y86.testnet",
+        "owner_epoch": "0"
+      }
+    },
+    {
+      "name": "Actual worker A broadcast succeeded but injected response loss persisted Unknown and exited",
+      "at": "2026-11-05T16:26:02.248Z",
+      "data": {
+        "attempt": {
+          "request_id": "02b661a1-670f-4f75-851f-2702a9f49187",
+          "command": {
+            "type": "accept_period",
+            "commitment_id": "0"
+          },
+          "phase": "Unknown",
+          "tx_hash": "EWsx8XBtsqf7kAJBNKHPuKWvZ4Z9p4xaDP9faYXgB4Wg",
+          "nonce": "276364940000001",
+          "outcome": null,
+          "error": "Error: QA injected response loss after actual broadcast"
+        },
+        "process_exit_code": 86
+      }
+    },
+    {
+      "name": "Restart reconciled the same actual hash without a second acceptance transaction",
+      "at": "2026-11-05T16:26:07.901Z",
+      "data": {
+        "before_hash": "EWsx8XBtsqf7kAJBNKHPuKWvZ4Z9p4xaDP9faYXgB4Wg",
+        "after_hash": "EWsx8XBtsqf7kAJBNKHPuKWvZ4Z9p4xaDP9faYXgB4Wg"
+      }
+    },
+    {
+      "name": "Signed owner CLI root: nft_transfer",
+      "at": "2026-11-05T16:26:14.929Z",
+      "data": {
+        "request_id": "2f3e6b69-bb25-4844-9429-63f16cdb4915",
+        "receipt": {
+          "source": "near-testnet",
+          "status": "Succeeded",
+          "transaction_hash": "68V6VbpwBYTiuGTJ7i4zW6ks2rpvbu6ZLRFydrq16FUa",
+          "receipt_ids": [
+            "8ZJvdGugE6PQGj5jH5ymtmagb1W3tCRUVuvmEPRkyqKz",
+            "tmQr8ebQXxAzxpL3vACi9HMCpuCdm4fi1Ha6jFVdhm1"
+          ],
+          "local_event_id": null,
+          "explorer_url": null
+        },
+        "owner_id": "bob.apw-mw3r4y86.testnet",
+        "owner_epoch": "1"
+      }
+    }
+  ],
+  "limitations": [
+    "Both keeper HTTP processes run on one computer.",
+    "Response loss is an explicit post-broadcast QA transport injection; actual transaction execution is real."
+  ],
+  "status": "failed",
+  "error": "Error: Testnet RPC HTTP429"
+}

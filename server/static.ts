@@ -1,0 +1,11 @@
+import {existsSync,lstatSync,realpathSync,readFileSync} from 'node:fs';import {resolve,sep,extname} from 'node:path';import type {IncomingMessage,ServerResponse} from 'node:http';
+const MIME:Record<string,string>={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json; charset=utf-8','.svg':'image/svg+xml','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.webp':'image/webp','.avif':'image/avif','.gif':'image/gif','.ico':'image/x-icon','.woff':'font/woff','.woff2':'font/woff2','.txt':'text/plain; charset=utf-8'};
+/** Only the explicit build root is public; application sources/data never form a fallback. */
+export function serveStatic(req:IncomingMessage,res:ServerResponse,directory:string):boolean{
+ if(req.method!=='GET'&&req.method!=='HEAD')return false;let decoded:string;try{decoded=decodeURIComponent((req.url??'/').split('?')[0]!);}catch{return false;}
+ const parts=decoded.split('/');if(!decoded.startsWith('/')||decoded.includes('\\')||decoded.includes('\0')||decoded.includes('%')||parts.some(p=>p==='..'||p.startsWith('.'))||/^\/(api|health|data|server|shared|keeper|contract|scripts|tests|src|node_modules)(\/|$)/.test(decoded))return false;
+ const root=resolve(directory);if(!existsSync(root)||lstatSync(root).isSymbolicLink()||realpathSync(root)!==root)return false;let target=resolve(root,'.'+decoded);if(target!==root&&!target.startsWith(root+sep))return false;
+ if(!extname(decoded)){target=resolve(root,'index.html');}else if(!MIME[extname(decoded).toLowerCase()])return false;
+ if(!existsSync(target)||!lstatSync(target).isFile())return false;let cursor=root;for(const part of target.slice(root.length+1).split(sep)){cursor=resolve(cursor,part);if(lstatSync(cursor).isSymbolicLink())return false;}if(realpathSync(target)!==target)return false;
+ const bytes=readFileSync(target);res.writeHead(200,{'Content-Type':MIME[extname(target).toLowerCase()]!,'Content-Length':String(bytes.length),'Cache-Control':/\/[a-zA-Z0-9_-]+-[a-zA-Z0-9_-]{8,}\.[a-z]+$/.test(decoded)?'public, max-age=31536000, immutable':'no-cache','X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer','X-Frame-Options':'SAMEORIGIN'});res.end(req.method==='HEAD'?undefined:bytes);return true;
+}

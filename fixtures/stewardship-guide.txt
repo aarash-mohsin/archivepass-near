@@ -1,0 +1,23 @@
+ArchivePass public stewardship field guide
+Copyright waived under CC0 1.0 Universal. This original demonstration document may be copied, modified, and redistributed.
+
+1. Make the handover understandable
+Record the archive title, byte length, SHA-256 digest, chunk root, license, and reason it matters. The digest identifies bytes; it does not establish their accuracy, safety, authorship, or legal ownership. A useful archive also needs context that a future reader can understand.
+
+2. Preserve the funding agreement
+Tell sponsors which providers may earn, the maximum payment per period, the total slot cap, when funding expires, and where unused money goes. Funding is a restricted contribution under those terms. It is not a refundable personal savings account. The NFT caretaker can arrange future service within the policy; the caretaker cannot directly withdraw upkeep.
+
+3. Check actual retrieval
+Choose a keeper, download the complete file, and compute SHA-256 over the bytes in your browser. Compare the actual digest and length with the manifest. Record the host and time. A green check is an observation about that completed download, not a promise that tomorrow's download will succeed. Keep a local copy if the material matters to you.
+
+4. Understand a sampled response
+A provider earns a fixed period payment only after an authorized response supplies the challenged chunk and its Merkle siblings before the deadline. A valid response shows knowledge of those bytes at that moment. It does not show a complete replica, independent infrastructure, or continuous HTTP service. Providers can fetch public bytes from one another. Do not market this check as permanent storage.
+
+5. Transfer responsibility without rewriting debts
+Before transfer, inspect the current caretaker, ownership epoch, available upkeep, reserved commitments, earned claims, pending payouts, expiry, and fixed refund beneficiary. Existing commitments keep their provider, content, rate, and deadline. The former caretaker loses future configuration authority. A temporary transfer-call holder cannot create fresh service obligations while the return decision is unresolved.
+
+6. Recover carefully
+Restart the app and keepers with their original databases and content directories. Read authoritative commitment and payment state before retrying. A missed window remains missed. A payment with unknown delivery remains pending until durable evidence resolves it; elapsed time alone is not evidence of failure. Never send a second payment because the browser stopped waiting.
+
+7. Plan for the end
+Finite upkeep eventually expires. Settle outstanding missed commitments, finalize the unused-fund refund, and pay the fixed beneficiary. Earned provider credits survive this step and any NFT transfer. If every keeper disappears, a manifest cannot reconstruct missing bytes. Keep independent backups and identify the next caretaker before the service term ends.

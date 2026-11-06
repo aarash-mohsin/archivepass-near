@@ -1,0 +1,67 @@
+{
+  "run": "mw3rw8h2-a5de2a",
+  "reused_dedicated_run": "mw3qhtsg-35fb41",
+  "started_at": "2026-11-05T16:41:36.999Z",
+  "network": "testnet",
+  "rpc": "https://rpc.testnet.near.org",
+  "status": "failed",
+  "scope": "fresh keyless account; largest Merkle proof; actual bounded state; receipt gas; native failure restoration and retry",
+  "steps": [
+    {
+      "name": "Faucet request inconclusive; checking same saved account",
+      "account_id": "qab-mw3rw8h2-a5de2a.testnet",
+      "error": "Unexpected token 'R', \"Rate limit\"... is not valid JSON"
+    }
+  ],
+  "limits": {
+    "max_file_bytes": 16777216,
+    "merkle_depth": 14,
+    "target_lifetime_commitments": 256,
+    "max_nonterminal": 16,
+    "period_seconds": 30,
+    "callback_allocated_gas": "50000000000000"
+  },
+  "native_workspace": {
+    "tests_passed": 21,
+    "command": "node scripts/contract.mjs test",
+    "count_source": "Parent supplied actual final native-run result"
+  },
+  "keepers": {
+    "ports": [
+      8991,
+      8992
+    ],
+    "separate_processes": true,
+    "independent_infrastructure": false,
+    "description": "Isolated HTTP fixture processes with separately copied/recomputed actual files, not automatic product testnet schedulers"
+  },
+  "artifacts": {
+    "primary": {
+      "bytes": 266288,
+      "sha256": "6b35856cc8d713b123a5431b525a6f3dc6393110d3f11a46e50f64cf9a07cad3"
+    },
+    "receiver": {
+      "bytes": 120148,
+      "sha256": "dd59e3139587368fe4bd800402530e9c9a8bfccacf08da52313a17ab88b2dd79"
+    }
+  },
+  "manifest": {
+    "title": "ArchivePass vector 16777216",
+    "filename": "vector-16777216.bin",
+    "media_type": "application/octet-stream",
+    "license_note": "CC0-1.0",
+    "schema": "archivepass-manifest-v1",
+    "version_id": "v1",
+    "size_bytes": "16777216",
+    "chunk_size": 1024,
+    "chunk_count": 16384,
+    "file_sha256": "287507f403176f1f5b22b9a4d9cb49f7d7f88ac19e406b5ae87ce109564846bd",
+    "merkle_root": "9859d216bc4659d6877cfffb9263b3c9072db83cc3ca273bf4c39a3294052122",
+    "manifest_sha256": "1ddadaef0d961b7f7a9ade20c2d6739dde25e7a119b8dabcf1a1bbcc97fd3a7f"
+  },
+  "error": {
+    "message": "Faucet did not finalize qab-mw3rw8h2-a5de2a.testnet; credential preserved and never regenerated",
+    "stack": "Error: Faucet did not finalize qab-mw3rw8h2-a5de2a.testnet; credential preserved and never regenerated\n    at faucet (file:///C:/CryptoProject/archivepass/scripts/qa-testnet-benchmark.mjs:65:23)\n    at async benchmark (file:///C:/CryptoProject/archivepass/scripts/qa-testnet-benchmark.mjs:82:10)\n    at async file:///C:/CryptoProject/archivepass/scripts/qa-testnet-benchmark.mjs:140:75"
+  },
+  "failed_at": "2026-11-05T16:43:16.769Z"
+}
