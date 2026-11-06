@@ -1,5 +1,7 @@
 # ArchivePass
 
+[![CI](https://github.com/aarash-mohsin/archivepass-near/actions/workflows/ci.yml/badge.svg)](https://github.com/aarash-mohsin/archivepass-near/actions/workflows/ci.yml)
+
 **Pass an archive on, with its upkeep money and its storage agreements attached.**
 
 Small public archives, like a community's oral-history recordings, a school's open dataset or an open-source project's documentation, often stay online only because one volunteer pays for the hosting. When that person steps away, the archive tends to disappear. The money and the hosting arrangements sit in their personal accounts, and there's no clean way to hand them over.
