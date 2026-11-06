@@ -123,7 +123,7 @@ The testnet scripts are for creating a **new, dedicated** testnet deployment. `t
 - **Contracts:** Rust, [near-sdk](https://github.com/near/near-sdk-rs) 5.30; the contract implements the NEP-171 NFT methods itself
 - **App:** TypeScript, React 19, Vite, Node.js 24 (built-in SQLite), [near-api-js](https://github.com/near/near-api-js) 7.4
 - **On chain:** NEAR testnet
-- **AI tools:** OpenAI Codex was used as a coding assistant for implementation and for the review passes recorded in `docs/ASTRA_*.md`.
+- **AI tools:** OpenAI Codex with OpenAI's GPT-6 Astra model, used as a coding assistant for implementation and for the review passes recorded in `docs/ASTRA_*.md`.
 
 The exact versions are pinned in `package.json`, `pnpm-lock.yaml` and `contract/Cargo.lock`.
 
