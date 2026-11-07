@@ -12,9 +12,9 @@ import wasmUrl from '../../contract/target/near/archivepass.wasm?url';
 
 const REPO='https://github.com/aarash-mohsin/archivepass-near';
 const RAW_WASM='https://raw.githubusercontent.com/aarash-mohsin/archivepass-near/main/contract/target/near/archivepass.wasm';
-type Tab='verify'|'history'|'fund'|'holder';
-const TABS:[Tab,string][]=[['verify','Verify'],['history','History'],['fund','Fund'],['holder','Holder console']];
-const tabFromHash=():Tab=>{const t=location.hash.replace(/^#\/?/,'') as Tab;return TABS.some(([id])=>id===t)?t:'verify';};
+type Tab='home'|'verify'|'history'|'fund'|'holder';
+const TABS:[Tab,string][]=[['home','Overview'],['verify','Verify'],['history','History'],['fund','Fund'],['holder','Holder console']];
+const tabFromHash=():Tab=>{const t=location.hash.replace(/^#\/?/,'') as Tab;return TABS.some(([id])=>id===t)?t:'home';};
 const shortTx=(h:string)=>h.slice(0,8)+'…';
 const accountUrl=(a:string)=>`https://testnet.nearblocks.io/address/${a}`;
 const fmtTime=(ns:string)=>timeOf(ns).toLocaleString(undefined,{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit',second:'2-digit'});
@@ -59,16 +59,27 @@ export default function App(){
   return <>
     <div className="strip"><span className="live-dot"/>Live on NEAR testnet · reads public RPC from your browser · nothing is signed unless you connect a wallet<span className="strip-right">ARCHIVEPASS / LIVE</span></div>
     <header className="top">
-      <a className="brand" href="#/verify"><span className="brand-mark" aria-hidden="true">▥</span><span>Archive<span className="light">Pass</span></span></a>
+      <a className="brand" href="#/home"><span className="brand-mark" aria-hidden="true">▥</span><span>Archive<span className="light">Pass</span></span></a>
       <nav aria-label="Sections">{TABS.map(([id,label])=><a key={id} href={`#/${id}`} className={tab===id?'active':''} aria-current={tab===id?'page':undefined}>{label}</a>)}<a href={REPO} target="_blank" rel="noreferrer" className="ext">Code ↗</a></nav>
       <div className="wallet">{account?<><span className="wallet-chip" title={account}><span className="live-dot"/>{account}</span><button className="link" disabled={walletBusy} onClick={()=>void walletAction(async()=>{await disconnect();setAccount('');})}>Disconnect</button></>:<button className="btn ghost" disabled={walletBusy} onClick={()=>void walletAction(async()=>setAccount(await connect()))}>{walletBusy?'Opening wallet…':'Connect testnet wallet'}</button>}</div>
     </header>
     <main>
       <section className="hero">
         <div>
-          <p className="eyebrow">ONE ARCHIVE · ONE NFT · ITS OWN NEAR ACCOUNT</p>
-          <h1>{asset?.manifest.title??'Public stewardship field guide'}</h1>
-          <p className="lead">Other NFT wallets carry a balance through a sale. ArchivePass carries <em>ongoing obligations to third parties</em> through a handover: storage keepers are paid only for Merkle proofs of the file, and the asset account has no keys.</p>
+          {tab==='home'?<>
+            <p className="eyebrow">ARCHIVEPASS · AN NFT THAT IS ITS OWN NEAR ACCOUNT</p>
+            <h1>Pass an archive on, with its money and its promises attached.</h1>
+            <p className="lead">Small public archives stay online because one volunteer pays for hosting, and vanish when that person steps away. ArchivePass makes the caretaker role an NFT that holds the upkeep fund and carries <em>ongoing obligations to third parties</em> through a handover: keepers are paid only for Merkle proofs of the file, on an account with no keys.</p>
+            <div className="cta-row">
+              <a className="btn primary big" href="#/verify">Check the live asset →</a>
+              <button className="btn ghost big" onClick={()=>document.getElementById('demo')?.scrollIntoView({behavior:'smooth'})}>▶ Watch the 2-minute demo</button>
+              <a className="btn ghost big" href="#/fund">Fund this archive</a>
+            </div>
+          </>:<>
+            <p className="eyebrow">ONE ARCHIVE · ONE NFT · ITS OWN NEAR ACCOUNT</p>
+            <h1>{asset?.manifest.title??'Public stewardship field guide'}</h1>
+            <p className="lead">Other NFT wallets carry a balance through a sale. ArchivePass carries <em>ongoing obligations to third parties</em> through a handover: storage keepers are paid only for Merkle proofs of the file, and the asset account has no keys.</p>
+          </>}
           <p className="asset-id"><code>{ASSET_ID}</code> <a href={accountUrl(ASSET_ID)} target="_blank" rel="noreferrer">explorer ↗</a></p>
         </div>
         <aside className="summary" aria-live="polite">
@@ -81,6 +92,7 @@ export default function App(){
       {source==='snapshot'&&<div className="note warn">The testnet RPC could not be reached, so this page shows the snapshot recorded at {state?.observed_at}. Retry for live data.</div>}
       {state?.history_error&&<div className="note">{state.history_error}</div>}
       {error&&<div className="note bad" role="alert">{error} <button className="link" onClick={()=>void load()}>Retry</button></div>}
+      {tab==='home'&&<Home state={state} passed={passed} total={checks.filter(c=>c.status!=='INFO').length} done={!loading&&shown>=checks.length}/>}
       {tab==='verify'&&<Verify checks={checks} shown={shown} loading={loading} reload={load} passed={passed} failed={failed}/>}
       {tab==='history'&&state&&<History state={state}/>}
       {tab==='fund'&&state&&<Fund state={state} account={account} busy={walletBusy} walletAction={walletAction} setAccount={setAccount} reload={load}/>}
@@ -245,4 +257,30 @@ function Console({state,account,busy,walletAction,reload,commitments}:{state:Liv
     <div className="row"><input value={receiver} onChange={e=>setReceiver(e.target.value)} placeholder="next-caretaker.testnet" aria-label="Next caretaker"/><button className="btn ghost" disabled={busy||!receiver.trim()} onClick={()=>void walletAction(async()=>{setTx(await call(ASSET_ID,{method:'nft_transfer',args:{receiver_id:receiver.trim(),token_id:'archive',approval_id:null,memo:'ArchivePass holder console'},deposit:'1',gas:'100000000000000'}));await reload();})}>Transfer NFT</button></div>
     {tx&&<div className="note good">Sent: <Tx hash={tx}/></div>}
   </div>;
+}
+
+function Home({state,passed,total,done}:{state:LiveState|null;passed:number;total:number;done:boolean}){
+  const[video,setVideo]=useState(true);
+  const steps:[string,string,string][]=[
+    ['1','The NFT is its own account','archive.apw-mw4fsdcz.testnet holds the upkeep fund. The caretaker can\'t withdraw it; leftovers go to a refund address fixed at creation.'],
+    ['2','The caretaker books keepers','Each storage period names a keeper, a fee and a window. The fee is reserved when it is booked, and the terms can\'t change.'],
+    ['3','Keepers prove the file','A challenge picks a random chunk. The keeper answers with the bytes and a Merkle proof; only an accepted answer earns its fee.'],
+    ['4','Hand it over, promises intact','Transferring the NFT moves the right to book future service, nothing else. Booked periods still pay; the old owner is locked out.'],
+  ];
+  const holders=state?state.events.filter(e=>e.event==='nft_transfer').length+1:0;
+  const paid=state?state.events.filter(e=>e.event==='payment_resolved'&&e.data.success).length:0;
+  const links:[string,string,string][]=[
+    ['#/verify','Verify',done?`${passed} of ${total} checks passed in your browser just now`:'Live checks running in your browser…'],
+    ['#/history','History',state?`${holders} caretakers, ${paid} keeper payouts, every event with its transaction`:'Per-NFT history from chain events'],
+    ['#/fund','Fund','Add to the upkeep from your wallet: it can only pay keepers for proofs'],
+    ['#/holder','Holder console','A NEP-413 signed message proves you hold the NFT; the old caretaker is locked out'],
+  ];
+  return <>
+    <section className="how" aria-label="How it works">{steps.map(([n,t,d])=><div key={n}><span>{n}</span><h3>{t}</h3><p>{d}</p></div>)}</section>
+    <section className="explore" aria-label="Explore the live asset">{links.map(([href,t,d])=><a key={href} href={href}><b>{t} →</b><span>{d}</span></a>)}</section>
+    {video&&<section className="demo" id="demo">
+      <div><p className="eyebrow">THE DEMO · 2 MINUTES</p><h2>A handover in the middle of service, and the keepers still get paid.</h2><p className="intro">The first half runs the app on a local test ledger; the second half is this page reading the live asset on NEAR testnet.</p></div>
+      <video controls preload="none" poster="./demo-poster.jpg" src="./demo.mp4" onError={()=>setVideo(false)} aria-label="ArchivePass demo video, captions burned in"/>
+    </section>}
+  </>;
 }

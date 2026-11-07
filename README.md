@@ -21,7 +21,8 @@ Built for the **NFTs That Do Something** track of the NEAR Hackathon: the NFT is
 
 | Do | See |
 |---|---|
-| Open the [live page](https://aarash-mohsin.github.io/archivepass-live/) | 14 checks computed in your browser from public testnet RPC, each `PASS`, with transaction links: no keys on the asset, code hash = the committed WASM, books balanced, every keeper's Merkle proof re-verified from its transaction |
+| Open the [live page](https://aarash-mohsin.github.io/archivepass-live/) | The overview: how it works in four steps, the 2-minute demo, and links into the live asset |
+| Open **Verify** ([direct link](https://aarash-mohsin.github.io/archivepass-live/#/verify)) | 14 checks computed in your browser from public testnet RPC, each `PASS`, with transaction links: no keys on the asset, code hash = the committed WASM, books balanced, every keeper's Merkle proof re-verified from its transaction |
 | Open **History** | Two caretakers (epoch 0, then Bob at epoch 1), the handover transaction, periods booked at epoch 0 that were answered and paid *after* the handover, and one missed period that earned nothing |
 | Open **Fund**, connect a testnet wallet, fund 0.01 NEAR | Your wallet signs `fund_upkeep`; the ledger's total rises and your contribution appears in **History** |
 | Open **Holder console**, click `apw-mw4fsdcz.testnet` | "Former caretaker, no access": it handed the NFT over and holds 0 tokens |
