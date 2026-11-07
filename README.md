@@ -8,6 +8,9 @@
 
 **Live page:** <https://aarash-mohsin.github.io/archivepass-live/> · **Asset:** `archive.apw-mw4fsdcz.testnet` (NEAR testnet, funding open until 1 December 2026)
 
+[![The live page: 14 checks computed in your browser from NEAR testnet RPC, all passing](docs/images/verify.png)](https://aarash-mohsin.github.io/archivepass-live/)
+<sub>The <a href="https://aarash-mohsin.github.io/archivepass-live/">live page</a>. Every line is computed in the visitor's browser from public testnet RPC: no keys on the asset, the deployed code hash equals the WASM in this repo, the books balance, and every keeper's Merkle proof is re-checked from its transaction.</sub>
+
 Small public archives, like a community's oral-history recordings, a school's open dataset or an open-source project's documentation, often stay online only because one volunteer pays for the hosting. When that person steps away, the archive tends to disappear. The money and the hosting arrangements sit in their personal accounts, and there's no clean way to hand them over.
 
 ArchivePass makes the archive's stewardship an NFT that holds its own upkeep fund. Whoever holds the NFT can arrange future hosting, paid from a fund that can only be spent under fixed rules. Hosting providers ("keepers") are paid only after they answer a challenge with the right piece of the file. When the NFT moves to a new caretaker, the fund, the providers' existing agreements and the payments they've already earned all stay in place. The previous caretaker loses the authority to arrange service but cannot take the money with them.
@@ -27,6 +30,17 @@ Built for the **NFTs That Do Something** track of the NEAR Hackathon: the NFT is
 | Run `pnpm test` | 87 application tests, including tampered-state tests that make every verify check fail |
 | Run `pnpm test:contract` | 21 Rust tests, including a handover while a payout is in flight |
 | Run `pnpm dev` and `pnpm seed`, open <http://127.0.0.1:5174> | The whole caretaker story on a local test ledger: book keepers, hand over, watch both keepers prove and get paid |
+
+### The NFT's history, read from chain events
+
+![History tab: the former and the current caretaker, money in and out, and every booked service period with its result](docs/images/history.png)
+
+Periods 0 and 1 were booked by the first caretaker at epoch 0. The NFT then moved to Bob, and both were still answered with Merkle proofs and paid to their original keepers. Period 2 was missed, so it paid nothing and its reservation went back to the fund.
+
+| Only the current holder gets in | Handing over in the app |
+|---|---|
+| ![Holder console: the former caretaker is shown as having no access](docs/images/holder.png) | ![Transfer screen: what the next caretaker inherits and what stays fixed](docs/images/app-transfer.png) |
+| The holder console checks a NEP-413 signed message, the signing key and `nft_token`. The former caretaker is locked out. The real gate is the contract's `owner_id` and epoch check. | The local app previews what the next caretaker inherits before the handover: booked commitments, the remaining fund and the fixed refund address. |
 
 ## How control passes on transfer
 

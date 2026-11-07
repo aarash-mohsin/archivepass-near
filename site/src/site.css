@@ -110,7 +110,7 @@ form small,.panel>small{font-size:12px;color:var(--muted)}
 .proof li:before{position:absolute;left:0;top:6px;font-weight:700}.proof .ok:before{content:'✓';color:var(--green)}.proof .no:before{content:'✕';color:var(--red)}
 .console{margin-top:16px;border-top:1px solid var(--line);padding-top:16px}
 .quick{display:flex;flex-wrap:wrap;gap:12px;margin:4px 0 10px}
-.lookup{font-size:13px;background:var(--paper);padding:12px 14px;border-radius:6px}
+.lookup{font-size:13px;background:var(--card);border:1px solid var(--line);padding:12px 14px;border-radius:6px}
 .good{color:var(--green)}.bad{color:var(--red)}
 footer{max-width:1280px;margin:0 auto;padding:30px 40px;border-top:1px solid var(--line);display:flex;gap:40px;align-items:flex-start;color:var(--muted);font-size:12px}
 footer p{margin:0;max-width:460px}footer .honest{margin-left:auto}
