@@ -28,6 +28,15 @@ The browser app runs on a clearly labeled **local test ledger**. Its demo identi
 
 Don't rerun the completed testnet scenario to stage a demo. The asset's earlier periods have elapsed, and its history is evidence. Bob, the current caretaker, can book new periods with the owner CLI (see [RELEASE_WORKERS.md](RELEASE_WORKERS.md)) while funding is open, until 1 December 2026.
 
+## Part 3: the hosted live page
+
+Open <https://aarash-mohsin.github.io/archivepass-live/>. It reads NEAR testnet from your browser and needs no install.
+
+1. **Verify:** 14 checks run against the live asset and each shows `PASS` with its transactions: no access keys, code hash = the committed WASM, books balanced, money in = funding events, payouts = payment events, the archived file matches the stored hash and Merkle root, every keeper answer's Merkle proof re-verified from its transaction arguments, service booked before the handover paid after it, and the former holder left with no control. `npm run verify` prints the same lines.
+2. **History:** both caretakers with their epochs, every booked period and how it ended (three earned, one missed and unpaid), and the full event log from 22 transactions, newest first. The newest is a 0.01 NEAR contribution from a separate sponsor account ([`7L6hSvfx…`](https://testnet.near.rocks/tx/7L6hSvfxJDjHgH2YdATwyU7otUcqDp4Hxsjahxo9unYn)).
+3. **Fund:** connect a testnet wallet and add upkeep. The wallet signs `fund_upkeep`, and the ledger and history update.
+4. **Holder console:** click `apw-mw4fsdcz.testnet` to see the former caretaker locked out. Signing in with a wallet checks a NEP-413 signed message, the key and `nft_token`; only the current holder gets the console (book a period, hand over).
+
 ## What the demo claims
 
 ArchivePass's claim is **portable funded stewardship under fixed rules**. A caretaker can change while funded obligations stay intact. Hashes, NFTs that hold money and Merkle proofs all exist elsewhere already. A passed challenge shows that a keeper produced the requested chunk in time. It doesn't prove continuous uptime or an independent copy, and both demo keepers run on one computer.

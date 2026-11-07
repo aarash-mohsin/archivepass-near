@@ -96,6 +96,7 @@ Key transactions from the signed run on 6 November 2026:
 | Keeper A claims its payment | [`7AtPXRwN…`](https://testnet.nearblocks.io/txns/7AtPXRwNvsTPjUTtdnWRMvyMp2k5uvfkEpqpdhD9UHH4) |
 | Keeper B answers and claims | [`2hBEEJmU…`](https://testnet.nearblocks.io/txns/2hBEEJmUX8poMxuYrrK6P1NKBhTA5N74KcMKg7Kt6ZbZ), [`9UjdvpT9…`](https://testnet.nearblocks.io/txns/9UjdvpT9j4DYCnTBfFNBGCRn55bdqefp1eS2ZBDe6p9v) |
 | A period keeper A missed while stopped is closed unpaid | [`GXKSMQYT…`](https://testnet.nearblocks.io/txns/GXKSMQYTzKbhdDkXVAofimypqVPvvBLn81eCaudpYXyB) |
+| 7 Nov: a separate sponsor account adds 0.01 NEAR of upkeep | [`7L6hSvfx…`](https://testnet.nearblocks.io/txns/7L6hSvfxJDjHgH2YdATwyU7otUcqDp4Hxsjahxo9unYn) |
 
 The full run is in [`docs/RELEASE_WORKERS-final-evidence.json`](docs/RELEASE_WORKERS-final-evidence.json). An earlier deployment of the same contract, whose funding window has closed, is listed in the [evidence index](docs/EVIDENCE_INDEX.md).
 
@@ -123,7 +124,7 @@ curl -s https://rpc.testnet.near.org -H 'Content-Type: application/json' -d '{"j
 curl -s https://rpc.testnet.near.org -H 'Content-Type: application/json' -d '{"jsonrpc":"2.0","id":1,"method":"query","params":{"request_type":"call_function","finality":"final","account_id":"archive.apw-mw4fsdcz.testnet","method_name":"get_ledger","args_base64":"e30="}}'
 ```
 
-`result.result` in the last two responses is a byte array of JSON text. After the run, the ledger showed 0.02 NEAR funded, 0.003 NEAR paid to keepers and 0.017 NEAR still available. The deployed code hash `8DVxZxb2nD3zST8tky1jPTbWvLJfs8vfLXzrB7AMgSNN` matches `contract/target/near/archivepass.wasm`; CI checks this on every push. `node scripts/testnet-view.mjs` prints the same state in one go.
+`result.result` in the last two responses is a byte array of JSON text. After the signed run the ledger showed 0.02 NEAR funded, 0.003 NEAR paid to keepers and 0.017 NEAR available; the sponsor's 0.01 NEAR on 7 November brought the total funded to 0.03 NEAR. The deployed code hash `8DVxZxb2nD3zST8tky1jPTbWvLJfs8vfLXzrB7AMgSNN` matches `contract/target/near/archivepass.wasm`; CI checks this on every push. `node scripts/testnet-view.mjs` prints the same state in one go.
 
 ## Run it locally
 
