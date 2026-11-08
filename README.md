@@ -217,6 +217,15 @@ The exact versions are pinned in `package.json`, `pnpm-lock.yaml` and `contract/
 
 The project was built locally during the hackathon and put under Git only when it was published, so the first commit contains the finished work. The testnet deployments give independent dated evidence: the first deployments were made on 5 November 2026, and the current asset on 6 November 2026 (see the [evidence index](docs/EVIDENCE_INDEX.md) and the explorer links above).
 
+## Other hackathon entry by the same author
+
+Aarash Mohsin entered two independent projects in this hackathon:
+
+- **ArchivePass** (this repo), track *NFTs That Do Something*
+- **AllTogether**, track *Social Money*: <https://github.com/aarash-mohsin/alltogether-near> · [live page](https://aarash-mohsin.github.io/alltogether-live/)
+
+They are separate products. They share no contracts, NEAR accounts, on-chain state, database or claims; each was built, deployed and tested on its own.
+
 ## License
 
 [MIT](LICENSE)
