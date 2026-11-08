@@ -209,7 +209,10 @@ The testnet scripts are for creating a **new, dedicated** testnet deployment. `t
 - **App:** TypeScript, React 19, Vite, Node.js 24 (built-in SQLite), [near-api-js](https://github.com/near/near-api-js) 7.4
 - **Live page:** [near-connect](https://github.com/hot-dao/near-connect) 0.12 for wallets, [@noble/curves](https://github.com/paulmillr/noble-curves) for NEP-413 signature checks, FastNEAR RPC and transaction API, hosted on GitHub Pages
 - **On chain:** NEAR testnet
-- **AI tools:** OpenAI Codex with OpenAI's GPT-6 Astra model, used as a coding assistant for implementation and for the review passes recorded in `docs/ASTRA_*.md`.
+- **AI tools:**
+  - OpenAI Codex with OpenAI's GPT-6 Astra model, used as a coding assistant for implementation and for the review passes recorded in `docs/ASTRA_*.md`.
+  - Anthropic's Claude (Claude Code, Claude Opus), used as a coding assistant for the hosted live page and its in-browser checks, the wallet funding and holder console, the verifier script, the README and documentation, and the demo video's production.
+  - Google Gemini: `gemini-3.8-flash-tts` generated the demo video's voice-over, and `gemini-2.5-flash` transcribed it to check the narration.
 
 The exact versions are pinned in `package.json`, `pnpm-lock.yaml` and `contract/Cargo.lock`.
 
